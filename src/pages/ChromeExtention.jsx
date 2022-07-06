@@ -47,17 +47,19 @@ function ChromeExtention() {
           <div className="title__wrapper">
             <div className="title__text">
               <h1>
-                Enrich Play Store with mobile
-                <br /> app analytics
+                {/* Enrich Play Store with mobile
+                <br /> app analytics */}
+                Get pro app insights with a simple Chrome extension
+
               </h1>
               <p>Get more information in less time:</p>
               <ul>
                 <li>Key metrics</li>
                 <li>Screenshots</li>
-                <li>Personal Collections</li>
+                <li>Custom analytics</li>
               </ul>
               <ThemeProvider theme={theme}>
-                <Button variant="contained">Install Chrome Extension now</Button>
+                <Button variant="contained">Install AppStoreSpy on Chrome</Button>
               </ThemeProvider>
               <span>
                 Don’t have an account? <a href="#">Sign up for free</a>
@@ -80,7 +82,7 @@ function ChromeExtention() {
       <section className="see-down">
         <div className="wrapper">
           <div className="line">
-            <span>See what you can do with AppstoreSpy Extension</span>
+            <span>What you can do with AppstoreSpy Extension</span>
             <KeyboardArrowDown />
           </div>
         </div>
@@ -166,9 +168,9 @@ function ChromeExtention() {
           img={preview_img}
           img_mob={preview_img_mob}
           img_before={card_img}
-          title={'Preview Store Listing'}
+          title={'Get full Store listing previews'}
           text={
-            'Save time exploring Apps without visiting App pages: all information and even screenshots are available when browsing Play Store.'
+            'AppstoreSpy offers more than just data in previews: access full Store listing views including screenshots without opening the app page.'
           }
         />
       </div>
@@ -178,7 +180,7 @@ function ChromeExtention() {
           img_mob={collections_img_mob}
           img_before={collections_mini_img}
           left
-          title={'Add apps to your Collections'}
+          title={'Customize your research'}
           text={
             'Add the apps you are interested in to your Personal Collections directly from Google Play to learn more about them, monitor and analyze.'
           }
@@ -192,20 +194,19 @@ function ChromeExtention() {
           <div className="feature__wrapper">
             <div className="feature__item">
               <SavedSearch />
-              <h3>Take the helicopter view</h3>
-              <p>Get more data for the competitors’ primary analysis in Google Play Store.</p>
+              <h3>Get the 'helicopter view'</h3>
+              <p>Get basic insights into your competitors right in the Google Play Store.</p>
             </div>
             <div className="feature__item">
               <AutoGraph />
-              <h3>Develop more effectively</h3>
-              <p>Explore exclusive metrics and visuals about your app from across Google Play.</p>
+              <h3>Grow your business more efficiently</h3>
+              <p>Explore exclusive metrics and visuals about your app on Google Play.</p>
             </div>
             <div className="feature__item">
               <AppShortcut />
-              <h3>Save favourite apps</h3>
+              <h3>Get custom insights</h3>
               <p>
-                Save apps from the Top charts or your search to come back later for analysis and
-                follow them.
+                Save apps from the Top charts or your search to come back later to track and analyze them.
               </p>
             </div>
           </div>

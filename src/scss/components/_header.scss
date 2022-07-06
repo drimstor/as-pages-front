@@ -47,11 +47,10 @@
   }
 }
 
-
 button.MuiButton-root {
   @extend %Roboto;
   @include text(1rem, 1.5rem);
-  text-transform: capitalize;
+  text-transform: inherit;
   color: white;
   padding: 8px 32px;
   font-weight: 500;

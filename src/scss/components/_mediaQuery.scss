@@ -22,6 +22,14 @@
       }
     }
   }
+  .text-img__title {
+    max-width: 32%;
+  }
+
+  .text-img--preview .text-img__before {
+    width: 130px;
+    left: -125px;
+  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -192,10 +200,24 @@
 }
 
 @media screen and (max-width: 425px) {
+  .get-start button,
+  .title__text button {
+    width: 100%;
+  }
+  * {
+    text-align: center;
+  }
+
   .title {
     padding-top: 50px;
     &__text {
       padding: 0 25px;
+      li {
+        text-align: left;
+      }
+      li:before {
+        bottom: 9px;
+      }
     }
   }
   .plans {
@@ -215,15 +237,48 @@
     }
     &__age-bg {
       padding-left: 10px;
+      p {
+        text-align: left;
+        &:before {
+          top: -1px;
+        }
+      }
     }
   }
-
+  .plans__text {
+   
+    button {
+      width: 100%;
+    }
+    ul li {
+      text-align: left;
+      &::before {
+        bottom: 10px;
+      }
+    }
+  }
+  .get-start__wrapper {
+    padding: 0 25px;
+  }
   .text-img--collections .text-img__image {
     margin-left: 0px;
   }
   .text-img__image picture img {
     min-width: 200px;
     width: 100%;
+  }
+
+  .plans {
+    padding-top: 100px;
+  }
+  .plans__cards {
+    margin-bottom: 20px;
+  }
+  .get-start h2 {
+    margin-top: 0px;
+  }
+  .card-info {
+    margin-bottom: 50px;
   }
 }
 
@@ -238,17 +293,5 @@
   }
   .card-info__age-bg {
     margin-top: 20px;
-  }
-  .plans {
-    padding-top: 100px;
-  }
-  .get-start h2 {
-    margin-top: 0px;
-  }
-  .plans__cards {
-    margin-bottom: 20px;
-  }
-  .card-info {
-    margin-bottom: 50px;
   }
 }

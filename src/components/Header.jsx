@@ -35,7 +35,7 @@ export default function Header({ theme, matches }) {
             <div className="header__btns">
               <ThemeProvider theme={theme}>
                 <Button variant="outlined">Sign in</Button>
-                <Button variant="contained">Try Extention now</Button>
+                <Button variant="contained">Try AppStoreSpy now</Button>
               </ThemeProvider>
             </div>
           </div>
