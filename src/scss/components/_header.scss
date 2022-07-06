@@ -1,8 +1,10 @@
 .header {
   @include size(100%, 64px);
-  background: transparent;
+  background: white;
   box-shadow: 0px 2px 8px 0px #0000001a;
   padding: 0 25px;
+  position: fixed;
+  z-index: 2;
   &__wrapper {
     display: flex;
     align-items: center;
@@ -27,7 +29,17 @@
     &-flexContainer {
       height: 64px;
       gap: 25px;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        button {
+          height: 100%;
+        }
+      }
     }
+   
     &-indicator {
       height: 4px;
     }

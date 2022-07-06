@@ -3,6 +3,7 @@ import { Header, TextImg, Footer } from '../components';
 import { Button, useMediaQuery } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { KeyboardArrowDown, SavedSearch, AutoGraph, AppShortcut } from '@mui/icons-material';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import title_img from '../assets/img/mac.png';
 import title_img_mob from '../assets/img/title-mob.png';
@@ -42,15 +43,12 @@ function ChromeExtention() {
       <Header matches={matches1025} theme={theme} />
 
       {/* ---------------------------- */}
-      <section className="title">
+      <section className="title"  id='top'>
         <div className="wrapper">
           <div className="title__wrapper">
             <div className="title__text">
               <h1>
-                {/* Enrich Play Store with mobile
-                <br /> app analytics */}
                 Get pro app insights with a simple Chrome extension
-
               </h1>
               <p>Get more information in less time:</p>
               <ul>
@@ -79,7 +77,7 @@ function ChromeExtention() {
 
       {/* ---------------------------- */}
 
-      <section className="see-down">
+      <section className="see-down" id='overview'>
         <div className="wrapper">
           <div className="line">
             <span>What you can do with AppstoreSpy Extension</span>
@@ -96,7 +94,7 @@ function ChromeExtention() {
                 <div className="card-info__caption-position-left">
                   <p>Category</p>
                   <p>Release date & Last update</p>
-                  <p>Top Countries</p>
+                  <p>Top Country</p>
                 </div>
 
                 <img src={card_img} alt="Card pic" />
@@ -142,7 +140,7 @@ function ChromeExtention() {
                     <div className="card-info__caption-position-left">
                       <p>Category</p>
                       <p>Release date & Last update</p>
-                      <p>Top Countries</p>
+                      <p>Top Country</p>
                     </div>
                     <img src={card_img} alt="Card pic" />
                   </div>
@@ -189,7 +187,7 @@ function ChromeExtention() {
 
       {/* ---------------------------- */}
 
-      <section className="feature">
+      <section className="feature" id='features'>
         <div className="wrapper">
           <div className="feature__wrapper">
             <div className="feature__item">
@@ -215,7 +213,7 @@ function ChromeExtention() {
 
       {/* ---------------------------- */}
 
-      <section className="plans">
+      <section className="plans" id='plans'>
         <div className="wrapper">
           <div className="plans__title">
             <h2>Find the plan that is right for you</h2>

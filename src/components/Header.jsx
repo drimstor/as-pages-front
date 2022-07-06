@@ -2,8 +2,8 @@ import React from 'react';
 import logo from '../assets/img/logo.svg';
 import { Menu } from '@mui/icons-material';
 import { Tab, Tabs, Button, AppBar, Toolbar, IconButton } from '@mui/material';
-
 import { ThemeProvider } from '@mui/material/styles';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default function Header({ theme, matches }) {
   const [value, setValue] = React.useState('one');
@@ -16,7 +16,7 @@ export default function Header({ theme, matches }) {
         <header className="header">
           <div className="header__wrapper">
             <div className="header__nav">
-              <img src={logo} alt="logo" width={114} />
+            <AnchorLink href='#top' ><img src={logo} alt="logo" width={114} /></AnchorLink>
               <ThemeProvider theme={theme}>
                 <Tabs
                   value={value}
@@ -24,9 +24,9 @@ export default function Header({ theme, matches }) {
                   textColor="secondary"
                   indicatorColor="secondary"
                   aria-label="secondary tabs example">
-                  <Tab value="one" label="Overview" />
-                  <Tab value="two" label="Features" />
-                  <Tab value="three" label="Plans" />
+                  <Tab value="one" label={<AnchorLink href='#overview' offset = ' 60 ' >Overview</AnchorLink>} />
+                  <Tab value="two" label={<AnchorLink href='#features' offset = ' 220 ' >Features</AnchorLink> }/>
+                  <Tab value="three" label={<AnchorLink href='#plans'offset = ' -30 ' >Plans</AnchorLink>} />
                   <Tab value="four" label="Pricing" />
                 </Tabs>
               </ThemeProvider>
@@ -52,7 +52,7 @@ export default function Header({ theme, matches }) {
                 sx={{ mr: 2 }}>
                 <Menu />
               </IconButton>
-              <img src={logo} alt="logo" width={114} />
+              <AnchorLink href='#top' ><img src={logo} alt="logo" width={114} /></AnchorLink>
               <ThemeProvider theme={theme}>
                 <Button variant="contained">Sign in</Button>
               </ThemeProvider>
