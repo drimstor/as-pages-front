@@ -1,0 +1,55 @@
+@import '../assets/fonts/ProductSans/productsans.css';
+@import '../assets/fonts/Roboto/roboto.css';
+@import 'variables';
+@import 'nullstyle';
+@import 'components/all';
+
+html {
+  @extend %Roboto;
+  @include text(16px, 19px);
+  color: $secondary;
+  letter-spacing: 0px;
+}
+
+h1,
+h2,
+h3 {
+  @extend %ProductSans;
+  @include text(2.25rem, 120%);
+  color: $main;
+  font-weight: 500;
+}
+
+a {
+  transition: all 0.3s;
+  &:hover {
+    color: $blue;
+  }
+}
+
+.wrapper {
+  width: calc(100vw - 100px);
+  max-width: 1220px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1023px) {
+  html {
+    @include text(14px, 17px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    @include text(13px, 15px);
+  }
+}
+@media screen and (max-width: 425px) {
+  html {
+    @include text(12px, 14px);
+  }
+  .wrapper {
+    width: calc(100vw - 20px);
+  }
+}

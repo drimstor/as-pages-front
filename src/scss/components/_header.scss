@@ -1,0 +1,68 @@
+.header {
+  @include size(100%, 64px);
+  background: transparent;
+  box-shadow: 0px 2px 8px 0px #0000001a;
+  padding: 0 25px;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100vw - 100px);
+    max-width: 1420px;
+    margin: 0 auto;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 66px;
+  }
+  &__btns {
+    display: flex;
+    button {
+      margin-left: 10px;
+    }
+  }
+
+  .MuiTabs {
+    &-flexContainer {
+      height: 64px;
+      gap: 25px;
+    }
+    &-indicator {
+      height: 4px;
+    }
+    &-root {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      button {
+        @extend %ProductSans;
+        @include text(1rem, 1.1875rem);
+        text-transform: capitalize;
+        min-width: 90px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+
+button.MuiButton-root {
+  @extend %Roboto;
+  @include text(1rem, 1.5rem);
+  text-transform: capitalize;
+  color: white;
+  padding: 8px 32px;
+  font-weight: 500;
+  white-space: nowrap;
+  &.MuiButton-outlined {
+    color: $blue;
+    border: 1px solid #e0e0e0;
+    margin-right: 10px;
+  }
+}
+
+.header button.MuiButton-root.MuiButton-contained {
+  margin-left: auto;
+}

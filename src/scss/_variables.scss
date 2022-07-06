@@ -1,0 +1,33 @@
+$main: #212121;
+$secondary: #616161;
+$table: #424242;
+$corners: #E0E0E0;
+$disabled: #9E9E9E;
+$blue: #2196F3;
+
+//-----------------------------//
+
+@mixin text($f, $lh)
+{
+	font-size: $f;
+	line-height: $lh;
+}
+
+@mixin size($w, $h)
+{
+	width: $w;
+	height: $h;
+}
+
+//-----------------------------//
+
+%ProductSans
+{
+    font-family: 'Product Sans';
+}
+
+%Roboto
+{
+    font-family: 'Roboto';
+}
+
