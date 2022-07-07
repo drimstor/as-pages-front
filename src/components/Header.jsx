@@ -75,7 +75,7 @@ export default function Header({ theme, matches }) {
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2 }}
+                sx={{ ml: -1.5}}
                 onClick={toggleDrawer}>
                 <Menu />
               </IconButton>
@@ -83,7 +83,9 @@ export default function Header({ theme, matches }) {
                 <img src={logo} alt="logo" width={114} />
               </AnchorLink>
               <ThemeProvider theme={theme}>
-                <Button variant="contained" sx={{ ml: 'auto' }}>
+                <Button variant="contained" 
+                // sx={{ ml: 'auto' }}
+                >
                   Sign in
                 </Button>
               </ThemeProvider>

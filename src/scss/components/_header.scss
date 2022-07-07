@@ -60,6 +60,11 @@
       }
     }
   }
+  .MuiToolbar-root {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 button.MuiButton-root {
@@ -90,8 +95,15 @@ ul.MuiList-root {
   }
 }
 
+@media screen and (max-width: 1025px) {
+  .header button.MuiButton-contained {
+    width: 70px;
+    margin-left: -10px;
+  }
+}
 @media screen and (max-width: 350px) {
-  .header button.MuiIconButton-root {
-    margin-right: 5px;
+  .header button.MuiButton-contained {
+    width: 50px;
+    margin-left: -5px;
   }
 }
