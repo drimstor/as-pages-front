@@ -49,7 +49,7 @@ export default function Footer() {
           affiliation with appstorespy.
         </p>
         <div className="footer__copyright">
-          <span>© 2022 AppstoreSpy</span>
+          <span>2022 AppstoreSpy©</span>
           <a href="#">AGREEMENT</a>
           <a href="#">PRIVACY</a>
         </div>

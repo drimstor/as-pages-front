@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 80px 0;
-
   &__title {
     max-width: 37%;
     h2 {
@@ -22,7 +21,7 @@
     }
     picture img {
       min-width: 300px;
-      width: 100%;
+      max-width: 100%;
     }
   }
 }

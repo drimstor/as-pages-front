@@ -14,6 +14,7 @@ import preview_img_mob from '../assets/img/preview-mob.png';
 import collections_img from '../assets/img/collections.png';
 import collections_img_mob from '../assets/img/collections-mob.png';
 import collections_mini_img from '../assets/img/add-col.png';
+import chrome_store_img from '../assets/img/ChromeWebStore.png';
 
 export default function ChromeExtention() {
   const matches1025 = useMediaQuery('(min-width:1025px)');
@@ -53,8 +54,18 @@ export default function ChromeExtention() {
                 <li>Custom analytics</li>
               </ul>
               <ThemeProvider theme={theme}>
-                <Button variant="contained">Install AppStoreSpy on Chrome</Button>
+                <Button
+                  variant="contained"
+                  target="_blank"
+                  href="https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore"
+                  >
+                  Install AppStoreSpy on Chrome
+                </Button>
               </ThemeProvider>
+              <div className="title__featured">
+                <span className="material-symbols-outlined">workspace_premium</span>
+                <p>Featured</p>
+              </div>
               <span>
                 Don’t have an account? <a href="#">Sign up for free</a>
               </span>
@@ -259,9 +270,17 @@ export default function ChromeExtention() {
           <div className="get-start__wrapper">
             <div className="line"></div>
             <h2>Ready to get started?</h2>
-            <ThemeProvider theme={theme}>
-              <Button variant="contained">Try Chrome Extension now</Button>
-            </ThemeProvider>
+            <div className="get-start__btn">
+              <img src={chrome_store_img} alt="chrome_store_img" />
+              <ThemeProvider theme={theme}>
+                <Button
+                  variant="contained"
+                  target="_blank"
+                  href="https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore">
+                  Add to Chrome
+                </Button>
+              </ThemeProvider>
+            </div>
           </div>
         </div>
       </section>
