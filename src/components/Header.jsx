@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import logo from '../assets/img/logo.svg';
+
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { ThemeProvider } from '@mui/material/styles';
 import { Menu } from '@mui/icons-material';
 import {
   Tab,
@@ -13,12 +16,10 @@ import {
   ListItemButton,
   ListItemText,
 } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default function Header({ theme, matches }) {
   const navLi = ['Overview', 'Features', 'Plans', 'Pricing'];
-  const [listItem, setListItem] = useState(null);
+  const [listItem, setListItem] = useState(false);
   const handleChange = (event, newValue) => {
     setListItem(newValue);
   };
@@ -33,7 +34,7 @@ export default function Header({ theme, matches }) {
         <header className="header">
           <div className="header__wrapper">
             <div className="header__nav">
-              <AnchorLink href="#top" onClick={handleChange}>
+              <AnchorLink href="#top" onClick={() => setListItem(false)}>
                 <img src={logo} alt="logo" width={114} />
               </AnchorLink>
               <ThemeProvider theme={theme}>

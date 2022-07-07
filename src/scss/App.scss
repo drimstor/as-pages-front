@@ -34,6 +34,7 @@ a {
   margin: 0 auto;
 }
 
+
 @media screen and (max-width: 1023px) {
   html {
     @include text(14px, 17px);
@@ -53,3 +54,4 @@ a {
     width: calc(100vw - 20px);
   }
 }
+

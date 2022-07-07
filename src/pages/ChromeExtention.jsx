@@ -3,7 +3,6 @@ import { Header, TextImg, Footer } from '../components';
 import { Button, useMediaQuery } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { KeyboardArrowDown, SavedSearch, AutoGraph, AppShortcut } from '@mui/icons-material';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import title_img from '../assets/img/mac.png';
 import title_img_mob from '../assets/img/title-mob.png';
@@ -16,7 +15,7 @@ import collections_img from '../assets/img/collections.png';
 import collections_img_mob from '../assets/img/collections-mob.png';
 import collections_mini_img from '../assets/img/add-col.png';
 
-function ChromeExtention() {
+export default function ChromeExtention() {
   const matches1025 = useMediaQuery('(min-width:1025px)');
   const matches769 = useMediaQuery('(min-width:769px)');
   const theme = createTheme({
@@ -40,9 +39,7 @@ function ChromeExtention() {
 
   return (
     <>
-
       <Header matches={matches1025} theme={theme} />
-
       {/* ---------------------------- */}
       <section className="title" id="top">
         <div className="wrapper">
@@ -73,7 +70,6 @@ function ChromeExtention() {
           </div>
         </div>
       </section>
-
       {/* ---------------------------- */}
       <div id="Overview"></div>
       <section className="see-down">
@@ -84,7 +80,7 @@ function ChromeExtention() {
           </div>
         </div>
       </section>
-
+      {/* ---------------------------- */}
       <section className="card-info">
         <div className="wrapper">
           <div className="card-info__wrapper">
@@ -95,9 +91,7 @@ function ChromeExtention() {
                   <p>Release date & Last update</p>
                   <p>Top Country</p>
                 </div>
-
                 <img src={card_img} alt="Card pic" />
-
                 <div className="card-info__caption-position-right">
                   <div className="card-info__age-bg">
                     <span>App&#8217;s age: background color</span>
@@ -105,7 +99,6 @@ function ChromeExtention() {
                     <p>&lt;1 year</p>
                     <p>&gt;1 year</p>
                   </div>
-
                   <div className="card-info__caption-text">
                     <p>Developer: total apps & installs</p>
                     <p>Accurate installs: total & daily</p>
@@ -143,7 +136,6 @@ function ChromeExtention() {
                 </div>
               </div>
             )}
-
             <div className="card-info__title">
               <h2>No more clicks to app pages</h2>
               <p>
@@ -154,9 +146,7 @@ function ChromeExtention() {
           </div>
         </div>
       </section>
-
       {/* ---------------------------- */}
-
       <div className="text-img--preview">
         <TextImg
           img={preview_img}
@@ -180,7 +170,6 @@ function ChromeExtention() {
           }
         />
       </div>
-
       {/* ---------------------------- */}
       <div id="Features"></div>
       <section className="feature">
@@ -207,9 +196,7 @@ function ChromeExtention() {
           </div>
         </div>
       </section>
-
       {/* ---------------------------- */}
-
       <section className="plans" id="Plans">
         <div className="wrapper">
           <div className="plans__title">
@@ -266,10 +253,8 @@ function ChromeExtention() {
           </div>
         </div>
       </section>
-
       {/* ---------------------------- */}
-
-      <section className="get-start">
+      <section className="get-start" id="Pricing">
         <div className="wrapper">
           <div className="get-start__wrapper">
             <div className="line"></div>
@@ -280,13 +265,8 @@ function ChromeExtention() {
           </div>
         </div>
       </section>
-
       {/* ---------------------------- */}
-
       <Footer />
-      
     </>
   );
 }
-
-export default ChromeExtention;
