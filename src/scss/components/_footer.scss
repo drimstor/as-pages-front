@@ -14,12 +14,12 @@
       font-size: 1.1rem;
       font-weight: 500;
     }
-    email {
-      color: $blue;
-      transition: all 0.3s;
-      &:hover {
-        color: #1f79c2;
-      }
+  }
+  &__email {
+    color: $blue;
+    transition: all 0.3s;
+    &:hover {
+      color: #1f79c2;
     }
   }
   &__copyright {

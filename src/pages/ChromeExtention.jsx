@@ -3,7 +3,7 @@ import { Header, TextImg, Footer } from '../components';
 import { Button, useMediaQuery } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { KeyboardArrowDown, SavedSearch, AutoGraph, AppShortcut } from '@mui/icons-material';
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import title_img from '../assets/img/mac.png';
 import title_img_mob from '../assets/img/title-mob.png';
@@ -40,16 +40,15 @@ function ChromeExtention() {
 
   return (
     <>
+
       <Header matches={matches1025} theme={theme} />
 
       {/* ---------------------------- */}
-      <section className="title"  id='top'>
+      <section className="title" id="top">
         <div className="wrapper">
           <div className="title__wrapper">
             <div className="title__text">
-              <h1>
-                Get pro app insights with a simple Chrome extension
-              </h1>
+              <h1>Get pro app insights with a simple Chrome extension</h1>
               <p>Get more information in less time:</p>
               <ul>
                 <li>Key metrics</li>
@@ -76,8 +75,8 @@ function ChromeExtention() {
       </section>
 
       {/* ---------------------------- */}
-
-      <section className="see-down" id='overview'>
+      <div id="Overview"></div>
+      <section className="see-down">
         <div className="wrapper">
           <div className="line">
             <span>What you can do with AppstoreSpy Extension</span>
@@ -116,36 +115,33 @@ function ChromeExtention() {
                 </div>
               </div>
             ) : (
-              <>
-                <div className="card-info__matches">
-                  <div className="card-info__card card-info__card--left">
-                    <img src={card_img} alt="Card pic" />
-                    <div className="card-info__caption-position-right">
-                      <div className="card-info__age-bg">
-                        <span>App&#8217;s age: background color</span>
-                        <p>&lt;1 month</p>
-                        <p>&lt;1 year</p>
-                        <p>&gt;1 year</p>
-                      </div>
-                      <div className="card-info__caption-text">
-                        <p>Developer: total apps & installs</p>
-                        <p>Accurate installs: total & daily</p>
-                        <p>Revenue & downloads estimates</p>
-                        <p>Raiting, purchases, ads & file size</p>
-                      </div>
+              <div className="card-info__matches">
+                <div className="card-info__card card-info__card--left">
+                  <img src={card_img} alt="Card pic" />
+                  <div className="card-info__caption-position-right">
+                    <div className="card-info__age-bg">
+                      <span>App&#8217;s age: background color</span>
+                      <p>&lt;1 month</p>
+                      <p>&lt;1 year</p>
+                      <p>&gt;1 year</p>
                     </div>
-                  </div>
-
-                  <div className="card-info__card card-info__card--right">
-                    <div className="card-info__caption-position-left">
-                      <p>Category</p>
-                      <p>Release date & Last update</p>
-                      <p>Top Country</p>
+                    <div className="card-info__caption-text">
+                      <p>Developer: total apps & installs</p>
+                      <p>Accurate installs: total & daily</p>
+                      <p>Revenue & downloads estimates</p>
+                      <p>Raiting, purchases, ads & file size</p>
                     </div>
-                    <img src={card_img} alt="Card pic" />
                   </div>
                 </div>
-              </>
+                <div className="card-info__card card-info__card--right">
+                  <div className="card-info__caption-position-left">
+                    <p>Category</p>
+                    <p>Release date & Last update</p>
+                    <p>Top Country</p>
+                  </div>
+                  <img src={card_img} alt="Card pic" />
+                </div>
+              </div>
             )}
 
             <div className="card-info__title">
@@ -186,8 +182,8 @@ function ChromeExtention() {
       </div>
 
       {/* ---------------------------- */}
-
-      <section className="feature" id='features'>
+      <div id="Features"></div>
+      <section className="feature">
         <div className="wrapper">
           <div className="feature__wrapper">
             <div className="feature__item">
@@ -204,7 +200,8 @@ function ChromeExtention() {
               <AppShortcut />
               <h3>Get custom insights</h3>
               <p>
-                Save apps from the Top charts or your search to come back later to track and analyze them.
+                Save apps from the Top charts or your search to come back later to track and analyze
+                them.
               </p>
             </div>
           </div>
@@ -213,7 +210,7 @@ function ChromeExtention() {
 
       {/* ---------------------------- */}
 
-      <section className="plans" id='plans'>
+      <section className="plans" id="Plans">
         <div className="wrapper">
           <div className="plans__title">
             <h2>Find the plan that is right for you</h2>
@@ -261,7 +258,7 @@ function ChromeExtention() {
                   <li>Accurate total installs</li>
                   <li>Installs daily</li>
                   <li>Revenue and downloads estimates</li>
-                  <li>Top countries</li>
+                  <li>Top country</li>
                   <li>Raiting, purchases, ads and file size</li>
                 </ul>
               </div>
@@ -287,6 +284,7 @@ function ChromeExtention() {
       {/* ---------------------------- */}
 
       <Footer />
+      
     </>
   );
 }

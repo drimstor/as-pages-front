@@ -240,7 +240,10 @@
 }
 
 //-----------------------------//
-
+#Features {
+ position: relative;
+ bottom: -50px;
+}
 .feature {
   margin-top: 200px;
   background-color: #f8f9fa;
@@ -338,7 +341,11 @@
       padding-left: 0px;
       margin-bottom: -10px;
       p:before {
-        top: 5px;
+        top: 6px;
+        left: -20px;
+      }
+      p {
+        margin-left: 22px;
       }
     }
     li {

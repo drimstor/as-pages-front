@@ -1,33 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/img/logo.svg';
 import { Menu } from '@mui/icons-material';
-import { Tab, Tabs, Button, AppBar, Toolbar, IconButton } from '@mui/material';
+import {
+  Tab,
+  Tabs,
+  Button,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemText,
+} from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default function Header({ theme, matches }) {
-  const [value, setValue] = React.useState('one');
+  const navLi = ['Overview', 'Features', 'Plans', 'Pricing'];
+  const [listItem, setListItem] = useState(null);
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setListItem(newValue);
   };
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const toggleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  };
+
   return (
     <>
       {matches ? (
         <header className="header">
           <div className="header__wrapper">
             <div className="header__nav">
-            <AnchorLink href='#top' ><img src={logo} alt="logo" width={114} /></AnchorLink>
+              <AnchorLink href="#top" onClick={handleChange}>
+                <img src={logo} alt="logo" width={114} />
+              </AnchorLink>
               <ThemeProvider theme={theme}>
                 <Tabs
-                  value={value}
+                  value={listItem}
                   onChange={handleChange}
                   textColor="secondary"
-                  indicatorColor="secondary"
-                  aria-label="secondary tabs example">
-                  <Tab value="one" label={<AnchorLink href='#overview' offset = ' 60 ' >Overview</AnchorLink>} />
-                  <Tab value="two" label={<AnchorLink href='#features' offset = ' 220 ' >Features</AnchorLink> }/>
-                  <Tab value="three" label={<AnchorLink href='#plans'offset = ' -30 ' >Plans</AnchorLink>} />
-                  <Tab value="four" label="Pricing" />
+                  indicatorColor="secondary">
+                  {navLi.map((item, index) => (
+                    <Tab
+                      key={index}
+                      value={index}
+                      label={
+                        <AnchorLink key={index} href={'#' + item} offset=" 0 ">
+                          {item}
+                        </AnchorLink>
+                      }
+                    />
+                  ))}
                 </Tabs>
               </ThemeProvider>
             </div>
@@ -49,14 +74,32 @@ export default function Header({ theme, matches }) {
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2 }}>
+                sx={{ mr: 2 }}
+                onClick={toggleDrawer}>
                 <Menu />
               </IconButton>
-              <AnchorLink href='#top' ><img src={logo} alt="logo" width={114} /></AnchorLink>
+              <AnchorLink href="#top">
+                <img src={logo} alt="logo" width={114} />
+              </AnchorLink>
               <ThemeProvider theme={theme}>
-                <Button variant="contained">Sign in</Button>
+                <Button variant="contained" sx={{ ml: 'auto' }}>
+                  Sign in
+                </Button>
               </ThemeProvider>
             </Toolbar>
+            <Drawer anchor="top" open={openDrawer} onClose={toggleDrawer}>
+              <List>
+                {navLi.map((item, index) => (
+                  <ListItemButton key={index}>
+                    <ListItemText key={index}>
+                      <AnchorLink key={index} href={'#' + item} offset=" 0 " onClick={toggleDrawer}>
+                        {item}
+                      </AnchorLink>
+                    </ListItemText>
+                  </ListItemButton>
+                ))}
+              </List>
+            </Drawer>
           </AppBar>
         </header>
       )}

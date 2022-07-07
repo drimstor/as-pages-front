@@ -24,22 +24,25 @@
       margin-left: 10px;
     }
   }
-
+  svg.MuiSvgIcon-root {
+    @include size(40px, 40px);
+  }
   .MuiTabs {
     &-flexContainer {
       height: 64px;
       gap: 25px;
+      button {
+        padding: 0;
+      }
       a {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100%;
-        button {
-          height: 100%;
-        }
+        height: 68px;
+        width: 100%;
       }
     }
-   
+
     &-indicator {
       height: 4px;
     }
@@ -74,6 +77,21 @@ button.MuiButton-root {
   }
 }
 
-.header button.MuiButton-root.MuiButton-contained {
-  margin-left: auto;
+ul.MuiList-root {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  span {
+    font-size: 25px;
+    @extend %ProductSans;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .header button.MuiIconButton-root {
+    margin-right: 5px;
+  }
 }

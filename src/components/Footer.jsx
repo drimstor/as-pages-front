@@ -35,9 +35,7 @@ export default function Footer() {
           <ul>
             <li>Contacts</li>
             <li>
-              <a href="#">
-                <email>support@appstorespy.com</email>
-              </a>
+              <a className='footer__email' href="#">support@appstorespy.com</a>
             </li>
           </ul>
         </div>
