@@ -272,6 +272,10 @@
 
 
   .plans {
+    &__title {
+      max-width: 90%;
+      margin: 0 auto;
+    }
     .card-info__age-bg {
       margin-left: 0px;
       p:before {
