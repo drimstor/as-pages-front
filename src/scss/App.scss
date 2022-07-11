@@ -23,8 +23,11 @@ h3 {
 
 a {
   transition: all 0.3s;
+  display: inline-block;
+  color: $blue;
+  font-weight: 500;
   &:hover {
-    color: $blue;
+    color: #186eb5;
   }
 }
 
@@ -35,18 +38,6 @@ a {
   margin: 0 auto;
 }
 
-
-// @media screen and (max-width: 1023px) {
-//   html {
-//     @include text(14px, 17px);
-//   }
-// }
-
-// @media screen and (max-width: 767px) {
-//   html {
-//     @include text(13px, 15px);
-//   }
-// }
 @media screen and (max-width: 500px) {
   html {
     @include text(15px, 14px);
@@ -55,4 +46,3 @@ a {
     width: calc(100vw - 20px);
   }
 }
-

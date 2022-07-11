@@ -4,6 +4,7 @@ $table: #424242;
 $corners: #e0e0e0;
 $disabled: #9e9e9e;
 $blue: #2196f3;
+$bg: #f8f9fa;
 
 //-----------------------------//
 
@@ -29,4 +30,11 @@ $blue: #2196f3;
 
 %Sans {
   font-family: 'Google Sans';
+}
+
+%SecondText {
+  @include text(1.125rem, 1.6875rem);
+  color: $secondary;
+  @extend %Sans;
+  letter-spacing: 0.25px;
 }

@@ -1,0 +1,92 @@
+.text-img {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 0;
+  &__title {
+    max-width: 45%;
+    padding: 0 25px;
+    h2 {
+      color: $main;
+    }
+    p {
+      padding-top: 20px;
+      @include text(1.125rem, 1.6875rem);
+      color: $secondary;
+    }
+    a {
+      margin-top: 20px;
+      position: relative;
+      &::after {
+        position: absolute;
+        bottom: -1px;
+        right: -15px;
+        content: '\276F';
+        font-size: 0.9rem;
+      }
+    }
+    ul {
+      padding-top: 10px;
+      padding-left: 20px;
+      li {
+        position: relative;
+        margin: 5px 0;
+      }
+      li::before {
+        content: '\2022';
+        position: absolute;
+        left: -15px;
+        bottom: 1px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  &__image {
+    position: relative;
+    > img {
+      position: absolute;
+    }
+    picture img {
+      min-width: 300px;
+      max-width: 100%;
+    }
+  }
+}
+
+//--------------------------------------//
+
+@media screen and (max-width: 1023px) {
+  .text-img {
+    flex-direction: column;
+  }
+  .text-img--left {
+    flex-direction: column-reverse;
+  }
+
+  .text-img {
+    &__title {
+      margin-bottom: 50px;
+      max-width: 80%;
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .text-img {
+    &__title {
+      max-width: 90%;
+      ul li {
+        text-align: left;
+        margin: 10px 0;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .text-img {
+    padding: 60px 0;
+  }
+}

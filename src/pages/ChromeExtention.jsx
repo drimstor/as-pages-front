@@ -1,101 +1,47 @@
 import React from 'react';
-import { Header, TextImg, Footer } from '../components';
-import { Button, useMediaQuery } from '@mui/material';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { KeyboardArrowDown, SavedSearch, AutoGraph, AppShortcut } from '@mui/icons-material';
+import { TextAndImg, Features, GetStart, SeeDown, Title } from '../components';
 
-import title_img from '../assets/img/mac.png';
-import title_img_mob from '../assets/img/title-mob.png';
+import { Button } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { SavedSearch, AutoGraph, AppShortcut } from '@mui/icons-material';
+
+import title_img from '../assets/img/mac-extention.png';
+import title_img_mob from '../assets/img/mac-extention-mob.png';
 import card_img from '../assets/img/card-w200.png';
 import card_mini from '../assets/img/mini-card0-w161.png';
 import card_mini_premium from '../assets/img/mini-card1-w161.png';
-import preview_img from '../assets/img/preview.png';
-import preview_img_mob from '../assets/img/preview-mob.png';
-import collections_img from '../assets/img/collections.png';
-import collections_img_mob from '../assets/img/collections-mob.png';
+import chrome_ext1_img from '../assets/img/chrome-ext1.png';
+import chrome_ext1_img_mob from '../assets/img/chrome-ext1-mob.png';
+import chrome_ext_img from '../assets/img/chrome-ext.png';
+import chrome_ext_img_mob from '../assets/img/chrome-ext-mob.png';
 import collections_mini_img from '../assets/img/add-col.png';
 import chrome_store_img from '../assets/img/ChromeWebStore.png';
 
-export default function ChromeExtention() {
-  const matches1025 = useMediaQuery('(min-width:1025px)');
-  const matches769 = useMediaQuery('(min-width:769px)');
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#2196F3',
-      },
-      secondary: {
-        main: '#212121',
-      },
-      text: {
-        primary: '#212121',
-        secondary: '#616161',
-        disabled: '#9E9E9E',
-      },
-      white: {
-        main: '#ffffff',
-      },
-    },
-  });
-
+export default function ChromeExtention({ theme, matches }) {
   return (
     <>
-      <Header matches={matches1025} theme={theme} />
+      <Title
+        theme={theme}
+        img={title_img}
+        imgMob={title_img_mob}
+        cardImg={card_img}
+        title={'Get pro app insights with a simple Chrome extension'}
+        paragraph={'Get more information in less time:'}
+        ul={['Key metrics', 'Screenshots', 'Custom analytics']}
+        buttonLink={
+          'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
+        }
+        buttonText={'Install AppStoreSpy on Chrome'}
+      />
       {/* ---------------------------- */}
-      <section className="title" id="top">
-        <div className="wrapper">
-          <div className="title__wrapper">
-            <div className="title__text">
-              <h1>Get pro app insights with a simple Chrome extension</h1>
-              <p>Get more information in less time:</p>
-              <ul>
-                <li>Key metrics</li>
-                <li>Screenshots</li>
-                <li>Custom analytics</li>
-              </ul>
-              <ThemeProvider theme={theme}>
-                <Button
-                  variant="contained"
-                  target="_blank"
-                  href="https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore"
-                  >
-                  Install AppStoreSpy on Chrome
-                </Button>
-              </ThemeProvider>
-              <div className="title__featured">
-                <span className="material-symbols-outlined">workspace_premium</span>
-                <p>Featured</p>
-              </div>
-              <span>
-                Don’t have an account? <a href="#">Sign up for free</a>
-              </span>
-            </div>
-            <div className="title__img">
-              <picture>
-                <source media="(max-width: 1024px)" srcSet={title_img_mob} />
-                <source media="(min-width: 1025px)" srcSet={title_img} />
-                <img src={title_img} alt="sreen" />
-              </picture>
-              <img className="card-img--144" src={card_img} alt="card" />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* ---------------------------- */}
-      <div id="Overview"></div>
-      <section className="see-down">
-        <div className="wrapper">
-          <div className="line">
-            <span>What you can do with AppstoreSpy Extension</span>
-            <KeyboardArrowDown />
-          </div>
-        </div>
-      </section>
+      <SeeDown
+        text={'What you can do with AppstoreSpy Extension'}
+      />
       {/* ---------------------------- */}
       <section className="card-info">
         <div className="wrapper">
           <div className="card-info__wrapper">
-            {matches769 ? (
+            {matches ? (
               <div className="card-info__card">
                 <div className="card-info__caption-position-left">
                   <p>Category</p>
@@ -159,54 +105,43 @@ export default function ChromeExtention() {
       </section>
       {/* ---------------------------- */}
       <div className="text-img--preview">
-        <TextImg
-          img={preview_img}
-          img_mob={preview_img_mob}
-          img_before={card_img}
+        <TextAndImg
+          img={chrome_ext1_img}
+          imgMob={chrome_ext1_img_mob}
+          imgBefore={card_img}
           title={'Get full Store listing previews'}
           text={
-            'AppstoreSpy offers more than just data in previews: access full Store listing views including screenshots without opening the app page.'
-          }
-        />
-      </div>
-      <div className="text-img--collections">
-        <TextImg
-          img={collections_img}
-          img_mob={collections_img_mob}
-          img_before={collections_mini_img}
-          left
-          title={'Customize your research'}
-          text={
-            'Add the apps you are interested in to your Personal Collections directly from Google Play to learn more about them, monitor and analyze.'
+            'AppstoreSpy offers more than just data in previews: access full Store listing views including screenshots without opening the app page'
           }
         />
       </div>
       {/* ---------------------------- */}
-      <div id="Features"></div>
-      <section className="feature">
-        <div className="wrapper">
-          <div className="feature__wrapper">
-            <div className="feature__item">
-              <SavedSearch />
-              <h3>Get the 'helicopter view'</h3>
-              <p>Get basic insights into your competitors right in the Google Play Store.</p>
-            </div>
-            <div className="feature__item">
-              <AutoGraph />
-              <h3>Grow your business more efficiently</h3>
-              <p>Explore exclusive metrics and visuals about your app on Google Play.</p>
-            </div>
-            <div className="feature__item">
-              <AppShortcut />
-              <h3>Get custom insights</h3>
-              <p>
-                Save apps from the Top charts or your search to come back later to track and analyze
-                them.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="text-img--collections">
+        <TextAndImg
+          img={chrome_ext_img}
+          imgMob={chrome_ext_img_mob}
+          imgBefore={collections_mini_img}
+          left
+          title={'Customize your research'}
+          text={
+            'Add the apps you are interested in to your Personal Collections directly from Google Play to learn more about them, monitor and analyze'
+          }
+        />
+      </div>
+      {/* ---------------------------- */}
+      <Features
+        icon1={<SavedSearch />}
+        icon2={<AutoGraph />}
+        icon3={<AppShortcut />}
+        title1={'Get the "helicopter view"'}
+        title2={'Grow your business more efficiently'}
+        title3={'Get custom insights'}
+        text1={'Get basic insights into your competitors right in the Google Play Store'}
+        text2={'Explore exclusive metrics and visuals about your app on Google Play'}
+        text3={
+          'Save apps from the Top charts or your search to come back later to track and analyze them'
+        }
+      />
       {/* ---------------------------- */}
       <section className="plans" id="Plans">
         <div className="wrapper">
@@ -265,27 +200,14 @@ export default function ChromeExtention() {
         </div>
       </section>
       {/* ---------------------------- */}
-      <section className="get-start" id="Pricing">
-        <div className="wrapper">
-          <div className="get-start__wrapper">
-            <div className="line"></div>
-            <h2>Ready to get started?</h2>
-            <div className="get-start__btn">
-              <img src={chrome_store_img} alt="chrome_store_img" />
-              <ThemeProvider theme={theme}>
-                <Button
-                  variant="contained"
-                  target="_blank"
-                  href="https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore">
-                  Add to Chrome
-                </Button>
-              </ThemeProvider>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* ---------------------------- */}
-      <Footer />
+      <GetStart
+      img={chrome_store_img}
+        buttonLink={
+          'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
+        }
+        buttonText={'Add to Chrome'}
+        theme={theme}
+      />
     </>
   );
 }

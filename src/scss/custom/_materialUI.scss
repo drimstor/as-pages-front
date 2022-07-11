@@ -35,6 +35,9 @@ ul.MuiList-root {
   span {
     font-size: 25px;
     @extend %ProductSans;
+    a {
+      color: $main;
+    }
   }
   div.MuiListItemButton-root {
     width: 100%;
@@ -82,5 +85,13 @@ ul.MuiList-root {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .get-start button,
+  .title__text a {
+    width: 100%;
   }
 }

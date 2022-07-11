@@ -1,0 +1,155 @@
+.title {
+  padding-top: 150px;
+  @extend %ProductSans;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__img {
+    min-width: 550px;
+    position: relative;
+    picture img {
+      min-width: 550px;
+      max-width: 100%;
+    }
+    .card-img--144 {
+      filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
+      border-radius: 8px;
+      position: absolute;
+      bottom: -80px;
+      right: 0px;
+      max-width: 160px;
+    }
+  }
+  &__text {
+    max-width: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+    h1 {
+      font-size: 3.75rem;
+      letter-spacing: -1px;
+      font-weight: 400;
+    }
+    li,
+    p {
+      @include text(1.25rem, 1.625rem);
+    }
+    li {
+      margin-bottom: 10px;
+      margin-left: 35px;
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 13px;
+        left: -33px;
+        width: 20px;
+        height: 10px;
+        border-right: 3px solid $secondary;
+        border-top: 3px solid $secondary;
+        transform: rotate(135deg);
+      }
+    }
+    span {
+      display: inline-block;
+      font-size: 1rem;
+    }
+    a.MuiButton-root {
+      padding: 12px 36px;
+    }
+    span a {
+      margin-left: 15px;
+    }
+  }
+  &__featured {
+    color: $blue;
+    display: flex;
+    align-items: center;
+    p {
+      @include text(14px, 16px);
+      @extend %Sans;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    span {
+      margin-right: 4px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .title {
+    padding-top: 160px;
+    &__img {
+      min-width: 300px;
+      picture img {
+        min-width: 300px;
+        margin-left: 50px;
+      }
+    }
+    &__text {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__text {
+      max-width: 100%;
+      padding: 0 15px;
+    }
+    &__img {
+      margin-top: 50px;
+      picture img {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .title {
+    padding-top: 120px;
+    &__featured {
+      margin: 0 auto;
+    }
+    span {
+      margin: 0 auto;
+      a {
+        margin: 8px auto 0;
+      }
+    }
+    h1 {
+      font-size: 48px;
+    }
+    img {
+      display: none;
+    }
+    &__text {
+      padding: 0 15px;
+      li {
+        text-align: left;
+      }
+      li:before {
+        bottom: 9px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 332px) {
+  .title h1 {
+    font-size: 44px;
+  }
+}

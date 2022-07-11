@@ -1,4 +1,10 @@
 export { default as Header } from './Header';
-export { default as TextImg } from './TextImg';
+export { default as Title } from './Title';
+export { default as SeeDown } from './SeeDown';
+export { default as TextAndImg } from './TextAndImg';
+export { default as Features } from './Features';
+export { default as GetStart } from './GetStart';
 export { default as Footer } from './Footer';
 export { default as ScrollToTop } from './ScrollToTop';
+
+export { default as EmailForm } from './EmailForm';

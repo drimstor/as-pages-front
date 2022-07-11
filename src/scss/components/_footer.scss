@@ -2,6 +2,12 @@
   background-color: #f8f9fa;
   padding-top: 45px;
   @extend %ProductSans;
+  a {
+    color: $secondary;
+    &:hover {
+      color: $blue;
+    }
+  }
   &__list {
     display: flex;
     justify-content: space-between;
@@ -15,7 +21,7 @@
       font-weight: 500;
     }
   }
-  &__email {
+  a.footer__email {
     color: $blue;
     transition: all 0.3s;
     &:hover {
@@ -29,9 +35,6 @@
     justify-content: start;
     gap: 50px;
     color: $disabled;
-    a:hover {
-      color: #444;
-    }
   }
   p {
     color: $disabled;

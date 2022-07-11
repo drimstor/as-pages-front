@@ -17,6 +17,15 @@
     display: flex;
     align-items: center;
     gap: 66px;
+    a {
+      color: $secondary;
+      &:hover {
+        color: $blue;
+      }
+      &:focus {
+        color: $main;
+      }
+    }
   }
   &__btns {
     display: flex;
