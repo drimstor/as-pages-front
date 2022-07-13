@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Close } from '@mui/icons-material';
 import google_icon from '../assets/img/google-icon.svg';
+
 import {
   FormGroup,
   Button,

@@ -129,17 +129,23 @@ export default function ChromeExtention() {
       </div>
       {/* ---------------------------- */}
       <Features
-        icon1={<SavedSearch />}
-        icon2={<AutoGraph />}
-        icon3={<AppShortcut />}
-        title1={'Get the "helicopter view"'}
-        title2={'Grow your business more efficiently'}
-        title3={'Get custom insights'}
-        text1={'Get basic insights into your competitors right in the Google Play Store'}
-        text2={'Explore exclusive metrics and visuals about your app on Google Play'}
-        text3={
-          'Save apps from the Top charts or your search to come back later to track and analyze them'
-        }
+        obj={[
+          {
+            icon: <SavedSearch />,
+            title: 'Get the "helicopter view',
+            text: 'Get basic insights into your competitors right in the Google Play Store',
+          },
+          {
+            icon: <AutoGraph />,
+            title: 'Grow your business more efficiently',
+            text: 'Explore exclusive metrics and visuals about your app on Google Play',
+          },
+          {
+            icon: <AppShortcut />,
+            title: 'Get custom insights',
+            text: 'Save apps from the Top charts or your search to come back later to track and analyze them',
+          },
+        ]}
       />
       {/* ---------------------------- */}
       <section className="plans" id="Plans">
@@ -157,7 +163,7 @@ export default function ChromeExtention() {
               <img src={card_mini} alt="card" />
               <div className="plans__text">
                 <h3>Free plan</h3>
-                  <Button variant="outlined">Try now</Button>
+                <Button variant="outlined">Try now</Button>
                 <span>Start exploring the App’s metrics for free:</span>
                 <li>App’s age highlights:</li>
                 <div className="card-info__age-bg">
@@ -176,7 +182,7 @@ export default function ChromeExtention() {
               <img src={card_mini_premium} alt="card" />
               <div className="plans__text">
                 <h3 className="plans__text--premium">Premium plan</h3>
-                  <Button variant="contained">Get Started</Button>
+                <Button variant="contained">Get Started</Button>
                 <span>
                   <a href="#">See more Plans</a>
                 </span>

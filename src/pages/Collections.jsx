@@ -79,15 +79,23 @@ function Collections() {
       <div className="features-imgs">
         <Features
           title={'A perfect tool for every Customer'}
-          img1={stock_img}
-          img2={stock1_img}
-          img3={stock2_img}
-          title1={'For Founders & Owners"'}
-          title2={'For Product & Marketing'}
-          title3={'For Investors & Ventures'}
-          text1={'Monitor your market niche and its top players'}
-          text2={'Analyze your competitors` behavior'}
-          text3={'Track & find promising apps and developers'}
+          obj={[
+            {
+              img: { stock_img },
+              title: 'For Founders & Owners',
+              text: 'Monitor your market niche and its top players',
+            },
+            {
+              img: { stock1_img },
+              title: 'For Product & Marketing',
+              text: 'Analyze your competitors` behavior',
+            },
+            {
+              img: { stock2_img },
+              title: 'For Investors & Ventures',
+              text: 'Track & find promising apps and developers',
+            },
+          ]}
         />
       </div>
       {/* ---------------------------- */}
@@ -101,46 +109,50 @@ function Collections() {
       />
       {/* ---------------------------- */}
       <Features
-        icon1={<Workspaces />}
-        icon2={<Cached />}
-        icon3={<Groups />}
-        title1={'Group apps by features'}
-        title2={'Data always stays up to date'}
-        title3={'View public Collections'}
-        text1={'Group competitors into collections and keep eye on changes in your selected groups'}
-        text2={'You don`t need to update data in your Collections — we do it for you'}
-        text3={'Explore 500+ Public Collections and copy them to your Collections for tracking'}
+        obj={[
+          {
+            icon: <Workspaces />,
+            title: 'Group apps by features',
+            text: 'Group competitors into collections and keep eye on changes in your selected groups',
+          },
+          {
+            icon: <Cached />,
+            title: 'Data always stays up to date',
+            text: 'You don`t need to update data in your Collections — we do it for you',
+          },
+          {
+            icon: <Groups />,
+            title: 'View public Collections',
+            text: 'Explore 500+ Public Collections and copy them to your Collections for tracking',
+          },
+        ]}
       />
       {/* ---------------------------- */}
       <div className="table-features">
         <Features
           title={'Discover more products by AppstoreSpy'}
-          subLink={'https://chrome.google.com/'}
+          subLink={'#'}
           subLinkText={'See all products'}
-          icon1={<Extension />}
-          icon2={<GridOn />}
-          icon3={<Timeline />}
-          title1={'Chrome Plugin'}
-          title2={'Niche Finder'}
-          title3={'App Timeline'}
-          link1={
-            'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
-          }
-          link2={
-            'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
-          }
-          link3={
-            'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
-          }
-          text1={
-            'Install AppstoreSpy Chrome Extension to automatically embed app data directly into Google Play Store.'
-          }
-          text2={
-            'Build and grow the next hot app by finding and tracking the right market  niche for you.'
-          }
-          text3={
-            'Track all available recent app changes to analyze what influences app performance.'
-          }
+          obj={[
+            {
+              icon: <Extension />,
+              title: 'Chrome Plugin',
+              text: 'Install AppstoreSpy Chrome Extension to automatically embed app data directly into Google Play Store.',
+              link: '#',
+            },
+            {
+              icon: <GridOn />,
+              title: 'Niche Finder',
+              text: 'Build and grow the next hot app by finding and tracking the right market  niche for you.',
+              link: '#',
+            },
+            {
+              icon: <Timeline />,
+              title: 'App Timeline',
+              text: 'Track all available recent app changes to analyze what influences app performance.',
+              link: '#',
+            },
+          ]}
         />
       </div>
       {/* ---------------------------- */}

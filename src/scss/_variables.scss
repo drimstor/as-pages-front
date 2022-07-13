@@ -28,14 +28,10 @@ $bg: #f8f9fa;
   font-family: 'Roboto';
 }
 
-%Sans {
-  font-family: 'Google Sans';
-}
-
 %SecondText {
+  @extend %Roboto;
   @include text(1.125rem, 1.6875rem);
   color: $secondary;
-  @extend %Sans;
   letter-spacing: 0.25px;
 }
 

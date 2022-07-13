@@ -35,10 +35,6 @@ function Title({
               target={target && `_blank`}>
               {buttonText}
             </Button>
-            <div className="title__featured">
-              <span className="material-symbols-outlined">workspace_premium</span>
-              <p>Featured</p>
-            </div>
             <span>
               Don’t have an account? <a href="#">Sign up for free</a>
             </span>

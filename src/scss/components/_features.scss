@@ -35,6 +35,10 @@
       @include text(1rem, 1.5rem);
     }
   }
+  a {
+    @extend %ProductSans;
+    font-weight: 500;
+  }
 }
 
 .table-features {

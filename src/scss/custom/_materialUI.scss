@@ -1,7 +1,7 @@
 // Кнопки
 button.MuiButton-root,
 a.MuiButton-root {
-  @extend %Sans;
+  @extend %Roboto;
   @include text(1.005rem, 1.5rem);
   text-transform: inherit;
   color: white;
