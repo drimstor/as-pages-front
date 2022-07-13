@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import logo from '../assets/img/logo.svg';
 
+import { ModalContext } from '../contexts';
+
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { ThemeProvider } from '@mui/material/styles';
 import { Menu } from '@mui/icons-material';
 import {
   Tab,
@@ -17,8 +18,9 @@ import {
   ListItemText,
 } from '@mui/material';
 
-export default function Header({ theme, matches }) {
-  const navLi = ['Overview', 'Features', 'Plans', 'Pricing'];
+const navLi = ['Overview', 'Features', 'Plans', 'Pricing'];
+
+export default function Header({  }) {
   const [listItem, setListItem] = useState(false);
   const handleChange = (event, newValue) => {
     setListItem(newValue);
@@ -27,48 +29,45 @@ export default function Header({ theme, matches }) {
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
   };
-
+  const { toggleModal, matches1025 } = useContext(ModalContext);
   return (
     <>
-      {matches ? (
+      {matches1025 ? (
         <header className="header">
           <div className="header__wrapper">
             <div className="header__nav">
               <AnchorLink href="#top" onClick={() => setListItem(false)}>
                 <img src={logo} alt="logo" width={114} />
               </AnchorLink>
-              <ThemeProvider theme={theme}>
-                <Tabs
-                  value={listItem}
-                  onChange={handleChange}
-                  textColor="secondary"
-                  indicatorColor="primary">
-                  {navLi.map((item, index) => (
-                    <Tab
-                      key={index}
-                      value={index}
-                      label={
-                        <AnchorLink key={index} href={'#' + item} offset=" 0 ">
-                          {item}
-                        </AnchorLink>
-                      }
-                    />
-                  ))}
-                </Tabs>
-              </ThemeProvider>
+              <Tabs
+                value={listItem}
+                onChange={handleChange}
+                textColor="secondary"
+                indicatorColor="primary">
+                {navLi.map((item, index) => (
+                  <Tab
+                    key={index}
+                    value={index}
+                    label={
+                      <AnchorLink key={index} href={'#' + item} offset=" 0 ">
+                        {item}
+                      </AnchorLink>
+                    }
+                  />
+                ))}
+              </Tabs>
             </div>
-
             <div className="header__btns">
-              <ThemeProvider theme={theme}>
-                <Button variant="outlined">Sign in</Button>
-                <Button variant="contained">Try AppStoreSpy now</Button>
-              </ThemeProvider>
+              <Button variant="outlined" onClick={toggleModal}>
+                Sign in
+              </Button>
+              <Button variant="contained">Try AppStoreSpy now</Button>
             </div>
           </div>
         </header>
       ) : (
         <header className="header">
-          <AppBar position="fixed" theme={theme} color="white">
+          <AppBar position="fixed" color="white">
             <Toolbar>
               <IconButton
                 size="large"
@@ -82,14 +81,9 @@ export default function Header({ theme, matches }) {
               <AnchorLink href="#top">
                 <img src={logo} alt="logo" width={114} />
               </AnchorLink>
-              <ThemeProvider theme={theme}>
-                <Button
-                  variant="contained"
-                  // sx={{ ml: 'auto' }}
-                >
-                  Sign in
-                </Button>
-              </ThemeProvider>
+              <Button variant="contained" onClick={toggleModal}>
+                Sign in
+              </Button>
             </Toolbar>
             <Drawer anchor="top" open={openDrawer} onClose={toggleDrawer}>
               <List>

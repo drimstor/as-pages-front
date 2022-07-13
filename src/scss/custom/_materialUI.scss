@@ -11,7 +11,6 @@ a.MuiButton-root {
   &.MuiButton-outlined {
     color: $blue;
     border: 1px solid #e0e0e0;
-    margin-right: 10px;
     &:hover {
       background: rgba(218, 218, 218, 0.186);
     }
@@ -48,6 +47,12 @@ ul.MuiList-root {
 .header {
   svg.MuiSvgIcon-root {
     @include size(40px, 40px);
+  }
+  button.MuiButton-root,
+  a.MuiButton-root {
+    &.MuiButton-outlined {
+      margin-right: 10px;
+    }
   }
   .MuiTabs {
     &-flexContainer {
@@ -88,10 +93,10 @@ ul.MuiList-root {
   }
 }
 
-
 @media screen and (max-width: 425px) {
-  .get-start button,
+  button.w100-btn,
   .title__text a {
     width: 100%;
+    padding: 12px 36px;
   }
 }

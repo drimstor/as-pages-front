@@ -7,4 +7,6 @@ export { default as GetStart } from './GetStart';
 export { default as Footer } from './Footer';
 export { default as ScrollToTop } from './ScrollToTop';
 
+export { default as ModalSingUp } from './ModalSingUp';
+
 export { default as EmailForm } from './EmailForm';

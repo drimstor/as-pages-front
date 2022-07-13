@@ -13,40 +13,31 @@
     margin: 15px 0 35px;
     @extend %SecondText;
   }
+}
 
-  form {
-    background: $bg;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 40px 60px;
-    > input {
-      @include size(385px, 45px);
-      padding: 15px;
-      border: 1px solid $disabled;
-      border-radius: 3px;
-      @extend %Sans;
-      @include text(1rem, 1.1875rem);
-      color: $main;
-      outline: none;
-      &:focus {
-        border: 2px solid $main;
-      }
-      &::placeholder {
-        @extend %Sans;
-        @include text(1rem, 1.1875rem);
-        color: $disabled;
-      }
+form {
+  background: $bg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 40px 60px;
+  > input {
+    @include size(350px, 45px);
+    padding: 15px;
+    border: 1px solid $disabled;
+    border-radius: 3px;
+    @extend %Roboto;
+    @include text(1rem, 1.1875rem);
+    color: $main;
+    outline: none;
+    &:focus {
+      border: 2px solid $main;
     }
-  }
-  .MuiFormGroup-root {
-    width: 385px;
-    padding-left: 5px;
-    a {
-      margin: 35px auto 0;
-      width: 50%;
-      padding: 12px 36px;
+    &::placeholder {
+      @extend %Roboto;
+      @include text(1rem, 1.1875rem);
+      color: $disabled;
     }
   }
   label.MuiFormControlLabel-root {
@@ -55,6 +46,16 @@
       font-size: 12px;
       color: $disabled;
       text-align: left;
+    }
+  }
+  .MuiFormGroup-root {
+    width: 350px;
+    padding-left: 5px;
+    a,
+    button {
+      margin: 25px auto 0;
+      width: 50%;
+      padding: 12px 36px;
     }
   }
 }
@@ -70,13 +71,14 @@
       width: 100%;
       padding: 40px 20px;
       > input {
-        width: 90%;
+        text-align: left;
+        width: 100%;
       }
     }
     .MuiFormGroup-root {
       width: 100%;
       a.MuiButton-root {
-        width: 90%;
+        width: 100%;
       }
     }
   }

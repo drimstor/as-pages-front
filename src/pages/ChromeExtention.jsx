@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TextAndImg, Features, GetStart, SeeDown, Title } from '../components';
+import { ModalContext } from '../contexts';
 
 import { Button } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
 import { SavedSearch, AutoGraph, AppShortcut } from '@mui/icons-material';
 
 import title_img from '../assets/img/mac-extention.png';
@@ -17,11 +17,11 @@ import chrome_ext_img_mob from '../assets/img/chrome-ext-mob.png';
 import collections_mini_img from '../assets/img/add-col.png';
 import chrome_store_img from '../assets/img/ChromeWebStore.png';
 
-export default function ChromeExtention({ theme, matches }) {
+export default function ChromeExtention() {
+  const { matches769 } = useContext(ModalContext);
   return (
     <>
       <Title
-        theme={theme}
         img={title_img}
         imgMob={title_img_mob}
         cardImg={card_img}
@@ -32,16 +32,15 @@ export default function ChromeExtention({ theme, matches }) {
           'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
         }
         buttonText={'Install AppStoreSpy on Chrome'}
+        target
       />
       {/* ---------------------------- */}
-      <SeeDown
-        text={'What you can do with AppstoreSpy Extension'}
-      />
+      <SeeDown text={'What you can do with The AppstoreSpy Extension'} />
       {/* ---------------------------- */}
       <section className="card-info">
         <div className="wrapper">
           <div className="card-info__wrapper">
-            {matches ? (
+            {matches769 ? (
               <div className="card-info__card">
                 <div className="card-info__caption-position-left">
                   <p>Category</p>
@@ -96,8 +95,8 @@ export default function ChromeExtention({ theme, matches }) {
             <div className="card-info__title">
               <h2>No more clicks to app pages</h2>
               <p>
-                Extension AppstoreSpy embeds information directly into the app cards, so now you can
-                simply scroll through the Play Store and analyze.
+                The Extension AppstoreSpy embeds information directly into the app cards, so now you
+                can simply scroll through the Play Store and analyze.
               </p>
             </div>
           </div>
@@ -124,7 +123,7 @@ export default function ChromeExtention({ theme, matches }) {
           left
           title={'Customize your research'}
           text={
-            'Add the apps you are interested in to your Personal Collections directly from Google Play to learn more about them, monitor and analyze'
+            'Add the apps you are interested in to your Personal Collections directly from Google Play to learn more about them, monitor, and analyze'
           }
         />
       </div>
@@ -150,7 +149,7 @@ export default function ChromeExtention({ theme, matches }) {
             <p>
               Choose a subscription plan that best fits your goal.
               <br />
-              Downgrade, upgrade or cancel any time.
+              Downgrade, upgrade, or cancel any time.
             </p>
           </div>
           <div className="plans__cards">
@@ -158,9 +157,7 @@ export default function ChromeExtention({ theme, matches }) {
               <img src={card_mini} alt="card" />
               <div className="plans__text">
                 <h3>Free plan</h3>
-                <ThemeProvider theme={theme}>
                   <Button variant="outlined">Try now</Button>
-                </ThemeProvider>
                 <span>Start exploring the App’s metrics for free:</span>
                 <li>App’s age highlights:</li>
                 <div className="card-info__age-bg">
@@ -179,9 +176,7 @@ export default function ChromeExtention({ theme, matches }) {
               <img src={card_mini_premium} alt="card" />
               <div className="plans__text">
                 <h3 className="plans__text--premium">Premium plan</h3>
-                <ThemeProvider theme={theme}>
                   <Button variant="contained">Get Started</Button>
-                </ThemeProvider>
                 <span>
                   <a href="#">See more Plans</a>
                 </span>
@@ -192,7 +187,7 @@ export default function ChromeExtention({ theme, matches }) {
                   <li>Installs daily</li>
                   <li>Revenue and downloads estimates</li>
                   <li>Top country</li>
-                  <li>Raiting, purchases, ads and file size</li>
+                  <li>Raiting, purchases, ads, and file size</li>
                 </ul>
               </div>
             </div>
@@ -201,12 +196,12 @@ export default function ChromeExtention({ theme, matches }) {
       </section>
       {/* ---------------------------- */}
       <GetStart
-      img={chrome_store_img}
+        img={chrome_store_img}
         buttonLink={
           'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
         }
         buttonText={'Add to Chrome'}
-        theme={theme}
+        target
       />
     </>
   );

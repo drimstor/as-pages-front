@@ -36,6 +36,7 @@
     li,
     p {
       @include text(1.25rem, 1.625rem);
+      max-width: 400px;
     }
     li {
       margin-bottom: 10px;

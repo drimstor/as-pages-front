@@ -1,8 +1,18 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
 import { Button } from '@mui/material';
 
-function Title({ theme, img, imgMob, cardImg, title, paragraph, ul, buttonLink, buttonText }) {
+function Title({
+  img,
+  imgMob,
+  cardImg,
+  title,
+  paragraph,
+  ul,
+  buttonLink,
+  buttonText,
+  buttonClick,
+  target,
+}) {
   return (
     <section className="title" id="top">
       <div className="wrapper">
@@ -17,11 +27,14 @@ function Title({ theme, img, imgMob, cardImg, title, paragraph, ul, buttonLink, 
                 ))}
               </ul>
             )}
-            <ThemeProvider theme={theme}>
-              <Button variant="contained" target="_blank" href={buttonLink}>
-                {buttonText}
-              </Button>
-            </ThemeProvider>
+            <Button
+              variant="contained"
+              className="w100-btn"
+              onClick={buttonClick}
+              href={buttonLink}
+              target={target && `_blank`}>
+              {buttonText}
+            </Button>
             <div className="title__featured">
               <span className="material-symbols-outlined">workspace_premium</span>
               <p>Featured</p>

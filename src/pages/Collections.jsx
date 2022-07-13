@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Title, Features, GetStart, SeeDown, TextAndImg, EmailForm } from '../components';
+import { ModalContext } from '../contexts';
 
 import { Workspaces, Cached, Groups, Extension, GridOn, Timeline } from '@mui/icons-material';
 
@@ -15,60 +16,65 @@ import stock_img from '../assets/img/stockpeople.png';
 import stock1_img from '../assets/img/stockpeople1.png';
 import stock2_img from '../assets/img/stockpeople2.png';
 
-function Collections({ theme }) {
+function Collections() {
+  const { toggleModal } = useContext(ModalContext);
   return (
     <>
+      {/* ---------------------------- */}
       <Title
-        theme={theme}
         img={title_img}
         imgMob={title_img_mob}
         title={'Get custom insights with AppstoreSpy collections'}
         paragraph={'A single space for analytics tailored specifically for you'}
-        buttonLink={
-          'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
-        }
+        buttonClick={toggleModal}
         buttonText={'Get started'}
       />
       {/* ---------------------------- */}
       <SeeDown text={'What you can do with AppstoreSpy collections'} />
       {/* ---------------------------- */}
-      <TextAndImg
-        img={top_img}
-        imgMob={top_img_mob}
-        left
-        title={'Everything you need to know about your competitors in one place'}
-        text={
-          'Use one tool instead of multiple services to collect data about your competitors: Add them to your Collection and even sort them into sub-categories to stay on top of the competition'
-        }
-        link={'#'}
-        textLink={'Create Personal Collection now'}
-      />
+      <div className="text-img--no-border">
+        <TextAndImg
+          img={top_img}
+          imgMob={top_img_mob}
+          left
+          title={'Everything you need to know about your competitors in one place'}
+          text={
+            'Use one tool instead of multiple services to collect data about your competitors: Add them to your Collection and even sort them into sub-categories to stay on top of the competition'
+          }
+          link={'#'}
+          textLink={'Create Personal Collection now'}
+        />
+      </div>
       {/* ---------------------------- */}
-      <TextAndImg
-        img={top1_img}
-        imgMob={top1_img_mob}
-        title={'Analyze all apps in one tab'}
-        text={'Get quick overviews on the apps you track on your Collection page:'}
-        ul={[
-          'View all key metrics in one table',
-          'See all icons and descriptions on one screen',
-          'Get full screenshots on hover',
-        ]}
-        link={'#'}
-        textLink={'Try AppstoreSpy Collection now'}
-      />
+      <div className="text-img--no-border">
+        <TextAndImg
+          img={top1_img}
+          imgMob={top1_img_mob}
+          title={'Analyze all apps in one tab'}
+          text={'Get quick overviews on the apps you track on your Collection page:'}
+          ul={[
+            'View all key metrics in one table',
+            'See all icons and descriptions on one screen',
+            'Get full screenshots on hover',
+          ]}
+          link={'#'}
+          textLink={'Try AppstoreSpy Collection now'}
+        />
+      </div>
       {/* ---------------------------- */}
-      <TextAndImg
-        img={top2_img}
-        imgMob={top2_img_mob}
-        left
-        title={'Over 30 Reports in one click'}
-        text={
-          'Generate over 30 different types of Reports based on your Collection or selected Collection Apps'
-        }
-        link={'#'}
-        textLink={'Create Personal Collection now'}
-      />
+      <div className="text-img--no-border">
+        <TextAndImg
+          img={top2_img}
+          imgMob={top2_img_mob}
+          left
+          title={'Over 30 Reports in one click'}
+          text={
+            'Generate over 30 different types of Reports based on your Collection or selected Collection Apps'
+          }
+          link={'#'}
+          textLink={'Create Personal Collection now'}
+        />
+      </div>
       {/* ---------------------------- */}
       <div className="features-imgs">
         <Features
@@ -86,9 +92,7 @@ function Collections({ theme }) {
       </div>
       {/* ---------------------------- */}
       <EmailForm
-        theme={theme}
         buttonText={'Get started'}
-        buttonLink={'#'}
         title={'Try AppstoreSpy Collections for free'}
         paragraph={'Build your Collections to track and analyze competitors — start for free!'}
         label={
@@ -140,7 +144,7 @@ function Collections({ theme }) {
         />
       </div>
       {/* ---------------------------- */}
-      <GetStart buttonText={'Create your Collection now'} theme={theme} />
+      <GetStart buttonText={'Create your Collection now'} buttonClick={toggleModal} />
     </>
   );
 }
