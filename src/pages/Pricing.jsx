@@ -24,57 +24,63 @@ function Pricing() {
               name={'Free'}
               price={0}
               ul={[
-                'Chrome extension for Play Store',
-                'Free watchlists',
-                '1 Personal watchlists',
-                '1 Apps in a watchlist',
-                'Apps from Google Play and App store',
+                'Chrome Extension for Play Store with 300 cards per day',
+                '5 first results at Market explorer',
+                'Basic metrics on App/Dev pages',
+                'Free Data app metrics',
+                'Free Public Collections',
+                '1 Private Collections with 5 Apps&Devs ',
+                'Share Link Teamwork',
+                '200 Top Charts',
               ]}
             />
             <PricingCard
-              name={'Premium'}
-              price={7}
+              name={'Starter'}
+              price={19}
               ul={[
-                'Chrome extension for Play Store',
-                'Apps Database',
-                'Export CSV',
-                'Unlimited Personal watchlists',
-                '100 Apps in a watchlist',
-                'Apps from Google Play and App store',
-                'Accurate installs for apps in Google Play',
-                'See app changes',
+                'Chrome Extension for Play Store',
+                '5 first results at Market explorer',
+                'Key metrics on App/Dev pages',
+                'Starter Data',
+                'Starter Public Collections ',
+                '1 Private Collection with 100 Apps&Devs ',
+                'Share Link Teamwork',
+                '200 Top Charts',
+                'Installs&Revenue reports',
+                'Niche Finder (basic)',
               ]}
             />
             <PricingCard
-              name={'Pro'}
-              price={39}
+              name={'Professional'}
+              price={99}
               favorite
               ul={[
-                'Chrome extension for Play Store',
-                'Apps Database',
-                'Export CSV',
-                'All watchlists',
-                'Unlimited Personal watchlists',
-                '10,000 Apps in a watchlist',
-                'Apps from Google Play and App store',
-                'Accurate installs for apps in Google Play',
-                'See app changes',
+                'Chrome Extension for Play Store',
+                'Market Explorer',
+                'All metrics on App/Dev pages',
+                'Pro Apps&Devs Database',
+                'Pro Collections',
+                '10 Private Collections with 10 000 Apps&Devs ',
+                'Share pages with PRO features to all users',
+                '500 Top Charts',
+                'Installs&Revenue reports',
+                'Niche Finder',
+                'Invite users on Private boards',
+                'Export ',
+                'API',
+                'SDK Explorer',
               ]}
             />
             <PricingCard
-              name={'Business'}
-              price={79}
+              name={'Enterprise'}
+              price={'O/R'}
               ul={[
-                'Chrome extension for Play Store',
-                'Apps Database',
-                'Export CSV',
-                'API',
-                'All watchlists',
-                'Unlimited Personal watchlists',
-                '10,000 Apps in a watchlist',
-                'Apps from Google Play and App store',
-                'Accurate installs for apps in Google Play',
-                'See app changes',
+                'All PRO features, plus:',
+                'Personal manager',
+                'Custom Collections',
+                'Custom Reports',
+                'Reviews',
+                'Integrations',
               ]}
             />
           </div>
@@ -97,15 +103,15 @@ function Pricing() {
               <th>Enterprise</th>
             </thead>
             <tbody>
-            <tr className="tr-small">
-            <td></td>
+              <tr className="tr-small">
+                <td></td>
                 <td></td>
                 <td>19$</td>
                 <td>99$</td>
                 <td>O/R</td>
               </tr>
               <tr className="tr-small">
-              <td></td>
+                <td></td>
                 <td>Try main tools for free</td>
                 <td>Explore the market and monitor your competitors</td>
                 <td>Grow products and revenue</td>
@@ -515,7 +521,7 @@ function Pricing() {
                   <div className="dash" />
                 </td>
                 <td>
-                  Packages:  <br />
+                  Packages: <br />
                   25 000 credits - 60$ <br />
                   50 000 credits - 120$ <br />
                   100 000 credits - 220$

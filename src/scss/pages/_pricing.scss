@@ -33,6 +33,7 @@
       padding-bottom: 30px;
       gap: 20px;
       border: 1px solid $disabled;
+      width: 25%;
       h3 {
         @extend %Roboto;
         font-weight: 400;
@@ -42,10 +43,10 @@
       p {
         font-size: 2.2rem;
         color: $blue;
+        margin-bottom: -10px;
       }
       span {
         display: inline-block;
-        margin-top: -10px;
         color: $disabled;
         font-size: 13px;
       }
