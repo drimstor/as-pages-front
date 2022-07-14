@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Divider } from '@mui/material';
 
-function PricingCard({ name, price, buttonClick, target, favorite, ul }) {
+function PricingCard({ name, price, buttonClick, target, favorite, ul, title }) {
   return (
     <div className={favorite ? 'pricing__card pricing__card--favorite' : 'pricing__card'}>
       <h3>{name}</h3>
-      <p>${price}</p>
+      <p>{price}</p>
       <span>/month</span>
       <Button
         variant={favorite ? 'contained' : 'outlined'}
@@ -15,6 +15,7 @@ function PricingCard({ name, price, buttonClick, target, favorite, ul }) {
       </Button>
       <ul>
         <Divider />
+        {title && <span>{title}</span>}
         {ul && ul.map((item, index) => <li key={index}>{item}</li>)}
       </ul>
     </div>

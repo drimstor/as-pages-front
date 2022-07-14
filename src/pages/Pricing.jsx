@@ -3,6 +3,36 @@ import { GetStart, PricingCard, SeeDown } from '../components';
 
 import { Button } from '@mui/material';
 
+document.addEventListener('scroll', function () {
+  const elem = document.querySelector('#tablehead');
+  const elem2 = document.querySelector('tablehead');
+  // elem.classList[elem.getBoundingClientRect().top < elem.offsetHeight ? 'add' : 'remove']('abc');
+  if (window.pageYOffset > elem.getBoundingClientRect().top) {
+    elem2.classList.add('abc')
+  }
+  
+   if (window.pageYOffset < elem.getBoundingClientRect().top) {
+    elem2.classList.remove('abc')
+  }
+});
+
+
+
+// $(window).scroll(function(){
+
+//   let wScroll = $(this).scrollTop();
+
+//   // Activate menu
+//   if (wScroll > 20) {
+//       $('.header__top,.header__header').addClass('scroll');
+//   }
+//   else {
+//       $('.header__top,.header__header').removeClass('scroll');
+//   };
+// });
+
+
+
 function Pricing() {
   return (
     <>
@@ -11,9 +41,7 @@ function Pricing() {
           <div className="pricing__title">
             <h2>Choose your Plan</h2>
             <p>
-              AppstoreSpy plans start as low as $0 per user per month for Free Plan, $9 per user per
-              month for Premium Plan, $49 per user per month for Pro Plan and $99 per user per month
-              for Business Plan.
+              We have a range of plans that will work for anyone, from individuals to big companies.
             </p>
           </div>
 
@@ -22,28 +50,28 @@ function Pricing() {
           <div className="pricing__cards">
             <PricingCard
               name={'Free'}
-              price={0}
+              price={'$0'}
               ul={[
                 'Chrome Extension for Play Store with 300 cards per day',
                 '5 first results at Market explorer',
                 'Basic metrics on App/Dev pages',
                 'Free Data app metrics',
                 'Free Public Collections',
-                '1 Private Collections with 5 Apps&Devs ',
+                '5 apps in Private Collection',
                 'Share Link Teamwork',
                 '200 Top Charts',
               ]}
             />
             <PricingCard
               name={'Starter'}
-              price={19}
+              price={'$19'}
               ul={[
                 'Chrome Extension for Play Store',
                 '5 first results at Market explorer',
                 'Key metrics on App/Dev pages',
                 'Starter Data',
                 'Starter Public Collections ',
-                '1 Private Collection with 100 Apps&Devs ',
+                '100 apps in Private Collection',
                 'Share Link Teamwork',
                 '200 Top Charts',
                 'Installs&Revenue reports',
@@ -52,7 +80,7 @@ function Pricing() {
             />
             <PricingCard
               name={'Professional'}
-              price={99}
+              price={'$99'}
               favorite
               ul={[
                 'Chrome Extension for Play Store',
@@ -60,8 +88,8 @@ function Pricing() {
                 'All metrics on App/Dev pages',
                 'Pro Apps&Devs Database',
                 'Pro Collections',
-                '10 Private Collections with 10 000 Apps&Devs ',
-                'Share pages with PRO features to all users',
+                '10 Private Collections',
+                'Share pages with PRO features',
                 '500 Top Charts',
                 'Installs&Revenue reports',
                 'Niche Finder',
@@ -71,18 +99,18 @@ function Pricing() {
                 'SDK Explorer',
               ]}
             />
-            <PricingCard
-              name={'Enterprise'}
-              price={'O/R'}
-              ul={[
-                'All PRO features, plus:',
-                'Personal manager',
-                'Custom Collections',
-                'Custom Reports',
-                'Reviews',
-                'Integrations',
-              ]}
-            />
+              <PricingCard
+                name={'Enterprise'}
+                price={'On Request'}
+                title={'All PRO features, plus:'}
+                ul={[
+                  'Personal manager',
+                  'Custom Collections',
+                  'Custom Reports',
+                  'Reviews',
+                  'Integrations',
+                ]}
+              />
           </div>
 
           <span className="pricing__under-line">
@@ -95,27 +123,34 @@ function Pricing() {
 
           <table>
             <caption>Detailded Plans Comparison</caption>
-            <thead>
+            <thead id="tablehead">
               <th></th>
               <th>Free</th>
               <th>Starter</th>
               <th>Professional</th>
               <th>Enterprise</th>
             </thead>
+            {/* <div className='tablehead'>
+              <div className="el1"></div>
+              <div className="el2">Free</div>
+              <div className="el2">Starter</div>
+              <div className="el2">Professional</div>
+              <div className="el2">Enterprise</div>
+            </div> */}
             <tbody>
               <tr className="tr-small">
                 <td></td>
                 <td></td>
                 <td>19$</td>
                 <td>99$</td>
-                <td>O/R</td>
+                <td>Price upon request</td>
               </tr>
               <tr className="tr-small">
                 <td></td>
                 <td>Try main tools for free</td>
-                <td>Explore the market and monitor your competitors</td>
+                <td>Monitor your competitors</td>
                 <td>Grow products and revenue</td>
-                <td>Be #1 in the mobile app market</td>
+                <td>Be #1 in the app market</td>
               </tr>
               <tr>
                 <th>Chrome Extension for Play Store</th>
@@ -199,21 +234,6 @@ function Pricing() {
               </tr>
               <tr className="tr-small">
                 <th>Date released</th>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-              </tr>
-              <tr className="tr-small">
-                <th>Date update</th>
                 <td>
                   <div className="check" />
                 </td>
@@ -374,49 +394,20 @@ function Pricing() {
                   <div className="check" />
                 </td>
               </tr>
-              <tr className="tr-small">
-                <th>Google Play</th>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-              </tr>
-              <tr className="tr-small">
-                <th>App Store</th>
-                <td>
-                  <div className="dash" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-              </tr>
+
               <tr className="tr-small">
                 <th>Number of collections</th>
                 <td>1</td>
                 <td>1</td>
                 <td>10</td>
-                <td>Contact us</td>
+                <td>Custom</td>
               </tr>
               <tr className="tr-small">
                 <th>Amount App & Devs in Collection</th>
                 <td>5</td>
                 <td>100</td>
                 <td>10 000</td>
-                <td>Contact us</td>
+                <td>Custom</td>
               </tr>
               <tr className="tr-small">
                 <th>Export</th>
@@ -498,7 +489,7 @@ function Pricing() {
                 <td>200 </td>
                 <td>200</td>
                 <td>500</td>
-                <td>Contact us</td>
+                <td>Custom</td>
               </tr>
 
               <tr>
@@ -510,7 +501,7 @@ function Pricing() {
                   <div className="dash" />
                 </td>
                 <td>12 000 credits per month</td>
-                <td>Contact us</td>
+                <td>Custom</td>
               </tr>
               <tr className="tr-small">
                 <th>Add packages</th>
@@ -521,12 +512,11 @@ function Pricing() {
                   <div className="dash" />
                 </td>
                 <td>
-                  Packages: <br />
                   25 000 credits - 60$ <br />
                   50 000 credits - 120$ <br />
                   100 000 credits - 220$
                 </td>
-                <td>Contact us</td>
+                <td>Custom</td>
               </tr>
 
               <tr>
