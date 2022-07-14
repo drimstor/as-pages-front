@@ -1,5 +1,4 @@
 .get-start {
-  margin: 120px 0;
   &__btn {
     display: flex;
     justify-content: space-between;
@@ -18,10 +17,17 @@
     align-items: center;
     justify-content: center;
     gap: 35px;
+    text-align: center;
+    margin: 120px 0;
   }
   h2 {
-    margin-top: 50px;
+    margin-top: 20px;
     font-weight: normal;
+  }
+  p {
+    width: 55%;
+    margin: 0 auto;
+    line-height: 24px;
   }
   button {
     font-weight: 500;

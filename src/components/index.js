@@ -6,6 +6,7 @@ export { default as Features } from './Features';
 export { default as GetStart } from './GetStart';
 export { default as Footer } from './Footer';
 export { default as ScrollToTop } from './ScrollToTop';
+export { default as PricingCard } from './PricingCard';
 
 export { default as ModalSingUp } from './ModalSingUp';
 

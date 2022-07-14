@@ -20,7 +20,7 @@ import {
 
 const navLi = ['Overview', 'Features', 'Plans', 'Pricing'];
 
-export default function Header({  }) {
+export default function Header({}) {
   const [listItem, setListItem] = useState(false);
   const handleChange = (event, newValue) => {
     setListItem(newValue);
@@ -29,7 +29,7 @@ export default function Header({  }) {
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
   };
-  const { toggleModal, matches1025 } = useContext(ModalContext);
+  const {  openModal, matches1025 } = useContext(ModalContext);
   return (
     <>
       {matches1025 ? (
@@ -58,7 +58,7 @@ export default function Header({  }) {
               </Tabs>
             </div>
             <div className="header__btns">
-              <Button variant="outlined" onClick={toggleModal}>
+              <Button variant="outlined" onClick={openModal}>
                 Sign in
               </Button>
               <Button variant="contained">Try AppStoreSpy now</Button>
@@ -81,7 +81,7 @@ export default function Header({  }) {
               <AnchorLink href="#top">
                 <img src={logo} alt="logo" width={114} />
               </AnchorLink>
-              <Button variant="contained" onClick={toggleModal}>
+              <Button variant="contained" onClick={openModal}>
                 Sign in
               </Button>
             </Toolbar>
@@ -90,7 +90,11 @@ export default function Header({  }) {
                 {navLi.map((item, index) => (
                   <ListItemButton key={index}>
                     <ListItemText key={index}>
-                      <AnchorLink key={index} href={'#' + item} offset=" 0 " onClick={toggleDrawer}>
+                      <AnchorLink
+                        key={index}
+                        href={'#Mob' + item}
+                        offset=" 0 "
+                        onClick={toggleDrawer}>
                         {item}
                       </AnchorLink>
                     </ListItemText>

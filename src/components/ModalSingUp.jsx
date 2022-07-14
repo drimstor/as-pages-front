@@ -23,25 +23,24 @@ const style = {
   boxShadow: 24,
 };
 
-function ModalSingUp({ open, toggleModal }) {
+function ModalSingUp({ isOpen, closeModal }) {
   return (
     <div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={open}
-        onClose={toggleModal}
-        closeAfterTransition
+        open={isOpen}
+        onClose={closeModal}
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}>
-        <Fade in={open}>
+        <Fade in={isOpen}>
           <Box sx={style}>
             <div className="modal">
               <div className="modal__title">
                 <h3>Sing up for free</h3>
-                <IconButton onClick={toggleModal}>
+                <IconButton onClick={closeModal}>
                   <Close />
                 </IconButton>
               </div>

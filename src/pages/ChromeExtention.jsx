@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { TextAndImg, Features, GetStart, SeeDown, Title } from '../components';
 import { ModalContext } from '../contexts';
 
-import { Button } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 import { SavedSearch, AutoGraph, AppShortcut } from '@mui/icons-material';
 
 import title_img from '../assets/img/mac-extention.png';
@@ -37,6 +37,8 @@ export default function ChromeExtention() {
       {/* ---------------------------- */}
       <SeeDown text={'What you can do with The AppstoreSpy Extension'} />
       {/* ---------------------------- */}
+      <div id="Overview" className="anchor" />
+      <div id="MobOverview" className="anchor" />
       <section className="card-info">
         <div className="wrapper">
           <div className="card-info__wrapper">
@@ -128,27 +130,33 @@ export default function ChromeExtention() {
         />
       </div>
       {/* ---------------------------- */}
-      <Features
-        obj={[
-          {
-            icon: <SavedSearch />,
-            title: 'Get the "helicopter view',
-            text: 'Get basic insights into your competitors right in the Google Play Store',
-          },
-          {
-            icon: <AutoGraph />,
-            title: 'Grow your business more efficiently',
-            text: 'Explore exclusive metrics and visuals about your app on Google Play',
-          },
-          {
-            icon: <AppShortcut />,
-            title: 'Get custom insights',
-            text: 'Save apps from the Top charts or your search to come back later to track and analyze them',
-          },
-        ]}
-      />
+      <div className="chrome__feature" style={{ paddingTop: 120 }}>
+        <div id="Features" className="anchor" />
+        <div id="MobFeatures" className="anchor" />
+        <Features
+          obj={[
+            {
+              icon: <SavedSearch />,
+              title: 'Get the "helicopter view',
+              text: 'Get basic insights into your competitors right in the Google Play Store',
+            },
+            {
+              icon: <AutoGraph />,
+              title: 'Grow your business more efficiently',
+              text: 'Explore exclusive metrics and visuals about your app on Google Play',
+            },
+            {
+              icon: <AppShortcut />,
+              title: 'Get custom insights',
+              text: 'Save apps from the Top charts or your search to come back later to track and analyze them',
+            },
+          ]}
+        />
+      </div>
       {/* ---------------------------- */}
-      <section className="plans" id="Plans">
+      <div id="Plans" className="anchor" />
+      <div id="MobPlans" className="anchor" />
+      <section className="plans">
         <div className="wrapper">
           <div className="plans__title">
             <h2>Find the plan that is right for you</h2>
@@ -206,6 +214,7 @@ export default function ChromeExtention() {
         buttonLink={
           'https://chrome.google.com/webstore/detail/appstorespy-for-play-stor/dclnfogoojlodlkdfnmghfbeloeojken?utm_source=appstorespy.com&utm_medium=website&utm_campaign=playstore'
         }
+        title={'Ready to get started?'}
         buttonText={'Add to Chrome'}
         target
       />

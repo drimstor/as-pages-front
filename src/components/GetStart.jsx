@@ -1,18 +1,24 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 
-function GetStart({ img, target, buttonText, buttonLink, buttonClick }) {
+function GetStart({ img, target, buttonText, buttonLink, buttonClick, paragraph, title }) {
   return (
-    <section className="get-start" id="Pricing">
+    <section className="get-start">
       <div className="wrapper">
+        <Divider />
         <div className="get-start__wrapper">
-          <div className="line"></div>
-          <h2>Ready to get started?</h2>
+          <h2>{title}</h2>
+          {paragraph && <p>{paragraph}</p>}
           <div className="get-start__btn">
             {img && <img src={img} alt="chrome_store_img" />}
-              <Button className="w100-btn" variant="contained" target={target && `_blank`} href={buttonLink} onClick={buttonClick}>
-                {buttonText}
-              </Button>
+            <Button
+              className="w100-btn"
+              variant="contained"
+              target={target && `_blank`}
+              href={buttonLink}
+              onClick={buttonClick}>
+              {buttonText}
+            </Button>
           </div>
         </div>
       </div>

@@ -3,7 +3,6 @@ import React from 'react';
 function Features({ title, subLink, subLinkText, obj }) {
   return (
     <>
-      <div id="Features"></div>
       <section className="features">
         <div className="wrapper">
           {title && <h2 className="features__title">{title}</h2>}

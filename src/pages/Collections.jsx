@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Title, Features, GetStart, SeeDown, TextAndImg, EmailForm } from '../components';
 import { ModalContext } from '../contexts';
 
+import { Divider } from '@mui/material';
 import { Workspaces, Cached, Groups, Extension, GridOn, Timeline } from '@mui/icons-material';
 
 import title_img from '../assets/img/mac-collections.png';
@@ -17,7 +18,7 @@ import stock1_img from '../assets/img/stockpeople1.png';
 import stock2_img from '../assets/img/stockpeople2.png';
 
 function Collections() {
-  const { toggleModal } = useContext(ModalContext);
+  const { openModal } = useContext(ModalContext);
   return (
     <>
       {/* ---------------------------- */}
@@ -26,12 +27,14 @@ function Collections() {
         imgMob={title_img_mob}
         title={'Get custom insights with AppstoreSpy collections'}
         paragraph={'A single space for analytics tailored specifically for you'}
-        buttonClick={toggleModal}
+        buttonClick={openModal}
         buttonText={'Get started'}
       />
       {/* ---------------------------- */}
       <SeeDown text={'What you can do with AppstoreSpy collections'} />
       {/* ---------------------------- */}
+      <div id="Overview" className="anchor" />
+      <div id="MobOverview" className="anchor" />
       <div className="text-img--no-border">
         <TextAndImg
           img={top_img}
@@ -108,6 +111,8 @@ function Collections() {
         }
       />
       {/* ---------------------------- */}
+      <div id="Features" className="anchor" />
+      <div id="MobFeatures" className="anchor" />
       <Features
         obj={[
           {
@@ -156,7 +161,15 @@ function Collections() {
         />
       </div>
       {/* ---------------------------- */}
-      <GetStart buttonText={'Create your Collection now'} buttonClick={toggleModal} />
+      <div className="wrapper">
+        <Divider />
+      </div>
+      {/* ---------------------------- */}
+      <GetStart
+        buttonText={'Create your Collection now'}
+        title={'Ready to get started?'}
+        buttonClick={openModal}
+      />
     </>
   );
 }

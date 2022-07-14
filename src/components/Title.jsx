@@ -14,7 +14,7 @@ function Title({
   target,
 }) {
   return (
-    <section className="title" id="top">
+    <section className="title">
       <div className="wrapper">
         <div className="title__wrapper">
           <div className="title__text">

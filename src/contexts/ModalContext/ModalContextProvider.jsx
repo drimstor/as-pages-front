@@ -9,10 +9,23 @@ import { createTheme } from '@mui/material/styles';
 const ModalContextProvider = ({ children }) => {
   // Состояние открытости модалки
   const [openedModal, setOpenModal] = useState(false);
-  const toggleModal = () => setOpenModal(!openedModal);
+
+  const openModal = () => {
+    setOpenModal(true);
+    const scrollWidth = parseInt(window.innerWidth - document.documentElement.clientWidth);
+    document.querySelector('.header').style.right = `${scrollWidth / 2}px`;
+  };
+
+  const closeModal = () => {
+    setOpenModal(false);
+    document.querySelector('.header').style.right = '0';
+    document.querySelector('.MuiBox-root').style.display = 'none';
+  };
+
   // Брейкпоинты от MaterialUI
   const matches1025 = useMediaQuery('(min-width:1025px)');
   const matches769 = useMediaQuery('(min-width:769px)');
+
   // Тема от Maerial UI
   const theme = createTheme({
     palette: {
@@ -32,9 +45,11 @@ const ModalContextProvider = ({ children }) => {
       },
     },
   });
+
   // Значения для провайдера
   const modalContextValues = {
-    toggleModal,
+    openModal,
+    closeModal,
     matches1025,
     matches769,
   };
@@ -42,7 +57,8 @@ const ModalContextProvider = ({ children }) => {
   return (
     <ModalContext.Provider value={modalContextValues}>
       <ThemeProvider theme={theme}>
-        <ModalSingUp open={openedModal} toggleModal={toggleModal} />
+        <ModalSingUp isOpen={openedModal} closeModal={closeModal} />
+        <div id="top" className="anchor" />
         {children}
       </ThemeProvider>
     </ModalContext.Provider>

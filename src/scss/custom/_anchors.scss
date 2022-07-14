@@ -1,0 +1,36 @@
+.anchor {
+  position: relative;
+}
+
+#top {
+  position: absolute;
+  top: 0px;
+}
+
+//----------- Desktop Anchors -------------//
+
+#Overview {
+  top: -235px;
+}
+
+#Features {
+  top: -120px;
+}
+
+#Plans {
+  top: -80px;
+}
+
+//----------- Mobile Anchors -------------//
+
+#MobOverview {
+  top: -210px;
+}
+
+#MobFeatures {
+  top: 50px;
+}
+
+#MobPlans {
+  top: -80px;
+}
