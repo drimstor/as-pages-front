@@ -16,9 +16,9 @@
     gap: 12px;
     align-items: center;
     color: $main;
-   span {
-    font-weight: 500;
-   }
+    span {
+      font-weight: 500;
+    }
   }
   &__title {
     text-align: center;
@@ -152,8 +152,7 @@
     }
 
     tr.tr-small:nth-child(1) td,
-    tr.tr-small:nth-child(2) td
-     {
+    tr.tr-small:nth-child(2) td {
       font-weight: 500;
       color: $main;
       font-size: 1rem;
@@ -258,16 +257,18 @@
 }
 .tablehead {
   display: grid;
-  grid-template-columns: 25% 1fr 1fr 1fr 1fr;
+  grid-template-columns: 24.95% 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
   width: 100%;
-
-  > .el2 {
+  border-left: 1px solid $corners;
+  // border-right: 1px solid $corners;
+  > .el2,
+  .el1 {
     color: #212121;
     font-size: 18px;
     font-weight: 600;
-    background: #f8f9fa;
+    background: #f8f9fae9;
     width: 100%;
     height: 49px;
     text-align: center;
@@ -276,14 +277,23 @@
     border-bottom: 1px solid $corners;
     position: relative;
   }
-  .el2:after {
+  .el2::before {
     content: '';
     position: absolute;
     width: 1px;
     height: 48px;
-    right: 0;
+    right: 0px;
+    top: 0;
+    background: $corners;
+  }
+  
+  .el1::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 48px;
+    right: 0px;
     top: 0;
     background: $corners;
   }
 }
-

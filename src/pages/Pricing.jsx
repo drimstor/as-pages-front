@@ -76,14 +76,10 @@ function Pricing() {
   }));
 
 
-  const [switchState,  setSwitchState] = useState(false);
-
-
+  const [switchState,  setSwitchState] = useState(true);
 
   function handleSwitch () {
-
     setSwitchState(!switchState);
-    console.log(switchState)
   }
 
   return (
@@ -128,7 +124,7 @@ function Pricing() {
             />
             <PricingCard
               name={'Starter'}
-              price={switchState ? '$15.2' : '$19'}
+              price={switchState ? '$19' : '$24'}
               buttonClick={openModal}
               ul={[
                 'Chrome Extension for Play Store',
@@ -145,7 +141,7 @@ function Pricing() {
             />
             <PricingCard
               name={'Professional'}
-              price={switchState ? '$79.2' : '$99'}
+              price={switchState ? '$99' : '$124'}
               favorite
               buttonClick={openModal}
               ul={[
