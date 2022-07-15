@@ -16,6 +16,28 @@
     gap: 12px;
     align-items: center;
     color: $main;
+    .MuiSwitch-root {
+      padding: 4.5px;
+      border-radius: 20px;
+    }
+    .MuiSwitch-track {
+      border-radius: 15px;
+    }
+    .MuiSwitch-switchBase.Mui-checked {
+      color: #fff;
+    }
+   .MuiButtonBase-root.MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+      opacity: 0.9;
+    }
+    .MuiSwitch-thumb {
+      width: 25px;
+      height: 25px;
+      
+    }
+    .MuiButtonBase-root.MuiSwitch-switchBase {
+      top: -2px;
+      left: -2px;
+    }
     span {
       font-weight: 500;
     }
