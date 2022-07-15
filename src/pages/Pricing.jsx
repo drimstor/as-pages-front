@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { GetStart, PricingCard, SeeDown } from '../components';
 import { ModalContext } from '../contexts';
 
@@ -75,6 +75,17 @@ function Pricing() {
     },
   }));
 
+
+  const [switchState,  setSwitchState] = useState(false);
+
+
+
+  function handleSwitch () {
+
+    setSwitchState(!switchState);
+    console.log(switchState)
+  }
+
   return (
     <>
       <div className="pricing">
@@ -89,10 +100,13 @@ function Pricing() {
 
           <div className="pricing__tumbler">
             <span>Montly</span>
+    
             <FormControlLabel
               control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
               label="Annually (-20%)*"
-              labelPlacement={'Start' && 'End'}
+              labelPlacement={'End'}
+              checked={switchState}
+              onClick={handleSwitch}
             />
           </div>
 
@@ -114,7 +128,7 @@ function Pricing() {
             />
             <PricingCard
               name={'Starter'}
-              price={'$19'}
+              price={switchState ? '$15.2' : '$19'}
               buttonClick={openModal}
               ul={[
                 'Chrome Extension for Play Store',
@@ -131,7 +145,7 @@ function Pricing() {
             />
             <PricingCard
               name={'Professional'}
-              price={'$99'}
+              price={switchState ? '$79.2' : '$99'}
               favorite
               buttonClick={openModal}
               ul={[
