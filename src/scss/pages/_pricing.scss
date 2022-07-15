@@ -9,6 +9,17 @@
   padding-top: 170px;
   padding-bottom: 120px;
   margin-bottom: 120px;
+  &__tumbler {
+    margin-left: auto;
+    width: 280px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: $main;
+   span {
+    font-weight: 500;
+   }
+  }
   &__title {
     text-align: center;
     width: 48%;
@@ -138,6 +149,14 @@
     }
     td {
       font-size: 15px;
+    }
+
+    tr.tr-small:nth-child(1) td,
+    tr.tr-small:nth-child(2) td
+     {
+      font-weight: 500;
+      color: $main;
+      font-size: 1rem;
     }
     thead th {
       position: relative;

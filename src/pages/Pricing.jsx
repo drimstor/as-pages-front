@@ -1,26 +1,80 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { GetStart, PricingCard, SeeDown } from '../components';
+import { ModalContext } from '../contexts';
 
-import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-document.addEventListener('scroll', function () {
-  const triggerIn = document.querySelector('#tablehead');
-  const fixBlock = document.querySelector('.tableBtns');
-
-  const triggerOut = document.querySelector('.tablebottom');
-  
-
-  console.log(triggerOut.getBoundingClientRect().top);
-
-  if (triggerIn.getBoundingClientRect().top < 63 && triggerOut.getBoundingClientRect().top > 112) {
-    fixBlock.classList.add('fixed');
-  }
-  if (triggerIn.getBoundingClientRect().top > 63 || triggerOut.getBoundingClientRect().top < 112) {
-    fixBlock.classList.remove('fixed');
-  }
-});
+import { Button, FormControlLabel, Switch } from '@mui/material';
 
 function Pricing() {
+  const { openModal } = useContext(ModalContext);
+
+  document.addEventListener('scroll', function () {
+    const triggerIn = document.querySelector('#tablehead');
+    const fixBlock = document.querySelector('.tableBtns');
+    const triggerOut = document.querySelector('.tablebottom');
+    if (
+      triggerIn.getBoundingClientRect().top < 63 &&
+      triggerOut.getBoundingClientRect().top > 112
+    ) {
+      fixBlock.classList.add('fixed');
+    }
+    if (
+      triggerIn.getBoundingClientRect().top > 63 ||
+      triggerOut.getBoundingClientRect().top < 112
+    ) {
+      fixBlock.classList.remove('fixed');
+    }
+  });
+
+  const IOSSwitch = styled((props) => (
+    <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+  ))(({ theme }) => ({
+    width: 42,
+    height: 26,
+    padding: 0,
+    '& .MuiSwitch-switchBase': {
+      padding: 0,
+      margin: 2,
+      transitionDuration: '300ms',
+      '&.Mui-checked': {
+        transform: 'translateX(16px)',
+        color: '#fff',
+        '& + .MuiSwitch-track': {
+          backgroundColor: theme.palette.mode === 'dark' ? '#2196f3' : '#2196f3',
+          opacity: 1,
+          border: 0,
+        },
+        '&.Mui-disabled + .MuiSwitch-track': {
+          opacity: 0.5,
+        },
+      },
+      '&.Mui-focusVisible .MuiSwitch-thumb': {
+        color: '#33cf4d',
+        border: '6px solid #fff',
+      },
+      '&.Mui-disabled .MuiSwitch-thumb': {
+        color: theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[600],
+      },
+      '&.Mui-disabled + .MuiSwitch-track': {
+        opacity: theme.palette.mode === 'light' ? 0.7 : 0.3,
+      },
+    },
+    '& .MuiSwitch-thumb': {
+      boxSizing: 'border-box',
+      width: 22,
+      height: 22,
+    },
+    '& .MuiSwitch-track': {
+      borderRadius: 26 / 2,
+      backgroundColor: theme.palette.mode === 'light' ? '#E9E9EA' : '#39393D',
+      opacity: 1,
+      transition: theme.transitions.create(['background-color'], {
+        duration: 500,
+      }),
+    },
+  }));
+
   return (
     <>
       <div className="pricing">
@@ -28,16 +82,25 @@ function Pricing() {
           <div className="pricing__title">
             <h2>Choose your Plan</h2>
             <p>
-              We have a range of plans that will work for anyone, from individuals to big companies.
+              We have a range of price plans that will work for anyone, from individuals to big
+              companies.
             </p>
           </div>
 
-          <div className="pricing__tumbler"></div>
+          <div className="pricing__tumbler">
+            <span>Montly</span>
+            <FormControlLabel
+              control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+              label="Annually (-20%)*"
+              labelPlacement={'Start' && 'End'}
+            />
+          </div>
 
           <div className="pricing__cards">
             <PricingCard
               name={'Free'}
               price={'$0'}
+              buttonClick={openModal}
               ul={[
                 'Chrome Extension for Play Store with 300 cards per day',
                 '5 first results at Market explorer',
@@ -52,6 +115,7 @@ function Pricing() {
             <PricingCard
               name={'Starter'}
               price={'$19'}
+              buttonClick={openModal}
               ul={[
                 'Chrome Extension for Play Store',
                 '5 first results at Market explorer',
@@ -69,6 +133,7 @@ function Pricing() {
               name={'Professional'}
               price={'$99'}
               favorite
+              buttonClick={openModal}
               ul={[
                 'Chrome Extension for Play Store',
                 'Market Explorer',
@@ -90,6 +155,7 @@ function Pricing() {
               name={'Enterprise'}
               price={'On Request'}
               title={'All PRO features, plus:'}
+              buttonClick={openModal}
               ul={[
                 'Personal manager',
                 'Custom Collections',
@@ -101,11 +167,11 @@ function Pricing() {
           </div>
 
           <span className="pricing__under-line">
-            * The monthly amount specified in the pricing is relevant when paying the one-time
-            annual payment.
+            * Monthly prices listed for prices billed annually.
           </span>
+
           <div className="pricing__see-down">
-            <SeeDown text={'Compare plans in details'} />
+            <SeeDown text={'Compare plans in detail'} />
           </div>
 
           <div className="tableBtns">
@@ -121,7 +187,7 @@ function Pricing() {
           </div>
 
           <table>
-            <caption>Detailded Plans Comparison</caption>
+            <caption>Detaided Plan Comparison</caption>
             <thead id="tablehead">
               <th></th>
               <th>Free</th>
@@ -605,19 +671,27 @@ function Pricing() {
                 </td>
               </tr>
 
-              <tr className='tablebottom'>
+              <tr className="tablebottom">
                 <th></th>
                 <td>
-                  <Button variant="outlined">Get started</Button>
+                  <Button onClick={openModal} variant="outlined">
+                    Start for free
+                  </Button>
                 </td>
                 <td>
-                  <Button variant="outlined">Get started</Button>
+                  <Button onClick={openModal} variant="outlined">
+                    Start for 19$
+                  </Button>
                 </td>
                 <td>
-                  <Button variant="contained">Get started</Button>
+                  <Button onClick={openModal} variant="contained">
+                    Start for 99$
+                  </Button>
                 </td>
                 <td>
-                  <Button variant="outlined">Get started</Button>
+                  <Button onClick={openModal} variant="outlined">
+                    Contact us
+                  </Button>
                 </td>
               </tr>
             </tbody>
@@ -629,6 +703,7 @@ function Pricing() {
         <GetStart
           buttonText={'Get started'}
           title={'Start today for free'}
+          buttonClick={openModal}
           paragraph={
             'Dive into mobile market analytics with AppstoreSpy’s next-generation tools — get all the basics free and move to a more advanced plan whenever you want!'
           }
