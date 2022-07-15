@@ -27,9 +27,9 @@ function Pricing() {
 
   const [switchState, setSwitchState] = useState(true);
 
-  function handleSwitch(event) {
-    setSwitchState(event.target.checked);
-  }
+  // function handleSwitch(event) {
+  //   setSwitchState(event.target.checked);
+  // }
 
   return (
     <>
@@ -42,13 +42,12 @@ function Pricing() {
               companies.
             </p>
           </div>
-
           <div className="pricing__tumbler">
             <span>Montly</span>
-            <Switch size='medium' checked={switchState} onChange={handleSwitch} />
+            <Switch size="medium" checked={switchState} onChange={(event)=> setSwitchState(event.target.checked)} />
             <span>Annually (-20%)*</span>
           </div>
-
+          {/* ---------------------------- */}
           <div className="pricing__cards">
             <PricingCard
               name={'Free'}
@@ -118,15 +117,14 @@ function Pricing() {
               ]}
             />
           </div>
-
           <span className="pricing__under-line">
             * Monthly prices listed for prices billed annually.
           </span>
-
+          {/* ---------------------------- */}
           <div className="pricing__see-down">
             <SeeDown text={'Compare plans in detail'} />
           </div>
-
+          {/* ---------------------------- */}
           <div className="tableBtns">
             <div className="wrapper">
               <div className="tablehead">
@@ -138,7 +136,6 @@ function Pricing() {
               </div>
             </div>
           </div>
-
           <table>
             <caption>Detaided Plan Comparison</caption>
             <thead id="tablehead">
@@ -651,7 +648,7 @@ function Pricing() {
           </table>
         </div>
       </div>
-
+      {/* ---------------------------- */}
       <div className="pricing__get-start">
         <GetStart
           buttonText={'Get started'}
