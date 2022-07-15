@@ -4,34 +4,21 @@ import { GetStart, PricingCard, SeeDown } from '../components';
 import { Button } from '@mui/material';
 
 document.addEventListener('scroll', function () {
-  const elem = document.querySelector('#tablehead');
-  const elem2 = document.querySelector('tablehead');
-  // elem.classList[elem.getBoundingClientRect().top < elem.offsetHeight ? 'add' : 'remove']('abc');
-  if (window.pageYOffset > elem.getBoundingClientRect().top) {
-    elem2.classList.add('abc')
-  }
+  const triggerIn = document.querySelector('#tablehead');
+  const fixBlock = document.querySelector('.tableBtns');
+
+  const triggerOut = document.querySelector('.tablebottom');
   
-   if (window.pageYOffset < elem.getBoundingClientRect().top) {
-    elem2.classList.remove('abc')
+
+  console.log(triggerOut.getBoundingClientRect().top);
+
+  if (triggerIn.getBoundingClientRect().top < 63 && triggerOut.getBoundingClientRect().top > 112) {
+    fixBlock.classList.add('fixed');
+  }
+  if (triggerIn.getBoundingClientRect().top > 63 || triggerOut.getBoundingClientRect().top < 112) {
+    fixBlock.classList.remove('fixed');
   }
 });
-
-
-
-// $(window).scroll(function(){
-
-//   let wScroll = $(this).scrollTop();
-
-//   // Activate menu
-//   if (wScroll > 20) {
-//       $('.header__top,.header__header').addClass('scroll');
-//   }
-//   else {
-//       $('.header__top,.header__header').removeClass('scroll');
-//   };
-// });
-
-
 
 function Pricing() {
   return (
@@ -99,18 +86,18 @@ function Pricing() {
                 'SDK Explorer',
               ]}
             />
-              <PricingCard
-                name={'Enterprise'}
-                price={'On Request'}
-                title={'All PRO features, plus:'}
-                ul={[
-                  'Personal manager',
-                  'Custom Collections',
-                  'Custom Reports',
-                  'Reviews',
-                  'Integrations',
-                ]}
-              />
+            <PricingCard
+              name={'Enterprise'}
+              price={'On Request'}
+              title={'All PRO features, plus:'}
+              ul={[
+                'Personal manager',
+                'Custom Collections',
+                'Custom Reports',
+                'Reviews',
+                'Integrations',
+              ]}
+            />
           </div>
 
           <span className="pricing__under-line">
@@ -119,6 +106,18 @@ function Pricing() {
           </span>
           <div className="pricing__see-down">
             <SeeDown text={'Compare plans in details'} />
+          </div>
+
+          <div className="tableBtns">
+            <div className="wrapper">
+              <div className="tablehead">
+                <div className="el1"></div>
+                <div className="el2">Free</div>
+                <div className="el2">Starter</div>
+                <div className="el2">Professional</div>
+                <div className="el2">Enterprise</div>
+              </div>
+            </div>
           </div>
 
           <table>
@@ -130,13 +129,7 @@ function Pricing() {
               <th>Professional</th>
               <th>Enterprise</th>
             </thead>
-            {/* <div className='tablehead'>
-              <div className="el1"></div>
-              <div className="el2">Free</div>
-              <div className="el2">Starter</div>
-              <div className="el2">Professional</div>
-              <div className="el2">Enterprise</div>
-            </div> */}
+
             <tbody>
               <tr className="tr-small">
                 <td></td>
@@ -166,39 +159,9 @@ function Pricing() {
                 </td>
               </tr>
               <tr>
-                <th className="mark">Market Explorer</th>
+                <th>Market Explorer</th>
                 <td>5 results at search</td>
                 <td>5 results at search</td>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-              </tr>
-              <tr className="tr-small">
-                <th>Unlimited Collections</th>
-                <td>
-                  <div className="dash" />
-                </td>
-                <td>
-                  <div className="dash" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-                <td>
-                  <div className="check" />
-                </td>
-              </tr>
-              <tr className="tr-small">
-                <th>Unlimited Reports</th>
-                <td>
-                  <div className="dash" />
-                </td>
-                <td>
-                  <div className="dash" />
-                </td>
                 <td>
                   <div className="check" />
                 </td>
@@ -234,6 +197,21 @@ function Pricing() {
               </tr>
               <tr className="tr-small">
                 <th>Date released</th>
+                <td>
+                  <div className="check" />
+                </td>
+                <td>
+                  <div className="check" />
+                </td>
+                <td>
+                  <div className="check" />
+                </td>
+                <td>
+                  <div className="check" />
+                </td>
+              </tr>
+              <tr className="tr-small">
+                <th>Date updated</th>
                 <td>
                   <div className="check" />
                 </td>
@@ -627,7 +605,7 @@ function Pricing() {
                 </td>
               </tr>
 
-              <tr>
+              <tr className='tablebottom'>
                 <th></th>
                 <td>
                   <Button variant="outlined">Get started</Button>
@@ -650,9 +628,9 @@ function Pricing() {
       <div className="pricing__get-start">
         <GetStart
           buttonText={'Get started'}
-          title={'Start your trial today for free'}
+          title={'Start today for free'}
           paragraph={
-            'Explore the digital landscape with AppstoreSpy’s next-generation market-leading analytics platform by starting completely for free.'
+            'Dive into mobile market analytics with AppstoreSpy’s next-generation tools — get all the basics free and move to a more advanced plan whenever you want!'
           }
         />
       </div>

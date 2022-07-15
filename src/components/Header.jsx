@@ -29,7 +29,7 @@ export default function Header({}) {
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
   };
-  const {  openModal, matches1025 } = useContext(ModalContext);
+  const { openModal, matches1025 } = useContext(ModalContext);
   return (
     <>
       {matches1025 ? (
