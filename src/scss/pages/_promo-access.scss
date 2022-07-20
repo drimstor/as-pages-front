@@ -1,0 +1,41 @@
+.promo-access {
+  padding-top: 150px;
+  &__title {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      font-weight: 500;
+    }
+    p {
+      margin: 20px 0 40px;
+      @include text(1.125rem, 1.68rem);
+    }
+    ul {
+      text-align: left;
+      li {
+        @include text(1.125rem, 1.68rem);
+        margin: 20px 0;
+      }
+      li:nth-child(2) {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+    }
+    .MuiInputBase-input {
+      height: auto;
+      padding: 10px;
+    }
+    .MuiInputLabel-root {
+      top: -5px;
+    }
+    button.MuiButton-root {
+      margin: 25px 0 150px;
+      padding: 12px 36px;
+    }
+  }
+}

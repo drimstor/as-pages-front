@@ -41,10 +41,10 @@ function Collections() {
           imgMob={top_img_mob}
           left
           title={'Everything you need to know about your competitors in one place'}
-          text={
-            'Use one tool instead of multiple services to collect data about your competitors.'
+          text={'Use one tool instead of multiple services to collect data about your competitors.'}
+          text2={
+            'Add them to your Collection and even sort them into sub-categories to stay on top of the competition.'
           }
-          text2={'Add them to your Collection and even sort them into sub-categories to stay on top of the competition.'}
           link={'#'}
           textLink={'Create Personal Collection now'}
         />
