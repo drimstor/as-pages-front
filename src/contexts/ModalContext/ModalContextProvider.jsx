@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ModalSingUp } from '../../components';
+
+import { ModalGlobal, ModalSingUp, ModalContactUs, ModalHelpToChoose } from '../../components';
 import { ModalContext } from './';
 
 import { useMediaQuery } from '@mui/material';
@@ -9,17 +10,30 @@ import { createTheme } from '@mui/material/styles';
 const ModalContextProvider = ({ children }) => {
   // Состояние открытости модалки
   const [openedModal, setOpenModal] = useState(false);
-
-  const openModal = () => {
+  // Контент модалки
+  const [modalContent, setModalContent] = useState(Array(0));
+  // Открыть модал с контентом в аргументе и подвинуть хедер на ширину скролла
+  const openModal = (modalConfig) => {
+    setModalContent(modalConfig);
     setOpenModal(true);
     const scrollWidth = parseInt(window.innerWidth - document.documentElement.clientWidth);
     document.querySelector('.header').style.right = `${scrollWidth / 2}px`;
   };
-
+  // Закрыть, подвинуть обратно
   const closeModal = () => {
     setOpenModal(false);
     document.querySelector('.header').style.right = '0';
     document.querySelector('.MuiBox-root').style.display = 'none';
+  };
+  // Разные контенты модалок
+  const handleModalSingUp = () => {
+    openModal(['Sing up for free', <ModalSingUp />]);
+  };
+  const handleModalContactUs = () => {
+    openModal(['Contact us', <ModalContactUs />]);
+  };
+  const handleModalHelpToChoose = () => {
+    openModal(['ModalHelpToChoose', <ModalHelpToChoose />]);
   };
 
   // Брейкпоинты от MaterialUI
@@ -48,16 +62,22 @@ const ModalContextProvider = ({ children }) => {
 
   // Значения для провайдера
   const modalContextValues = {
-    openModal,
-    closeModal,
-    matches1025,
     matches769,
+    matches1025,
+    handleModalSingUp,
+    handleModalContactUs,
+    handleModalHelpToChoose,
   };
 
   return (
     <ModalContext.Provider value={modalContextValues}>
       <ThemeProvider theme={theme}>
-        <ModalSingUp isOpen={openedModal} closeModal={closeModal} />
+        <ModalGlobal
+          title={modalContent[0]}
+          content={modalContent[1]}
+          isOpen={openedModal}
+          closeModal={closeModal}
+        />
         <div id="top" className="anchor" />
         {children}
       </ThemeProvider>

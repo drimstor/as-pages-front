@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { TextAndImg, Features, GetStart, SeeDown, Title } from '../components';
 import { ModalContext } from '../contexts';
 
-import { Button, Divider } from '@mui/material';
+import { Button } from '@mui/material';
 import { SavedSearch, AutoGraph, AppShortcut } from '@mui/icons-material';
 
 import title_img from '../assets/img/mac-extention.png';
@@ -192,7 +192,7 @@ export default function ChromeExtention() {
                 <h3 className="plans__text--premium">Premium plan</h3>
                 <Button variant="contained">Get Started</Button>
                 <span>
-                  <a href="#">See more Plans</a>
+                  <a href="#top">See more Plans</a>
                 </span>
                 <ul>
                   <li>All free features</li>

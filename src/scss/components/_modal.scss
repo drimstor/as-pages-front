@@ -1,0 +1,167 @@
+.modal {
+  min-width: 420px;
+  background: #f9fafb;
+  padding: 30px 40px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -10px;
+    h3 {
+      @include text(20px, 23px);
+      @extend %Roboto;
+      font-weight: 400;
+    }
+    svg {
+      color: $table;
+      font-size: 28px;
+    }
+  }
+  .line {
+    padding-top: 20px;
+    margin-top: 10px;
+  }
+  > button.MuiButton-root {
+    margin-right: 0;
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    p {
+      @extend %Roboto;
+      color: $table;
+      @include text(16px, 24px);
+      font-weight: 500;
+    }
+    img {
+      @include size(27px, 27px);
+      margin-right: 12px;
+    }
+  }
+  > span {
+    margin: 20px;
+    @extend %Roboto;
+  }
+  form {
+    padding: 0 0 25px;
+    input.MuiInputBase-formControl {
+      width: 350px;
+      label.MuiInputLabel-root {
+        color: #9e9e9e;
+      }
+    }
+    .MuiFormGroup-root {
+      width: 350px;
+      padding-left: 0px;
+      a,
+      button {
+        margin: 15px auto 0;
+        width: 100%;
+      }
+    }
+    label.MuiFormControlLabel-root {
+      span.MuiTypography-root {
+        margin-left: 0px;
+        @include text(0.9rem, 1.3rem);
+        color: $secondary;
+        text-align: left;
+      }
+    }
+  }
+  p {
+    font-size: 12px;
+    color: $disabled;
+    text-align: center;
+  }
+}
+.MuiPaper-root ul.MuiList-root {
+  align-items: flex-start;
+}
+
+.modal__form-wrapper {
+  width: 100%;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  > div {
+    width: 280px;
+  }
+}
+
+.modal__contact-us {
+  form {
+    padding-bottom: 0;
+  }
+  p {
+    font-size: 1.2rem;
+    color: $main;
+    margin-bottom: 35px;
+    margin-top: 10px;
+    line-height: 1.4rem;
+  }
+  button.MuiButton-root {
+    margin-top: 10px;
+    padding: 12px 36px;
+    width: 50%;
+  }
+  .modal__form-wrapper-sub {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .modal {
+    .MuiInputBase-input.MuiOutlinedInput-input {
+      height: 1em;
+    }
+    &__contact-us {
+      width: 100%;
+      button.MuiButton-root {
+        width: 100%;
+      }
+    }
+
+    &__form-wrapper {
+      grid-template-columns: 1fr;
+      > div {
+        width: 100%;
+      }
+    }
+    &__form-wrapper-sub {
+      button.MuiButton-root {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 473px) {
+  .modal {
+    min-width: 280px;
+    width: 100%;
+    padding: 25px 20px;
+    * {
+      text-align: left;
+    }
+    form {
+      width: 100%;
+      input.MuiInputBase-formControl {
+        width: 100%;
+      }
+      .MuiFormGroup-root {
+        width: 100%;
+      }
+    }
+  }
+  .MuiBox-root {
+    width: 90%;
+  }
+
+  .modal__form-wrapper {
+    gap: 20px;
+  }
+}

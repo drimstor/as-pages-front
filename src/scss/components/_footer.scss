@@ -17,8 +17,9 @@
     }
     ul li:first-of-type {
       margin-bottom: 15px;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 500;
+      color: $table;
     }
   }
   a.footer__email {
@@ -32,7 +33,7 @@
     min-height: 64px;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 50px;
     color: $disabled;
   }
@@ -54,6 +55,7 @@
   -webkit-box-shadow: 0px 1px 8px 3px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 1px 8px 3px rgba(34, 60, 80, 0.2);
   box-shadow: 0px 1px 8px 3px rgba(34, 60, 80, 0.2);
+  z-index: 5;
   svg {
     font-size: 26px;
   }
@@ -69,7 +71,14 @@
     text-align: center;
     &__copyright {
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
+      a:last-of-type {
+        order: 2;
+      }
+      span {
+        order: 1;
+        width: 95px;
+      }
     }
     &__list {
       align-items: center;
@@ -77,6 +86,9 @@
       justify-content: center;
       ul {
         margin-bottom: 15px;
+        li {
+          margin: 17px 0;
+        }
       }
     }
   }

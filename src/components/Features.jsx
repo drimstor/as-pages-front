@@ -9,9 +9,7 @@ function Features({ title, subLink, subLinkText, obj }) {
           <div className="features__wrapper">
             {obj.map((item, index) => (
               <div className="features__item" key={`${item}_${index}`}>
-                {item.icon ? (
-                  item.icon
-                ) : (
+                {item.icon || (
                   <img src={Object.values(item.img)} key={`${item.img}_${index}`} alt="stock-img" />
                 )}
                 <h3 key={`${item.title}_${index}`}>{item.title}</h3>

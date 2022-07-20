@@ -18,7 +18,7 @@ import stock1_img from '../assets/img/stockpeople1.png';
 import stock2_img from '../assets/img/stockpeople2.png';
 
 function Collections() {
-  const { openModal } = useContext(ModalContext);
+  const { handleModalSingUp } = useContext(ModalContext);
   return (
     <>
       {/* ---------------------------- */}
@@ -27,7 +27,7 @@ function Collections() {
         imgMob={title_img_mob}
         title={'Get custom insights with AppstoreSpy collections'}
         paragraph={'A single space for analytics tailored specifically for you'}
-        buttonClick={openModal}
+        buttonClick={handleModalSingUp}
         buttonText={'Get started'}
       />
       {/* ---------------------------- */}
@@ -42,8 +42,9 @@ function Collections() {
           left
           title={'Everything you need to know about your competitors in one place'}
           text={
-            'Use one tool instead of multiple services to collect data about your competitors: Add them to your Collection and even sort them into sub-categories to stay on top of the competition'
+            'Use one tool instead of multiple services to collect data about your competitors.'
           }
+          text2={'Add them to your Collection and even sort them into sub-categories to stay on top of the competition.'}
           link={'#'}
           textLink={'Create Personal Collection now'}
         />
@@ -72,7 +73,7 @@ function Collections() {
           left
           title={'Over 30 Reports in one click'}
           text={
-            'Generate over 30 different types of Reports based on your Collection or selected Collection Apps'
+            'Generate over 30 different types of Reports based on your Collection or selected Collection Apps.'
           }
           link={'#'}
           textLink={'Create Personal Collection now'}
@@ -118,7 +119,7 @@ function Collections() {
           {
             icon: <Workspaces />,
             title: 'Group apps by features',
-            text: 'Group competitors into collections and keep eye on changes in your selected groups',
+            text: 'Group competitors into collections and keep an eye on changes in your selected groups',
           },
           {
             icon: <Cached />,
@@ -168,7 +169,7 @@ function Collections() {
       <GetStart
         buttonText={'Create your Collection now'}
         title={'Ready to get started?'}
-        buttonClick={openModal}
+        buttonClick={handleModalSingUp}
       />
     </>
   );

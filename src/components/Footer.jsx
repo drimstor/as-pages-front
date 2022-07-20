@@ -8,34 +8,36 @@ export default function Footer() {
           <ul>
             <li>Products</li>
             <li>
-              <a href="#">Apps Database (Google & Apple App Stores)</a>
+              <a href="#top">Apps Database (Google & Apple App Stores)</a>
             </li>
             <li>
-              <a href="#">App Watchlists</a>
+              <a href="#top">App Watchlists</a>
             </li>
             <li>
-              <a href="#">Recent Apps</a>
+              <a href="#top">Recent Apps</a>
             </li>
             <li>
-              <a href="#">Fresh Ads</a>
+              <a href="#top">Fresh Ads</a>
             </li>
           </ul>
           <ul>
             <li>Free tools</li>
             <li>
-              <a href="#">Chrome extension for Play Store</a>
+              <a href="#top">Chrome extension for Play Store</a>
             </li>
             <li>
-              <a href="#">Top Charts</a>
+              <a href="#top">Top Charts</a>
             </li>
             <li>
-              <a href="#">Google Play Pass Full List</a>
+              <a href="#top">Google Play Pass Full List</a>
             </li>
           </ul>
           <ul>
             <li>Contacts</li>
             <li>
-              <a className='footer__email' href="#">support@appstorespy.com</a>
+              <a className="footer__email" href="#top">
+                support@appstorespy.com
+              </a>
             </li>
           </ul>
         </div>
@@ -50,8 +52,8 @@ export default function Footer() {
         </p>
         <div className="footer__copyright">
           <span>2022 AppstoreSpy©</span>
-          <a href="#">AGREEMENT</a>
-          <a href="#">PRIVACY</a>
+          <a href="#top">AGREEMENT</a>
+          <a href="#top">PRIVACY</a>
         </div>
       </div>
     </footer>

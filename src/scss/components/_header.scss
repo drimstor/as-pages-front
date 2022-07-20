@@ -35,6 +35,12 @@
   }
 }
 
+@media screen and (max-width: 1115px) {
+  .header__nav {
+    gap: 30px;
+  }
+}
+
 @media screen and (max-width: 1025px) {
   .header button.MuiButton-contained {
     width: 70px;

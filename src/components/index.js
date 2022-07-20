@@ -8,6 +8,9 @@ export { default as Footer } from './Footer';
 export { default as ScrollToTop } from './ScrollToTop';
 export { default as PricingCard } from './PricingCard';
 
-export { default as ModalSingUp } from './ModalSingUp';
+export { default as ModalGlobal } from './Modals/ModalGlobal';
+export { default as ModalSingUp } from './Modals/ModalSingUp';
+export { default as ModalContactUs } from './Modals/ModalContactUs';
+export { default as ModalHelpToChoose } from './Modals/ModalHelpToChoose';
 
 export { default as EmailForm } from './EmailForm';

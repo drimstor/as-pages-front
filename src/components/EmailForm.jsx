@@ -16,7 +16,11 @@ function EmailForm({ buttonText, buttonLink, buttonClick, title, paragraph, labe
                 control={<Checkbox defaultChecked />}
                 label={label}
               />
-              <Button variant="contained" target={target && `_blank`} href={buttonLink} onClick={buttonClick}>
+              <Button
+                variant="contained"
+                target={target && `_blank`}
+                href={buttonLink}
+                onClick={buttonClick}>
                 {buttonText}
               </Button>
             </FormGroup>

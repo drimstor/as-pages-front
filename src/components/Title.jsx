@@ -29,14 +29,14 @@ function Title({
             )}
             <Button
               variant="contained"
-              className="w100-btn"
               onClick={buttonClick}
               href={buttonLink}
               target={target && `_blank`}>
               {buttonText}
             </Button>
+            <div></div>
             <span>
-              Don’t have an account? <a href="#">Sign up for free</a>
+              Don’t have an account? <a href="#top">Sign up for free</a>
             </span>
           </div>
           <div className="title__img">

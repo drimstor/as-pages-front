@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import logo from '../assets/img/logo.svg';
-
 import { ModalContext } from '../contexts';
 
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -20,16 +19,18 @@ import {
 
 const navLi = ['Overview', 'Features', 'Plans', 'Pricing'];
 
-export default function Header({}) {
+export default function Header() {
+  // Состояние активности табов
   const [listItem, setListItem] = useState(false);
   const handleChange = (event, newValue) => {
     setListItem(newValue);
   };
+  // Состояние открытия меню
   const [openDrawer, setOpenDrawer] = useState(false);
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
   };
-  const { openModal, matches1025 } = useContext(ModalContext);
+  const { matches1025, handleModalSingUp, handleModalContactUs } = useContext(ModalContext);
   return (
     <>
       {matches1025 ? (
@@ -58,10 +59,12 @@ export default function Header({}) {
               </Tabs>
             </div>
             <div className="header__btns">
-              <Button variant="outlined" onClick={openModal}>
+              <Button variant="outlined" onClick={handleModalSingUp}>
                 Sign in
               </Button>
-              <Button variant="contained">Try AppStoreSpy now</Button>
+              <Button variant="contained" onClick={handleModalContactUs}>
+                Try AppStoreSpy now
+              </Button>
             </div>
           </div>
         </header>
@@ -81,7 +84,7 @@ export default function Header({}) {
               <AnchorLink href="#top">
                 <img src={logo} alt="logo" width={114} />
               </AnchorLink>
-              <Button variant="contained" onClick={openModal}>
+              <Button variant="contained" onClick={handleModalSingUp}>
                 Sign in
               </Button>
             </Toolbar>
