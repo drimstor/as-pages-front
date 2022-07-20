@@ -70,12 +70,16 @@
   .footer {
     text-align: center;
     &__copyright {
-      justify-content: center;
       gap: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       a:last-of-type {
         order: 2;
       }
       span {
+        align-self: center;
+        justify-self: center;
+        margin-left: 5px;
         order: 1;
         width: 95px;
       }

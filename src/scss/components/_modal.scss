@@ -114,12 +114,47 @@
 }
 
 @media screen and (max-width: 769px) {
+  .MuiBox-root {
+    width: 70%;
+  }
   .modal {
+    min-width: 280px;
+    width: 100%;
+    padding: 20px 20px;
+    form {
+      width: 100%;
+      input.MuiInputBase-formControl {
+        width: 100%;
+      }
+      .MuiFormGroup-root {
+        width: 100%;
+      }
+    }
+    * {
+      text-align: left;
+    }
     .MuiInputBase-input.MuiOutlinedInput-input {
       height: 1em;
     }
     &__contact-us {
       width: 100%;
+      p {
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+      form {
+        gap: 15px;
+        .modal__form-wrapper {
+          gap: 15px;
+        }
+        button.MuiButton-root {
+          margin-top: 0;
+        }
+      }
+      .line {
+        padding-top: 10px;
+        margin-top: 0;
+      }
       button.MuiButton-root {
         width: 100%;
       }
@@ -127,6 +162,7 @@
 
     &__form-wrapper {
       grid-template-columns: 1fr;
+      gap: 20px;
       > div {
         width: 100%;
       }
@@ -137,31 +173,14 @@
       }
     }
   }
+
 }
 
-@media screen and (max-width: 473px) {
-  .modal {
-    min-width: 280px;
-    width: 100%;
-    padding: 25px 20px;
-    * {
-      text-align: left;
-    }
-    form {
-      width: 100%;
-      input.MuiInputBase-formControl {
-        width: 100%;
-      }
-      .MuiFormGroup-root {
-        width: 100%;
-      }
-    }
-  }
+@media screen and (max-width: 500px) {
   .MuiBox-root {
-    width: 90%;
+    width: 92%;
   }
-
-  .modal__form-wrapper {
-    gap: 20px;
+  .modal__contact-us p {
+    font-size: 1.1rem;
   }
 }
