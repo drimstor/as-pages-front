@@ -1,25 +1,22 @@
-import React, { useContext, useState, 
+import React, {
+  useContext,
+  useState,
   // useEffect
- } from 'react';
+} from 'react';
 import { GetStart, PricingCard, SeeDown } from '../components';
 import { ModalContext } from '../contexts';
 
 import { Button, Switch } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-  // EffectCards,
-  Navigation,
-  Pagination,
-} from 'swiper';
 import 'swiper/css';
-import 'swiper/css/effect-cards';
-import 'swiper/css/pagination';
 
 function Pricing() {
-  const { handleModalSingUp, handleModalContactUs, 
-    // handleModalHelpToChoose, 
-    matches1025 } =
-    useContext(ModalContext);
+  const {
+    handleModalSingUp,
+    handleModalContactUs,
+    // handleModalHelpToChoose,
+    matches1025,
+  } = useContext(ModalContext);
 
   // Состояние Switch'a
   const [switchState, setSwitchState] = useState(true);
@@ -56,6 +53,34 @@ function Pricing() {
         fixBlock.classList.remove('transform');
       }
     });
+
+  const swiperBreakPoints = {
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 0,
+    },
+    350: {
+      slidesPerView: 1.3,
+    },
+    380: {
+      slidesPerView: 1.4,
+    },
+    420: {
+      slidesPerView: 1.5,
+    },
+    470: {
+      slidesPerView: 1.6,
+    },
+    550: {
+      slidesPerView: 1.8,
+    },
+    650: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 2.5,
+    },
+  };
 
   return (
     <>
@@ -670,18 +695,12 @@ function Pricing() {
         ) : (
           <div className="pricing__cards">
             <Swiper
-              spaceBetween={1}
-              modules={[Navigation, Pagination]}
-              navigation
-              grabCursor={true}
               centeredSlides={true}
-              slidesPerView={1}
-              pagination={true}
-              // effect={'cards'}
-              // modules={[EffectCards]}
-              // onSlideChange={}
-              // onSwiper={(swiper) => console.log(swiper)}
-            >
+              freeMode={{
+                enabled: true,
+                sticky: true,
+              }}
+              breakpoints={swiperBreakPoints}>
               <SwiperSlide>
                 <PricingCard
                   name={'Starter'}

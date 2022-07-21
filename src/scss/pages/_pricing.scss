@@ -37,6 +37,9 @@
     display: flex;
     justify-content: space-between;
     gap: 25px;
+    .swiper-pagination-bullet-active {
+      background: $blue;
+    }
     .pricing__card {
       background: #fff;
       min-height: 530px;

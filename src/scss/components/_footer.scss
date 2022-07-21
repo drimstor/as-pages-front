@@ -68,7 +68,9 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    text-align: center;
+    * {
+      text-align: center;
+    }
     &__copyright {
       gap: 15px;
       display: grid;
