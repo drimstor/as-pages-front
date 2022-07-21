@@ -113,6 +113,42 @@
   }
 }
 
+.modal-help {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  gap: 30px;
+  padding: 5px;
+  color: $main;
+  p {
+    color: $main;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  ul li {
+    display:list-item;
+    list-style: inside;
+    margin: 10px 0;
+    line-height: 1.3rem;
+  }
+  
+  button.MuiButton-root {
+    max-width: 250px;
+    padding: 12px 36px;
+    margin: 0 auto;
+  }
+  span {
+    // color: $main;
+    text-align: center;
+    line-height: 1.3rem;
+  }
+}
+
 @media screen and (max-width: 769px) {
   .MuiBox-root {
     width: 70%;

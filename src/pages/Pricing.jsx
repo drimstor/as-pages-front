@@ -21,7 +21,7 @@ function Pricing() {
   useEffect(
     () => {
       // Всплывающая модалка
-      const timer = setTimeout(handleModalHelpToChoose, 45000);
+      const timer = setTimeout(handleModalHelpToChoose, 30000);
       return () => clearTimeout(timer);
     },
     // eslint-disable-next-line

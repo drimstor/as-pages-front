@@ -33,7 +33,7 @@ const ModalContextProvider = ({ children }) => {
     openModal(['Contact us', <ModalContactUs />]);
   };
   const handleModalHelpToChoose = () => {
-    openModal(['ModalHelpToChoose', <ModalHelpToChoose />]);
+    openModal(['', <ModalHelpToChoose />]);
   };
 
   // Брейкпоинты от MaterialUI

@@ -1,42 +1,24 @@
 import React from 'react';
 
-// import { FormGroup, Button, Checkbox, FormControlLabel, TextField } from '@mui/material';
+import { Button } from '@mui/material';
 
 function ModalHelpToChoose() {
   return (
-    <>
-      {/* <div className="line"></div>
-      <Button variant="outlined" onClick={''}></Button>
-      <span>or</span>
-      <form action="">
-        <TextField id="outlined-basic-email" fullWidth label="E-mail" variant="outlined" />
-        <TextField
-          id="outlined-basic-pass"
-          fullWidth
-          label="Password"
-          type="password"
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-basic-pass-conf"
-          fullWidth
-          label="Confirm password"
-          type="password"
-          variant="outlined"
-        />
-        <FormGroup>
-          <FormControlLabel
-            color="secondary"
-            control={<Checkbox defaultChecked />}
-            label={'Send me product updates and premium offers'}
-          />
-          <Button variant="contained">Creacte account</Button>
-        </FormGroup>
-      </form>
-      <p>
-        By joining you agree to <b>Terms and Conditions</b> and <b>Privacy Policy</b>.
-      </p> */}
-    </>
+    <div className="modal-help">
+      <div className="line"></div>
+
+      <h3>We see you're interested in AppstoreSpy, but can't choose a plan.</h3>
+      <p>Try AppstoreSpy for free and decide later!</p>
+      <ul>
+        <li>Basic Niche Finder</li>
+        <li>Monitor 5 android apps</li>
+        <li>Free Public Collections</li>
+        <li>Chrome Extension for Play Store (300 cards daily)</li>
+      </ul>
+      <span>Try features AppstoreSpy for free and choose plan for you</span>
+      <div></div>
+      <Button variant="contained">Get AppstoreSpy for Free</Button>
+    </div>
   );
 }
 
