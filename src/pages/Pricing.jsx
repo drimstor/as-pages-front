@@ -694,13 +694,7 @@ function Pricing() {
           </div>
         ) : (
           <div className="pricing__cards">
-            <Swiper
-              centeredSlides={true}
-              freeMode={{
-                enabled: true,
-                sticky: true,
-              }}
-              breakpoints={swiperBreakPoints}>
+            <Swiper centeredSlides={true} breakpoints={swiperBreakPoints}>
               <SwiperSlide>
                 <PricingCard
                   name={'Starter'}
