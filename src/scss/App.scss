@@ -39,7 +39,7 @@ a {
 
 @media screen and (max-width: 500px) {
   html {
-    @include text(15px, 14px);
+    @include text(15px, 18px);
   }
   .wrapper {
     width: calc(100vw - 20px);

@@ -1,0 +1,36 @@
+.market-explorer {
+  .table-features .features__item {
+    min-height: 300px;
+  }
+  .text-img__image {
+    width: 50%;
+  }
+  .text-img__title ul {
+    list-style: none;
+    li {
+      padding-left: 8px;
+      font-size: 1.05rem;
+      line-height: 1.5rem;
+    }
+    li:before {
+      content: '';
+      width: 16px;
+      height: 9px;
+      border-right: 2px solid #1976d2;
+      border-top: 2px solid #1976d2;
+      transform: rotate(135deg);
+      bottom: 11px;
+      left: -20px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1025px) {
+  .market-explorer {
+    .text-img__image {
+      width: 80%;
+    }
+  }
+
+}
