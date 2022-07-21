@@ -6,7 +6,6 @@ function ModalHelpToChoose() {
   return (
     <div className="modal-help">
       <div className="line"></div>
-
       <h3>We see you're interested in AppstoreSpy, but can't choose a plan.</h3>
       <p>Try AppstoreSpy for free and decide later!</p>
       <ul>
@@ -16,7 +15,6 @@ function ModalHelpToChoose() {
         <li>Chrome Extension for Play Store (300 cards daily)</li>
       </ul>
       <span>Try features AppstoreSpy for free and choose plan for you</span>
-      <div></div>
       <Button variant="contained">Get AppstoreSpy for Free</Button>
     </div>
   );

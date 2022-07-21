@@ -32,6 +32,7 @@
     }
   }
   &__cards {
+    padding-bottom: 100px;
     padding: 30px 0;
     display: flex;
     justify-content: space-between;
@@ -378,7 +379,7 @@
     &__cards {
       .pricing__card {
         width: 260px;
-        min-height: 590px;
+        min-height: 610px;
         padding-bottom: 10px;
         p span {
           bottom: 1px;

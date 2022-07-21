@@ -1,15 +1,24 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, 
+  // useEffect
+ } from 'react';
 import { GetStart, PricingCard, SeeDown } from '../components';
 import { ModalContext } from '../contexts';
 
 import { Button, Switch } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCards } from 'swiper';
+import {
+  // EffectCards,
+  Navigation,
+  Pagination,
+} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
 
 function Pricing() {
-  const { handleModalSingUp, handleModalContactUs, handleModalHelpToChoose, matches1025 } =
+  const { handleModalSingUp, handleModalContactUs, 
+    // handleModalHelpToChoose, 
+    matches1025 } =
     useContext(ModalContext);
 
   // Состояние Switch'a
@@ -18,15 +27,15 @@ function Pricing() {
     setSwitchState(event.target.checked);
   }
 
-  useEffect(
-    () => {
-      // Всплывающая модалка
-      const timer = setTimeout(handleModalHelpToChoose, 30000);
-      return () => clearTimeout(timer);
-    },
-    // eslint-disable-next-line
-    [],
-  );
+  // useEffect(
+  //   () => {
+  //     // Всплывающая модалка
+  //     const timer = setTimeout(handleModalHelpToChoose, 45000);
+  //     return () => clearTimeout(timer);
+  //   },
+  //   // eslint-disable-next-line
+  //   [],
+  // );
 
   // Закреп названий тарифов
   matches1025 &&
@@ -661,11 +670,15 @@ function Pricing() {
         ) : (
           <div className="pricing__cards">
             <Swiper
-              spaceBetween={50}
-              slidesPerView={1}
-              effect={'cards'}
+              spaceBetween={1}
+              modules={[Navigation, Pagination]}
+              navigation
               grabCursor={true}
-              modules={[EffectCards]}
+              centeredSlides={true}
+              slidesPerView={1}
+              pagination={true}
+              // effect={'cards'}
+              // modules={[EffectCards]}
               // onSlideChange={}
               // onSwiper={(swiper) => console.log(swiper)}
             >
