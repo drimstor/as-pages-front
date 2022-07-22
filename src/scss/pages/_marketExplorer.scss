@@ -1,6 +1,6 @@
 .market-explorer {
   .table-features .features__item {
-    min-height: 300px;
+    min-height: 400px;
   }
   .text-img__image {
     width: 50%;
@@ -25,12 +25,10 @@
   }
 }
 
-
 @media screen and (max-width: 1025px) {
   .market-explorer {
     .text-img__image {
       width: 80%;
     }
   }
-
 }

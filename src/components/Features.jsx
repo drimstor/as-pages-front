@@ -14,6 +14,14 @@ function Features({ title, subLink, subLinkText, obj }) {
                 )}
                 <h3 key={`${item.title}_${index}`}>{item.title}</h3>
                 <p key={`${item.text}_${index}`}>{item.text}</p>
+                {item.ul && (
+                  <ul key={`${item.text}_${index}`}>
+                    {item.ul.map((item, index) => (
+                      <li key={`${item}_${index}`}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {item.text2 && <p key={`${item.text2}_${index}`}>{item.text2}</p>}
                 {item.link && (
                   <a href={item.link} key={`${item.link}_${index}`}>
                     Learn more

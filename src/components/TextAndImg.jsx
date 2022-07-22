@@ -1,11 +1,24 @@
 import React from 'react';
 
-function TextAndImg({ img, imgMob, imgBefore, title, text, text2, left, link, textLink, ul }) {
+function TextAndImg({
+  img,
+  imgMob,
+  imgBefore,
+  title,
+  text,
+  text2,
+  left,
+  link,
+  textLink,
+  ul,
+  spanText,
+}) {
   return (
     <>
       <div className="wrapper">
         <section className={left ? 'text-img text-img--left' : 'text-img'}>
           <div className="text-img__title" style={left && { order: 2 }}>
+            {spanText && <span>{spanText}</span>}
             <h2>{title}</h2>
             <p>
               {text}

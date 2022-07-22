@@ -6,6 +6,13 @@
   &__title {
     max-width: 45%;
     padding: 0 25px;
+    span {
+      color: $blue;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      font-weight: 500;
+    }
     h2 {
       color: $main;
     }
@@ -43,6 +50,7 @@
   }
   &__image {
     position: relative;
+    width: 52%;
     > img {
       position: absolute;
     }
@@ -53,54 +61,37 @@
   }
 }
 
-.text-img--no-border {
-  .text-img {
-    &__image {
-      width: 50%;
-      picture img {
-        filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
-        border-radius: 8px;
-      }
-    }
-  }
-}
-
 //--------------------------------------//
 
 @media screen and (max-width: 1023px) {
   .text-img {
     flex-direction: column;
-  }
-  .text-img--left {
-    flex-direction: column-reverse;
-  }
-
-  .text-img {
     &__title {
       margin-bottom: 50px;
       max-width: 80%;
       padding: 0;
     }
-  }
-  .text-img--no-border {
-    .text-img {
-      &__image {
-        width: 80%;
-        picture img {
-          min-height: auto;
-          min-width: auto;
-          filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
-          border-radius: 8px;
-        }
+    &__image {
+      width: 80%;
+      picture img {
+        min-height: auto;
+        min-width: auto;
       }
     }
+  }
+  .text-img--left {
+    flex-direction: column-reverse;
   }
 }
 
 @media screen and (max-width: 769px) {
   .text-img {
+    &__image {
+      width: 90%;
+    }
     &__title {
       max-width: 90%;
+
       ul li {
         text-align: left;
         margin: 10px 0;
@@ -108,15 +99,7 @@
       }
     }
   }
-  .text-img--no-border {
-    .text-img {
-      &__image {
-        width: 90%;
-      }
-    }
-  }
 }
-
 
 @media screen and (max-width: 426px) {
   .text-img {

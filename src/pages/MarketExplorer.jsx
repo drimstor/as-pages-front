@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Title, Features, GetStart, SeeDown, TextAndImg } from '../components';
 
-import { Extension, GridOn, Timeline } from '@mui/icons-material';
+import { Groups, BusinessCenter, Hail } from '@mui/icons-material';
 
 import title_img from '../assets/img/Screenshot_2022-07-2.webp';
 import top_img from '../assets/img/2022-07-20_160651.jpg';
@@ -60,22 +60,29 @@ function MarketExplorer() {
           title={'AppstoreSpy will fit your needs'}
           obj={[
             {
-              icon: <Extension />,
-              title: 'Chrome Plugin',
-              text: 'Install AppstoreSpy Chrome Extension to automatically embed app data directly into Google Play Store.',
-              // link: '#',
+              icon: <Groups />,
+              title: 'For teams',
+              text: 'Make data-driven decisions:',
+              ul: ['Find your competitors', 'Track their key metrics', 'Study your market niche'],
+              text2: 'Build your app with insights into 1.7M other developers',
             },
             {
-              icon: <GridOn />,
-              title: 'Niche Finder',
-              text: 'Build and grow the next hot app by finding and tracking the right market  niche for you.',
-              // link: '#',
+              icon: <BusinessCenter />,
+              title: 'For business development',
+              text: 'Build & improve market strategies:',
+              ul: ['Use tailored searches', 'Track your competitors', 'Customize your analytics'],
+              text2: 'Stay on top of your niche with insights into 13 million apps',
             },
             {
-              icon: <Timeline />,
-              title: 'App Timeline',
-              text: 'Track all available recent app changes to analyze what influences app performance.',
-              // link: '#',
+              icon: <Hail />,
+              title: 'For investors',
+              text: 'Invest smart with easy research:',
+              ul: [
+                'Use 30+ search filters',
+                'Track top market performers',
+                'Find the best new opportunities',
+              ],
+              text2: 'Get onboard the hottest projects with access to pro market insights',
             },
           ]}
         />

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from '@mui/material';
 
+import { SearchInput } from './';
+
 function Title({
   img,
   imgMob,
@@ -12,6 +14,7 @@ function Title({
   buttonText,
   buttonClick,
   target,
+  search,
 }) {
   return (
     <section className="title">
@@ -27,17 +30,22 @@ function Title({
                 ))}
               </ul>
             )}
-            <Button
-              variant="contained"
-              onClick={buttonClick}
-              href={buttonLink}
-              target={target && `_blank`}>
-              {buttonText}
-            </Button>
-            <div></div>
-            <span>
-              Don’t have an account? <a href="#top">Sign up for free</a>
-            </span>
+            {buttonText && (
+              <>
+                <Button
+                  variant="contained"
+                  onClick={buttonClick}
+                  href={buttonLink}
+                  target={target && `_blank`}>
+                  {buttonText}
+                </Button>
+                <div></div>
+                <span>
+                  Don’t have an account? <a href="#top">Sign up for free</a>
+                </span>
+              </>
+            )}
+            {search && <SearchInput />}
           </div>
           <div className="title__img">
             <picture>

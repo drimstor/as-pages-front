@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button, Divider } from '@mui/material';
 
-function GetStart({ img, target, buttonText, buttonLink, buttonClick, paragraph, title }) {
+import { SearchInput } from './';
+
+function GetStart({ img, target, buttonText, buttonLink, buttonClick, paragraph, title, search }) {
   return (
     <section className="get-start">
       <div className="wrapper">
@@ -11,16 +13,20 @@ function GetStart({ img, target, buttonText, buttonLink, buttonClick, paragraph,
           {paragraph && <p>{paragraph}</p>}
           <div className="get-start__btn">
             {img && <img src={img} alt="chrome_store_img" />}
-            <Button
-              className="w100-btn"
-              variant="contained"
-              target={target && `_blank`}
-              href={buttonLink}
-              onClick={buttonClick}>
-              {buttonText}
-            </Button>
+            {buttonText && (
+              <Button
+                className="w100-btn"
+                variant="contained"
+                target={target && `_blank`}
+                href={buttonLink}
+                onClick={buttonClick}>
+                {buttonText}
+              </Button>
+            )}
           </div>
+          {search && <SearchInput />}
         </div>
+       
       </div>
     </section>
   );

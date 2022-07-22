@@ -6,6 +6,7 @@ import { Divider } from '@mui/material';
 import { Workspaces, Cached, Groups, Extension, GridOn, Timeline } from '@mui/icons-material';
 
 import title_img from '../assets/img/mac-collections.png';
+
 import title_img_mob from '../assets/img/mac-collections-mob.png';
 import top_img from '../assets/img/mytop.png';
 import top_img_mob from '../assets/img/mytop-mob.png';
@@ -35,50 +36,44 @@ function Collections() {
       {/* ---------------------------- */}
       <div id="Overview" className="anchor" />
       <div id="MobOverview" className="anchor" />
-      <div className="text-img--no-border">
-        <TextAndImg
-          img={top_img}
-          imgMob={top_img_mob}
-          left
-          title={'Everything you need to know about your competitors in one place'}
-          text={'Use one tool instead of multiple services to collect data about your competitors.'}
-          text2={
-            'Add them to your Collection and even sort them into sub-categories to stay on top of the competition.'
-          }
-          link={'#'}
-          textLink={'Create Personal Collection now'}
-        />
-      </div>
+      <TextAndImg
+        img={top_img}
+        imgMob={top_img_mob}
+        left
+        title={'Everything you need to know about your competitors in one place'}
+        text={'Use one tool instead of multiple services to collect data about your competitors.'}
+        text2={
+          'Add them to your Collection and even sort them into sub-categories to stay on top of the competition.'
+        }
+        link={'#'}
+        textLink={'Create Personal Collection now'}
+      />
       {/* ---------------------------- */}
-      <div className="text-img--no-border">
-        <TextAndImg
-          img={top1_img}
-          imgMob={top1_img_mob}
-          title={'Analyze all apps in one tab'}
-          text={'Get quick overviews on the apps you track on your Collection page:'}
-          ul={[
-            'View all key metrics in one table',
-            'See all icons and descriptions on one screen',
-            'Get full screenshots on hover',
-          ]}
-          link={'#'}
-          textLink={'Try AppstoreSpy Collection now'}
-        />
-      </div>
+      <TextAndImg
+        img={top1_img}
+        imgMob={top1_img_mob}
+        title={'Analyze all apps in one tab'}
+        text={'Get quick overviews on the apps you track on your Collection page:'}
+        ul={[
+          'View all key metrics in one table',
+          'See all icons and descriptions on one screen',
+          'Get full screenshots on hover',
+        ]}
+        link={'#'}
+        textLink={'Try AppstoreSpy Collection now'}
+      />
       {/* ---------------------------- */}
-      <div className="text-img--no-border">
-        <TextAndImg
-          img={top2_img}
-          imgMob={top2_img_mob}
-          left
-          title={'Over 30 Reports in one click'}
-          text={
-            'Generate over 30 different types of Reports based on your Collection or selected Collection Apps.'
-          }
-          link={'#'}
-          textLink={'Create Personal Collection now'}
-        />
-      </div>
+      <TextAndImg
+        img={top2_img}
+        imgMob={top2_img_mob}
+        left
+        title={'Over 30 Reports in one click'}
+        text={
+          'Generate over 30 different types of Reports based on your Collection or selected Collection Apps.'
+        }
+        link={'#'}
+        textLink={'Create Personal Collection now'}
+      />
       {/* ---------------------------- */}
       <div className="features-imgs">
         <Features

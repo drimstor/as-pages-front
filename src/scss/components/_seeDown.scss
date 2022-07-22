@@ -4,6 +4,11 @@
     @extend %ProductSans;
     @include text(1rem, 1.3rem);
   }
+  h4 {
+    @include text(1.3rem, 1.7rem);
+    color: $main;
+    margin-bottom: 15px;
+  }
 }
 .line {
   width: 100%;

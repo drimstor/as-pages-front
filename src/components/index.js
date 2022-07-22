@@ -13,5 +13,8 @@ export { default as ModalSingUp } from './Modals/ModalSingUp';
 export { default as ModalContactUs } from './Modals/ModalContactUs';
 export { default as ModalHelpToChoose } from './Modals/ModalHelpToChoose';
 
+export { default as SearchInput } from './SearchInput';
 export { default as EmailForm } from './EmailForm';
 export { default as PlansCards } from './PlansCards';
+
+

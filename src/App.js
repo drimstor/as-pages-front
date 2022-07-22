@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import './scss/App.scss';
-import { ChromeExtention, Collections, Pricing, PromoAccess, MarketExplorer } from './pages';
+import { ChromeExtention, Collections, Pricing, PromoAccess, MarketExplorer, Finder } from './pages';
 import { Header, Footer, ScrollToTop } from './components';
 import { ModalContextProvider } from './contexts';
 
@@ -15,6 +15,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} exact />
         <Route path="/promo-access" element={<PromoAccess />} exact />
         <Route path="/market-explorer" element={<MarketExplorer />} exact />
+        <Route path="/finder" element={<Finder />} exact />
       </Routes>
       <Footer />
       <ScrollToTop />

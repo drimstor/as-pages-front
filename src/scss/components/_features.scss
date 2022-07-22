@@ -15,11 +15,29 @@
   &__item {
     width: 30%;
     text-align: center;
+    ul {
+      margin: 20px 0;
+      li {
+        margin: 8px 0;
+        position: relative;
+        padding-left: 20px;
+        &:before {
+          position: absolute;
+          top: calc(50% - 3px);
+          left: 5px;
+          content: '';
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #1976d2;
+        }
+      }
+    }
     > svg {
-      font-size: 35px;
+      font-size: 37px;
       color: white;
-      padding: 12px;
-      @include size(50px, 50px);
+      padding: 10px;
+      @include size(55px, 55px);
       background: $blue;
       border-radius: 50%;
     }
