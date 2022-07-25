@@ -44,31 +44,34 @@ function Finder() {
           left
           spanText={'Step 1'}
           title={'Enter a keyword'}
-          text={"Find the niche that's ready for a breakthrough."}
+          text={"Find the niche that’s ready for a breakthrough."}
+          text2={'Select filters and enter a keyword so we can find your niche and show you it’s key metrics.'}
         />
       </div>
       {/* ---------------------------- */}
       <div className="text-img--finder2">
-      <TextAndImg
-        img={finder2_img}
-        imgMob={finder2_img_mob}
-        imgBefore={finder2_img_before}
-        spanText={'Step 2'}
-        title={'Customize widgets'}
-        text={'You will get an idea of the market as a whole or by individual categories.'}
-      />
+        <TextAndImg
+          img={finder2_img}
+          imgMob={finder2_img_mob}
+          imgBefore={finder2_img_before}
+          spanText={'Step 2'}
+          title={'Customize widgets'}
+          text={'You will get an idea of the market as a whole or by individual categories.'}
+          text2={'Choose widgets from the list and add them to your dashboard to analyze your niche.'}
+        />
       </div>
       {/* ---------------------------- */}
       <div className="text-img--finder3">
-      <TextAndImg
-        img={finder3_img}
-        imgMob={finder3_img_mob}
-        imgBefore={finder3_img_before}
-        left
-        spanText={'Step 3'}
-        title={'Explore top niche players'}
-        text={'Improve your strategy or find free niches where you can reach the top. '}
-      />
+        <TextAndImg
+          img={finder3_img}
+          imgMob={finder3_img_mob}
+          imgBefore={finder3_img_before}
+          left
+          spanText={'Step 3'}
+          title={'Explore top niche players'}
+          text={'Improve your strategy or find free niches where you can reach the top.'}
+          text2={'Analyze the main players and their metrics to better understand who you have to compete with in a niche.'}
+        />
       </div>
       {/* ---------------------------- */}
       <TextAndImg

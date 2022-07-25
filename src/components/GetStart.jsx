@@ -26,7 +26,6 @@ function GetStart({ img, target, buttonText, buttonLink, buttonClick, paragraph,
           </div>
           {search && <SearchInput />}
         </div>
-       
       </div>
     </section>
   );
