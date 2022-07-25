@@ -6,7 +6,6 @@ import { Divider } from '@mui/material';
 import { Workspaces, Cached, Groups, Extension, GridOn, Timeline } from '@mui/icons-material';
 
 import title_img from '../assets/img/mac-collections.png';
-
 import title_img_mob from '../assets/img/mac-collections-mob.png';
 import top_img from '../assets/img/mytop.png';
 import top_img_mob from '../assets/img/mytop-mob.png';

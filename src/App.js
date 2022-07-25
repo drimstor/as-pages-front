@@ -1,7 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
 
 import './scss/App.scss';
-import { ChromeExtention, Collections, Pricing, PromoAccess, MarketExplorer, Finder } from './pages';
+import {
+  ChromeExtention,
+  Collections,
+  Pricing,
+  PromoAccess,
+  MarketExplorer,
+  Finder,
+} from './pages';
 import { Header, Footer, ScrollToTop } from './components';
 import { ModalContextProvider } from './contexts';
 

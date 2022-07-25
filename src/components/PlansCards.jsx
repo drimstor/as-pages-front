@@ -14,7 +14,9 @@ function PlansCards() {
           <h3>Free plan</h3>
           <Button variant="outlined">Try now</Button>
           <span>Start exploring the App’s metrics for free:</span>
-          <li>App’s age highlights:</li>
+          <ul>
+            <li>App’s age highlights:</li>
+          </ul>
           <div className="card-info__age-bg">
             <p>&lt;1 month</p>
             <p>&lt;1 year</p>

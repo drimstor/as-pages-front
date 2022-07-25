@@ -84,7 +84,7 @@
     padding-left: 30px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    // gap: 7px;
     span {
       margin-bottom: 5px;
     }
@@ -232,13 +232,16 @@
     li {
       position: relative;
       margin: 3px 0px 3px 25px;
+      line-height: 1.3rem;
     }
+
     li::before {
       content: '';
       display: block;
       position: absolute;
-      bottom: 12px;
-      left: -22px;
+      // bottom: 11px;
+      top: 3px;
+      left: -24px;
       width: 10px;
       height: 7px;
       border-right: 2px solid #616161;
@@ -260,7 +263,7 @@
         left: -16px;
       }
       p {
-        margin-left: 10px;
+        margin-left: 15px;
       }
     }
     &__cards {
@@ -274,6 +277,9 @@
     }
     &__text {
       padding: 10px 5px;
+      ul {
+        padding-left: 5px;
+      }
       li {
         margin-left: 10px;
         &:before {
@@ -464,9 +470,6 @@
       }
       ul li {
         text-align: left;
-        &::before {
-          bottom: 12px;
-        }
       }
       li,
       p,
@@ -476,7 +479,7 @@
       }
     }
     li:before {
-      bottom: 9px;
+      top: 3px;
     }
     &__card {
       margin-bottom: 20px;
