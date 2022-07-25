@@ -370,19 +370,11 @@
   .get-start p {
     width: 100%;
   }
-}
-
-@media screen and (max-width: 500px) {
   .pricing {
-    padding-top: 150px;
-    &__tumbler {
-      margin: 0 auto;
-      width: 240px;
-    }
     &__cards {
       .pricing__card {
         width: 260px;
-        min-height: 600px;
+        min-height: 650px;
         padding-bottom: 10px;
         p span {
           bottom: 1px;
@@ -391,6 +383,16 @@
           height: 19px;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pricing {
+    padding-top: 150px;
+    &__tumbler {
+      margin: 0 auto;
+      width: 240px;
     }
   }
 }

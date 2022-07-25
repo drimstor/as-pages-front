@@ -34,3 +34,11 @@ $bg: #f8f9fa;
   color: $secondary;
   letter-spacing: 0.25px;
 }
+
+// 14 20 / 616161
+%MiniText {
+  @extend %Roboto;
+  @include text(0.875rem, 1.25rem);
+  color: $secondary;
+  letter-spacing: 0.25px;
+}

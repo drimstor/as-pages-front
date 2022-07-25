@@ -8,6 +8,7 @@ import {
   PromoAccess,
   MarketExplorer,
   Finder,
+  AppPage
 } from './pages';
 import { Header, Footer, ScrollToTop } from './components';
 import { ModalContextProvider } from './contexts';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/promo-access" element={<PromoAccess />} exact />
         <Route path="/market-explorer" element={<MarketExplorer />} exact />
         <Route path="/finder" element={<Finder />} exact />
+        <Route path="/app-page" element={<AppPage />} exact />
       </Routes>
       <Footer />
       <ScrollToTop />

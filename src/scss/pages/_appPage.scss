@@ -1,0 +1,32 @@
+.app-page {
+  background: #d1d1d11e;
+  &__notification {
+    padding: 90px 0 20px;
+    h4 {
+      @include text(1rem, 1.1875rem);
+      font-weight: 400;
+      letter-spacing: 0.25px;
+      color: $table;
+    }
+    span {
+      @include text(0.875rem, 1rem);
+      color: $secondary;
+      letter-spacing: 0.1px;
+      margin: 8px 0;
+      display: inline-block;
+
+    }
+    p {
+      @extend %MiniText;
+      color: $disabled;
+
+    }
+  }
+  nav {
+    margin: 30px 0;
+    li a, svg {
+      color: $disabled;
+      font-weight: 400;
+    }
+  }
+}

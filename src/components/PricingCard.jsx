@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Divider } from '@mui/material';
+import { Button, Divider, Tooltip } from '@mui/material';
 
 function PricingCard({
   name,
@@ -12,6 +12,7 @@ function PricingCard({
   favorite,
   ul,
   title,
+  tooltip,
 }) {
   return (
     <div className={favorite ? 'pricing__card pricing__card--favorite' : 'pricing__card'}>
@@ -30,7 +31,16 @@ function PricingCard({
       <ul>
         <Divider />
         {title && <span>{title}</span>}
-        {ul && ul.map((item, index) => <li key={index}>{item}</li>)}
+        {ul &&
+          ul.map((item, index) =>
+            tooltip && tooltip[index] ? (
+              <Tooltip key={index} title={tooltip[index]} arrow placement="right">
+                <li key={index}>{item}</li>
+              </Tooltip>
+            ) : (
+              <li key={index}>{item}</li>
+            ),
+          )}
       </ul>
     </div>
   );
