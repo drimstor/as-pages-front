@@ -32,7 +32,7 @@ function Pricing() {
 
   // Закреп названий тарифов
   matches1025 &&
-    document.body.addEventListener('scroll', function () {
+    document.addEventListener('scroll', function () {
       const triggerIn = document.querySelector('#tablehead');
       const fixBlock = document.querySelector('.tableBtns');
       const triggerOut = document.querySelector('.tablebottom');
