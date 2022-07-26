@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { TextAndImg, Features, GetStart, SeeDown, Title, PlansCards } from '../components';
 import { ModalContext } from '../contexts';
 
@@ -15,7 +15,7 @@ import collections_mini_img from '../assets/img/add-col.png';
 import chrome_store_img from '../assets/img/ChromeWebStore.png';
 
 export default function ChromeExtention() {
-  const { matches769 } = useContext(ModalContext);
+  const { matches769 } = React.useContext(ModalContext);
   return (
     <>
       <Title

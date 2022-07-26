@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Title, Features, GetStart, SeeDown, TextAndImg, EmailForm } from '../components';
 import { ModalContext } from '../contexts';
 
@@ -18,7 +18,7 @@ import stock1_img from '../assets/img/stockpeople1.png';
 import stock2_img from '../assets/img/stockpeople2.png';
 
 function Collections() {
-  const { handleModalSingUp } = useContext(ModalContext);
+  const { handleModalSingUp } = React.useContext(ModalContext);
   return (
     <>
       {/* ---------------------------- */}

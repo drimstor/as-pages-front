@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { ModalGlobal, ModalSingUp, ModalContactUs, ModalHelpToChoose } from '../../components';
 import { ModalContext } from './';
@@ -9,9 +9,9 @@ import { createTheme } from '@mui/material/styles';
 
 const ModalContextProvider = ({ children }) => {
   // Состояние открытости модалки
-  const [openedModal, setOpenModal] = useState(false);
+  const [openedModal, setOpenModal] = React.useState(false);
   // Контент модалки
-  const [modalContent, setModalContent] = useState(Array(0));
+  const [modalContent, setModalContent] = React.useState(Array(0));
   // Открыть модал с контентом в аргументе и подвинуть хедер на ширину скролла
   const openModal = (modalConfig) => {
     setModalContent(modalConfig);

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import logo from '../assets/img/logo.svg';
 import { ModalContext } from '../contexts';
 
@@ -21,16 +21,16 @@ const navLi = ['Overview', 'Features', 'Plans', 'Pricing'];
 
 export default function Header() {
   // Состояние активности табов
-  const [listItem, setListItem] = useState(false);
+  const [listItem, setListItem] = React.useState(false);
   const handleChange = (event, newValue) => {
     setListItem(newValue);
   };
   // Состояние открытия меню
-  const [openDrawer, setOpenDrawer] = useState(false);
+  const [openDrawer, setOpenDrawer] = React.useState(false);
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
   };
-  const { matches1025, handleModalSingUp, handleModalContactUs } = useContext(ModalContext);
+  const { matches1025, handleModalSingUp, handleModalContactUs } = React.useContext(ModalContext);
   return (
     <>
       {matches1025 ? (
