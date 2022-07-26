@@ -367,6 +367,7 @@
         min-height: 680px;
         &--favorite::after {
           top: 0px;
+
           border-bottom: 2px solid $blue;
         }
       }
@@ -392,6 +393,7 @@
         }
         &--favorite::after {
           height: 19px;
+          padding-top: 0px;
         }
       }
     }
@@ -405,7 +407,13 @@
       margin: 0 auto;
       width: 240px;
     }
+    .pricing__card {
+      &--favorite::after {
+        padding-top: 1px;
+      }
+    }
   }
+  
 }
 
 @media screen and (max-width: 330px) {

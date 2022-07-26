@@ -27,7 +27,6 @@ function PricingCard({
   React.useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
   }, []);
-
   function handleOutsideClick(event) {
     const path = event.path || (event.composedPath && event.composedPath());
     if (!path.includes(ulRef.current)) {

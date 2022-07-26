@@ -8,7 +8,7 @@ import {
   PromoAccess,
   MarketExplorer,
   Finder,
-  AppPage
+  AppPage,
 } from './pages';
 import { Header, Footer, ScrollToTop } from './components';
 import { ModalContextProvider } from './contexts';
