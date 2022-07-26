@@ -1,8 +1,4 @@
-import React, {
-  useContext,
-  useState,
-  // useEffect
-} from 'react';
+import React from 'react';
 import { GetStart, PricingCard, SeeDown } from '../components';
 import { ModalContext } from '../contexts';
 
@@ -16,15 +12,15 @@ function Pricing() {
     handleModalContactUs,
     // handleModalHelpToChoose,
     matches1025,
-  } = useContext(ModalContext);
+  } = React.useContext(ModalContext);
 
   // Состояние Switch'a
-  const [switchState, setSwitchState] = useState(true);
+  const [switchState, setSwitchState] = React.useState(true);
   function handleSwitch(event) {
     setSwitchState(event.target.checked);
   }
 
-  // useEffect(
+  // React.useEffect(
   //   () => {
   //     // Всплывающая модалка
   //     const timer = setTimeout(handleModalHelpToChoose, 45000);
@@ -36,7 +32,7 @@ function Pricing() {
 
   // Закреп названий тарифов
   matches1025 &&
-    document.addEventListener('scroll', function () {
+    document.body.addEventListener('scroll', function () {
       const triggerIn = document.querySelector('#tablehead');
       const fixBlock = document.querySelector('.tableBtns');
       const triggerOut = document.querySelector('.tablebottom');
@@ -733,12 +729,12 @@ function Pricing() {
                     'Starter Public Collections',
                   ]}
                   tooltip={[
-                  'Explore last month’s metrics',
-                  '1000 app cards daily',
-                  'Explore niches summary and find yours',
-                  'Add 100 apps & devs in Private Collecton and monitor it',
-                  'Explore apps & devs cards with key metrics and rankings',
-                ]}
+                    'Explore last month’s metrics',
+                    '1000 app cards daily',
+                    'Explore niches summary and find yours',
+                    'Add 100 apps & devs in Private Collecton and monitor it',
+                    'Explore apps & devs cards with key metrics and rankings',
+                  ]}
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -762,12 +758,12 @@ function Pricing() {
                     'SDK Explorer',
                   ]}
                   tooltip={[
-                  'Full access to apps&devs database',
-                  'Generate reports in 1 click: App monitor, App Timeline, App ranking history, Apps rankings by local, etc',
-                  'Explore competitors in more dimensions with app reports',
-                  'Track customized selections',
-                  'Explore&Export apps&devs cards with key metrics, rankings and timeline',
-                ]}
+                    'Full access to apps&devs database',
+                    'Generate reports in 1 click: App monitor, App Timeline, App ranking history, Apps rankings by local, etc',
+                    'Explore competitors in more dimensions with app reports',
+                    'Track customized selections',
+                    'Explore&Export apps&devs cards with key metrics, rankings and timeline',
+                  ]}
                 />
               </SwiperSlide>
               <SwiperSlide>

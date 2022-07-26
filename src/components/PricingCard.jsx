@@ -27,6 +27,7 @@ function PricingCard({
   React.useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
   }, []);
+
   function handleOutsideClick(event) {
     const path = event.path || (event.composedPath && event.composedPath());
     if (!path.includes(ulRef.current)) {
@@ -40,7 +41,9 @@ function PricingCard({
       <p>
         {!month && <span>$</span>} {price}
       </p>
-      <span className='pricing__span' style={month && { visibility: 'hidden' }}>/month</span>
+      <span className="pricing__span" style={month && { visibility: 'hidden' }}>
+        /month
+      </span>
       <Button
         variant={favorite ? 'contained' : 'outlined'}
         onClick={buttonClick}
