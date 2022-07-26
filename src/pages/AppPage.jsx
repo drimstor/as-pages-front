@@ -36,7 +36,8 @@ function AppPage() {
         </div>
       </div>
 
-<Divider />
+      <Divider />
+      
       <div className="wrapper">
         <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
           {breadcrumbs}

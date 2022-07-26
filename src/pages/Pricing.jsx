@@ -732,6 +732,13 @@ function Pricing() {
                     '1000 Cards daily ',
                     'Starter Public Collections',
                   ]}
+                  tooltip={[
+                  'Explore last month’s metrics',
+                  '1000 app cards daily',
+                  'Explore niches summary and find yours',
+                  'Add 100 apps & devs in Private Collecton and monitor it',
+                  'Explore apps & devs cards with key metrics and rankings',
+                ]}
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -754,6 +761,13 @@ function Pricing() {
                     'API',
                     'SDK Explorer',
                   ]}
+                  tooltip={[
+                  'Full access to apps&devs database',
+                  'Generate reports in 1 click: App monitor, App Timeline, App ranking history, Apps rankings by local, etc',
+                  'Explore competitors in more dimensions with app reports',
+                  'Track customized selections',
+                  'Explore&Export apps&devs cards with key metrics, rankings and timeline',
+                ]}
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -786,6 +800,11 @@ function Pricing() {
                     'Monitor 5 Android apps',
                     '300 Cards daily',
                     'Free Public Collections ',
+                  ]}
+                  tooltip={[
+                    'Try niche finder - explore first 5 apps & publishers',
+                    'Add 5 apps in Private Collection and monitor it',
+                    'Explore apps & publichers cards with key metrics',
                   ]}
                 />
               </SwiperSlide>
