@@ -112,7 +112,7 @@
             transform: rotate(135deg);
           }
         }
-        li[data-mui-internal-clone-element]::after {
+        li[aria-label]::after {
           content: '';
           width: 10px;
           height: 10px;

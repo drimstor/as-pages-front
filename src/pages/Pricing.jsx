@@ -153,7 +153,7 @@ function Pricing() {
                   '100 Private Collections',
                   '10000 cards daily',
                   'All Public Collections',
-                  'Apps&Devs Timeline',
+                  'Apps & Devs Timeline',
                   'CSV Export',
                   'API',
                   'SDK Explorer',
@@ -163,7 +163,7 @@ function Pricing() {
                   'Generate reports in 1 click: App monitor, App Timeline, App ranking history, Apps rankings by local, etc',
                   'Explore competitors in more dimensions with app reports',
                   'Track customized selections',
-                  'Explore&Export apps&devs cards with key metrics, rankings and timeline',
+                  'Explore & Export apps&devs cards with key metrics, rankings and timeline',
                 ]}
               />
               <PricingCard
@@ -752,7 +752,7 @@ function Pricing() {
                     '100 Private Collections',
                     '10000 cards daily',
                     'All Public Collections',
-                    'Apps&Devs Timeline',
+                    'Apps & Devs Timeline',
                     'CSV Export',
                     'API',
                     'SDK Explorer',
@@ -762,7 +762,7 @@ function Pricing() {
                     'Generate reports in 1 click: App monitor, App Timeline, App ranking history, Apps rankings by local, etc',
                     'Explore competitors in more dimensions with app reports',
                     'Track customized selections',
-                    'Explore&Export apps&devs cards with key metrics, rankings and timeline',
+                    'Explore & Export apps&devs cards with key metrics, rankings and timeline',
                   ]}
                 />
               </SwiperSlide>
