@@ -117,6 +117,7 @@ function Pricing() {
                   'Explore apps & publichers cards with key metrics',
                 ]}
               />
+
               <PricingCard
                 name={'Starter'}
                 price={switchState ? '19' : '24'}
@@ -159,11 +160,11 @@ function Pricing() {
                   'SDK Explorer',
                 ]}
                 tooltip={[
-                  'Full access to apps&devs database',
+                  'Full access to apps & devs database',
                   'Generate reports in 1 click: App monitor, App Timeline, App ranking history, Apps rankings by local, etc',
                   'Explore competitors in more dimensions with app reports',
                   'Track customized selections',
-                  'Explore & Export apps&devs cards with key metrics, rankings and timeline',
+                  'Explore & Export apps & devs cards with key metrics, rankings and timeline',
                 ]}
               />
               <PricingCard

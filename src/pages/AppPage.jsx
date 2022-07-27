@@ -35,13 +35,16 @@ function AppPage() {
           </p>
         </div>
       </div>
-
+      {/* ---------------------------- */}
       <Divider />
-      
+      {/* ---------------------------- */}
       <div className="wrapper">
         <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
           {breadcrumbs}
         </Breadcrumbs>
+        {/* ---------------------------- */}
+        <span className="app-page__reward">TOP 5 Apps like «Zoom Cloud Meetings» app</span>
+        {/* ---------------------------- */}
       </div>
     </div>
   );

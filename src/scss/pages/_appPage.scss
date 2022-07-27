@@ -20,6 +20,18 @@
       color: $disabled;
     }
   }
+  &__reward {
+    color: $blue;
+    position: relative;
+    @include text(1.125rem, 1.75rem);
+    &::after {
+      content: '\276F';
+      position: absolute;
+      font-size: 14px;
+      right: -15px;
+      bottom: -4px;
+    }
+  }
   nav {
     margin: 30px 0;
     li a,

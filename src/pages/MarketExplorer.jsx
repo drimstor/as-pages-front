@@ -4,10 +4,12 @@ import { Title, Features, GetStart, SeeDown, TextAndImg } from '../components';
 
 import { Groups, BusinessCenter, Hail } from '@mui/icons-material';
 
-import title_img from '../assets/img/Screenshot_2022-07-2.webp';
-import top_img from '../assets/img/2022-07-20_160651.jpg';
-import top1_img from '../assets/img/2022-07-20_160709.PNG';
-import top2_img from '../assets/img/2022-07-20_160702.jpg';
+import title_img from '../assets/img/market-explorer-title.png';
+import title_img_mob from '../assets/img/market-explorer-title-mob.png';
+
+import top_img from '../assets/img/market-explorer-img1.png';
+import top1_img from '../assets/img/market-explorer-img2.png';
+import top2_img from '../assets/img/market-explorer-img3.png';
 
 function MarketExplorer() {
   return (
@@ -15,7 +17,7 @@ function MarketExplorer() {
       {/* ---------------------------- */}
       <Title
         img={title_img}
-        // imgMob={title_img_mob}
+        imgMob={title_img_mob}
         title={'Dig into the full range of apps and developers in a few clicks'}
         paragraph={
           'Improve your strategy with unlimited access to mobile market insights. Millions of apps from 1.7 million developers at your fingertips'

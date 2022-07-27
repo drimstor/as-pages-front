@@ -60,7 +60,7 @@
         @include text(1.25rem, 1.4375rem);
         margin-bottom: 10px;
       }
-      p {
+      p.pricing__price {
         font-size: 2.2rem;
         color: $blue;
         margin-bottom: -10px;
@@ -82,7 +82,7 @@
       }
       ul {
         span.pricing__subtext,
-        p {
+        > p {
           font-weight: 500;
           font-size: 16px;
           color: $main;
@@ -93,12 +93,11 @@
         }
         li {
           margin: 13px 0;
-          @include text(0.875rem, 1.25rem);
+          @include text(14px, 20px);
           color: $main;
           padding-left: 20px;
           position: relative;
           letter-spacing: 0.25px;
-          cursor: pointer;
           padding-right: 7px;
           &::before {
             content: '';
@@ -113,15 +112,8 @@
             transform: rotate(135deg);
           }
         }
-        li[aria-label]::after {
-          content: '';
-          width: 10px;
-          height: 10px;
-          background: url(../../assets/img/info-icon.svg) no-repeat center center;
-          position: absolute;
-          bottom: 8px;
-          margin-left: 2px;
-          color: #1976d2;
+        li[data-mui-internal-clone-element] {
+          cursor: help;
         }
       }
       &--favorite {
@@ -413,7 +405,6 @@
       }
     }
   }
-  
 }
 
 @media screen and (max-width: 330px) {

@@ -124,6 +124,16 @@ ul.MuiList-root {
   outline: none;
 }
 
+// Тултип
+span.MuiTooltip-arrow::before {
+  background-color: #f5f5f9;
+  border: 1px solid #dadde9;
+  box-shadow: 0px 0px 6px rgb(0 0 0 / 2%);
+}
+div.MuiTooltip-popper[data-popper-placement='top'] .MuiTooltip-tooltip {
+  margin-bottom: 16px;
+}
+
 @media screen and (max-width: 425px) {
   button.w100-btn,
   .title__text a {
