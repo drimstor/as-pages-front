@@ -80,7 +80,8 @@ function PricingCard({
                 title={
                   <React.Fragment>
                     <Typography color="inherit">{tooltip[index]}</Typography>
-                    {/* {"It's very engaging. Right?"}  */}
+                    {"It's very engaging. Right?"} 
+                    <em>{"And here's"}</em> <b>{'some'}</b> <u>{'amazing content'}</u>.{' '}
                     <img src={img} width="530px" alt="descr-img" />
                   </React.Fragment>
                 }>
@@ -113,19 +114,3 @@ function PricingCard({
 }
 
 export default PricingCard;
-
-{
-  /* <Tooltip
-                PopperProps={{
-                  disablePortal: true,
-                }}
-                open={open === index && true}
-                title={tooltip[index]}
-                key={index}
-                arrow
-                placement="top">
-                <li onClick={() => handleTooltipOpen(index)} key={index}>
-                  {item}
-                </li>
-              </Tooltip> */
-}

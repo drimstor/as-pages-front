@@ -6,7 +6,6 @@ import { Groups, BusinessCenter, Hail } from '@mui/icons-material';
 
 import title_img from '../assets/img/market-explorer-title.png';
 import title_img_mob from '../assets/img/market-explorer-title-mob.png';
-
 import top_img from '../assets/img/market-explorer-img1.png';
 import top1_img from '../assets/img/market-explorer-img2.png';
 import top2_img from '../assets/img/market-explorer-img3.png';
