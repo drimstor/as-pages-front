@@ -1,0 +1,485 @@
+.app-page {
+  background: #d1d1d11e;
+  position: relative;
+  &__nav-wrapper {
+    margin-left: auto;
+  }
+  .flex-wrapper {
+    display: flex;
+  }
+  &__nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 132px;
+    right: 0;
+    p {
+      @extend %MiniText;
+      margin-bottom: 25px;
+    }
+    a {
+      font-weight: 400;
+    }
+    li {
+      @extend %MiniText;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    li.--active {
+      color: $main;
+      font-weight: 500;
+    }
+    ul {
+      position: relative;
+      padding: 0 0 0 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    &--progress-container {
+      position: absolute;
+      left: 5px;
+      width: 3px;
+      height: 100%;
+      background: $corners;
+    }
+    &--progress-bar {
+      width: 3px;
+      background: $main;
+      height: 0%;
+    }
+  }
+  &__wrapper {
+    width: 1000px;
+  }
+  &__rankings {
+    h3 {
+      @include text(1.375rem, 1.625rem);
+      font-weight: 400;
+      @extend %Roboto;
+      margin: 110px 0 35px;
+    }
+    button.MuiButton-root.MuiButton-outlined.app-page__rankings--btn {
+      @extend %MiniText;
+      color: $main;
+      border: 1px solid $main;
+      margin-top: 50px;
+      position: relative;
+      width: 190px;
+      left: calc(50% - 95px);
+      margin-bottom: 150px;
+    }
+    .MuiTableContainer-root {
+      margin-top: 50px;
+      width: 100%;
+      border: 1px solid $corners;
+      border-radius: 4px;
+      background: white;
+      table.MuiTable-root {
+        max-width: 100%;
+        * {
+          font-size: 1rem;
+        }
+        thead.MuiTableHead-root tr th.MuiTableCell-root:nth-child(4) img {
+          margin-bottom: -2px;
+          margin-right: -5px;
+        }
+        thead.MuiTableHead-root tr th.MuiTableCell-root:nth-child(6) {
+          padding-right: 0;
+          margin-left: -25px;
+          position: relative;
+          right: -35px;
+        }
+        tr td.MuiTableCell-root:nth-child(7) {
+          padding-left: 0;
+          &::before {
+            content: '+3';
+            color: $disabled;
+            padding-right: 2px;
+          }
+        }
+        th.MuiTableCell-root:nth-child(5),
+        tr td.MuiTableCell-root:nth-child(5) {
+          padding-left: 0;
+        }
+        tr td.MuiTableCell-root:nth-child(5) {
+          &::before {
+            content: '+3';
+            color: $disabled;
+            padding-right: 2px;
+          }
+        }
+        th.MuiTableCell-root:nth-child(6),
+        tr td.MuiTableCell-root:nth-child(6) {
+          padding-right: 12px;
+        }
+
+        th.MuiTableCell-root:nth-child(1) {
+          width: 50px;
+          max-width: 50px;
+          text-align: center;
+        }
+        tr:nth-child(even) td.MuiTableCell-root:nth-child(7) {
+          color: red;
+        }
+        tr:nth-child(odd) td.MuiTableCell-root:nth-child(7) {
+          color: green;
+        }
+        tr:nth-child(even) td.MuiTableCell-root:nth-child(5) {
+          color: red;
+        }
+        tr:nth-child(odd) td.MuiTableCell-root:nth-child(5) {
+          color: green;
+        }
+        th.MuiTableCell-root:nth-child(2),
+        tr td.MuiTableCell-root:nth-child(2) {
+          width: 38px;
+          max-width: 38px;
+          text-align: center;
+          padding-right: 0;
+          padding-left: 5px;
+          img {
+            margin-bottom: -4px;
+          }
+        }
+        .MuiTableCell-root.MuiTablePagination-root:last-child {
+          border: 0;
+        }
+        div.MuiInputBase-root {
+          border: 1px solid $corners;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  &__paragraphs {
+    padding-top: 35px;
+    position: relative;
+    &--shadow {
+      position: absolute;
+      width: 100%;
+      height: 25px;
+      bottom: 0;
+      // background: rgb(2, 0, 36);
+      // background: linear-gradient(
+      //   0deg,
+      //   rgba(255, 255, 255, 1) 0%,
+      //   rgba(0, 212, 255, 0) 100%F
+      // );
+      background: linear-gradient(180deg, #616161 0%, rgba(97, 97, 97, 0) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    &--span {
+      width: 100px;
+      display: inline-block;
+      position: relative;
+      left: calc(50% - 50px);
+      margin-top: 25px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  &__marketing {
+    h3 {
+      @include text(1.375rem, 1.625rem);
+      font-weight: 400;
+      @extend %Roboto;
+      margin-bottom: 35px;
+    }
+    p {
+      margin: 10px 0;
+      width: 710px;
+      letter-spacing: 0.5px;
+      @include text(1rem, 150%);
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      bottom: 50%;
+      z-index: 99;
+      @include size(36px, 36px);
+      background: #ffffff;
+      -webkit-box-shadow: 0px 1px 13px 0px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 0px 1px 13px 0px rgba(34, 60, 80, 0.2);
+      box-shadow: 0px 1px 13px 0px rgba(34, 60, 80, 0.2);
+      border-radius: 50%;
+      &::after {
+        content: '\276F';
+        position: absolute;
+        font-size: 20px;
+        top: 8px;
+        color: $secondary;
+      }
+    }
+    .swiper-button-prev {
+      &::after {
+        content: '\276E';
+      }
+    }
+  }
+  &__notification {
+    padding: 90px 0 20px;
+    h4 {
+      @include text(1rem, 1.1875rem);
+      font-weight: 400;
+      letter-spacing: 0.25px;
+      color: $table;
+    }
+    span {
+      @include text(0.875rem, 1rem);
+      color: $secondary;
+      letter-spacing: 0.1px;
+      margin: 8px 0;
+      display: inline-block;
+    }
+    p {
+      @extend %MiniText;
+      color: $disabled;
+    }
+  }
+  &__prompt {
+    background: #e3f2fd;
+    border-radius: 4px;
+    padding: 30px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    margin: 80px 0;
+    svg.MuiSvgIcon-root {
+      font-size: 30px;
+      color: #2196f3;
+      padding: 10px;
+      width: 45px;
+      height: 45px;
+      background: white;
+      border-radius: 50%;
+    }
+    h4 {
+      @extend %ProductSans;
+      color: $table;
+      @include text(1.375rem, 1.625rem);
+      font-weight: 500;
+    }
+    p {
+      margin: 15px 0;
+      letter-spacing: 0.5px;
+    }
+    span {
+      @extend %ProductSans;
+      margin-bottom: 0;
+    }
+    .app-page__reward::after {
+      bottom: -1px;
+    }
+  }
+  &__reward {
+    color: $blue;
+    position: relative;
+    @include text(1.125rem, 1.75rem);
+    margin-bottom: 40px;
+    display: inline-block;
+    &::after {
+      content: '\276F';
+      position: absolute;
+      font-size: 14px;
+      right: -15px;
+      bottom: -4px;
+    }
+  }
+  nav {
+    margin: 30px 0;
+    li a,
+    svg {
+      color: $disabled;
+      font-weight: 400;
+    }
+  }
+  .app-info {
+    position: relative;
+    &__stats {
+      margin-top: 100px;
+      .MuiBox-root {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 40px 0 -20px;
+      }
+      .MuiTabs-flexContainer button.MuiButtonBase-root {
+        padding: 12px 35px;
+        letter-spacing: 1.25px;
+      }
+      h3 {
+        @include text(1.375rem, 1.75rem);
+        @extend %Roboto;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+      p {
+        letter-spacing: 0.5px;
+        @include text(1rem, 150%);
+        margin-bottom: 35px;
+      }
+    }
+
+    &__chart {
+      position: relative;
+      width: 100%;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      background: #ffffff;
+      padding: 20px 0;
+      padding-right: 50px;
+      &--bottom {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-left: 90px;
+        margin-top: 10px;
+      }
+      &--item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        span {
+          display: inline-block;
+          width: 35px;
+          height: 2px;
+          background: #000;
+        }
+        p {
+          margin-bottom: 0;
+          font-size: 12px;
+        }
+      }
+      .recharts-wrapper {
+        .recharts-tooltip-wrapper {
+          outline: none;
+          div {
+            border-radius: 4px;
+          }
+        }
+        svg.recharts-surface {
+          g.recharts-layer {
+            font-size: 12px;
+          }
+        }
+      }
+      &--wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 25px;
+        p {
+          margin-bottom: 10px;
+          letter-spacing: 0.25px;
+          color: #616161;
+          font-size: 12px;
+        }
+      }
+      h4 {
+        font-size: 18px;
+        line-height: 150%;
+        @extend %ProductSans;
+        font-weight: 400;
+        padding-left: 25px;
+        margin-bottom: 10px;
+      }
+    }
+    &__title {
+      display: flex;
+      gap: 25px;
+      button.MuiButton-root {
+        height: 36px;
+        @extend %MiniText;
+        color: white;
+        position: absolute;
+        right: 0;
+      }
+    }
+    &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      h2 {
+        @include text(1.75rem, 2rem);
+        letter-spacing: 0.25px;
+        @extend %Roboto;
+        font-weight: 400;
+      }
+      p {
+        @extend %MiniText;
+        color: $table;
+      }
+    }
+    &__country {
+      display: flex;
+      align-items: center;
+      img {
+        margin-left: -3px;
+      }
+      a {
+        margin-left: 8px;
+        margin-bottom: 3px;
+        letter-spacing: 0.5px;
+        font-weight: 400;
+      }
+    }
+
+    &__metrics {
+      margin-top: 50px;
+      h3 {
+        @include text(1.25rem, 1.5rem);
+        @extend %Roboto;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+      table.MuiTable-root {
+        tr.MuiTableRow-root .MuiTableCell-root {
+          height: 40px;
+          padding: 0px;
+        }
+        th.MuiTableCell-root {
+          width: 200px;
+        }
+        td.MuiTableCell-root:nth-child(2) {
+          width: 60px;
+          font-weight: 500;
+        }
+        td.MuiTableCell-root:nth-child(3) {
+          width: 17px;
+          font-weight: 500;
+          font-size: 15px;
+          padding-bottom: 1px;
+        }
+        td.MuiTableCell-root:nth-child(4) {
+          width: 70px;
+          color: $disabled;
+          font-weight: 500;
+        }
+        tr.MuiTableRow-root:nth-child(3)td.MuiTableCell-root:nth-child(3) {
+          color: red;
+        }
+        tr.MuiTableRow-root:nth-child(4)td.MuiTableCell-root:nth-child(3) {
+          color: green;
+        }
+        tr.MuiTableRow-root:nth-child(1)td.MuiTableCell-root:nth-child(2)::before {
+          content: '★';
+          font-size: 16px;
+          margin-left: -3px;
+        }
+        td.MuiTableCell-root:last-child {
+          padding-right: 25px;
+        }
+      }
+    }
+    &__subtitle {
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: underline;
+      text-transform: uppercase;
+      color: $table;
+      letter-spacing: 0.5px;
+    }
+  }
+}
