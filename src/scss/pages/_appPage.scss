@@ -283,7 +283,7 @@
       position: absolute;
       font-size: 14px;
       right: -15px;
-      bottom: -4px;
+      bottom: -2px;
     }
   }
   nav {
@@ -332,7 +332,8 @@
         display: flex;
         align-items: center;
         gap: 30px;
-        padding-left: 70px;
+        padding-left: 90px;
+        margin-top: 10px;
       }
       &--item {
         display: flex;
@@ -381,7 +382,7 @@
         @extend %ProductSans;
         font-weight: 400;
         padding-left: 25px;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
       }
     }
     &__title {
