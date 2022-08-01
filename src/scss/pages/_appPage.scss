@@ -296,6 +296,94 @@
   }
   .app-info {
     position: relative;
+    &__stats {
+      margin-top: 100px;
+      .MuiBox-root {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 40px 0 -20px;
+      }
+      .MuiTabs-flexContainer button.MuiButtonBase-root {
+        padding: 12px 35px;
+        letter-spacing: 1.25px;
+      }
+      h3 {
+        @include text(1.375rem, 1.75rem);
+        @extend %Roboto;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+      p {
+        letter-spacing: 0.5px;
+        @include text(1rem, 150%);
+        margin-bottom: 35px;
+      }
+    }
+
+    &__chart {
+      position: relative;
+      width: 100%;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      background: #ffffff;
+      padding: 20px 0;
+      padding-right: 50px;
+      &--bottom {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-left: 70px;
+      }
+      &--item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        span {
+          display: inline-block;
+          width: 35px;
+          height: 2px;
+          background: #000;
+        }
+        p {
+          margin-bottom: 0;
+          font-size: 12px;
+        }
+      }
+      .recharts-wrapper {
+        .recharts-tooltip-wrapper {
+          outline: none;
+          div {
+            border-radius: 4px;
+          }
+        }
+        svg.recharts-surface {
+          g.recharts-layer {
+            font-size: 12px;
+          }
+        }
+      }
+      &--wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 25px;
+        p {
+          margin-bottom: 10px;
+          letter-spacing: 0.25px;
+          color: #616161;
+          font-size: 12px;
+        }
+      }
+      h4 {
+        font-size: 18px;
+        line-height: 150%;
+        @extend %ProductSans;
+        font-weight: 400;
+        padding-left: 25px;
+        margin-bottom: 25px;
+      }
+    }
     &__title {
       display: flex;
       gap: 25px;
@@ -336,29 +424,7 @@
         font-weight: 400;
       }
     }
-    &__stats {
-      margin-top: 100px;
-      .MuiBox-root {
-        padding-left: 0;
-        padding-right: 0;
-        margin: 40px 0 -20px;
-      }
-      .MuiTabs-flexContainer button.MuiButtonBase-root {
-        padding: 12px 35px;
-        letter-spacing: 1.25px;
-      }
-      h3 {
-        @include text(1.375rem, 1.75rem);
-        @extend %Roboto;
-        font-weight: 400;
-        margin-bottom: 10px;
-      }
-      p {
-        letter-spacing: 0.5px;
-        @include text(1rem, 150%);
-        margin-bottom: 35px;
-      }
-    }
+    
 
     &__metrics {
       margin-top: 50px;

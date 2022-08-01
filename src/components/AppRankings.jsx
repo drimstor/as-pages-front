@@ -1,15 +1,7 @@
 import React from 'react';
 
-import img from '../assets/google_ranking_chart.png';
-import arrow from '../assets/img/arrow-up.svg';
-
-import flagUk from '../assets/img/flag-uk.svg';
-import flagMalta from '../assets/img/flag-malta.svg';
-import flagGermany from '../assets/img/flag-germany.svg';
-import flagFrance from '../assets/img/flag-france.svg';
-import flagRussia from '../assets/img/flag-russia.svg';
-
 import { FirstPage, LastPage, KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+
 import { useTheme } from '@mui/material/styles';
 import {
   TableHead,
@@ -22,8 +14,95 @@ import {
   TablePagination,
   IconButton,
   Box,
-  Button
+  Button,
 } from '@mui/material';
+
+import img from '../assets/google_ranking_chart.png';
+import arrow from '../assets/img/arrow-up.svg';
+
+import flagUk from '../assets/img/flag-uk.svg';
+import flagMalta from '../assets/img/flag-malta.svg';
+import flagGermany from '../assets/img/flag-germany.svg';
+import flagFrance from '../assets/img/flag-france.svg';
+import flagRussia from '../assets/img/flag-russia.svg';
+
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+
+const chartColorsRevenue = ['#2196F3', '#1FAA00', '#FFEA00', '#FF9800', '#D81B60'];
+
+const data = [
+  {
+    name: 'Dec 1, 2021',
+    UK: 4000,
+    Malta: 2400,
+    Germany: 1300,
+    France: 3500,
+    Russia: 3000,
+    amt: 2400,
+  },
+  {
+    name: 'Dec 5, 2021',
+    UK: 3000,
+    Malta: 1398,
+    Germany: 1800,
+    France: 3000,
+    Russia: 3800,
+    amt: 2210,
+  },
+  {
+    name: 'Dec 10, 2021',
+    UK: 2000,
+    Malta: 4800,
+    Germany: 1500,
+    France: 2500,
+    Russia: 3000,
+    amt: 2290,
+  },
+  {
+    name: 'Dec 15, 2021',
+    UK: 2780,
+    Malta: 3908,
+    Germany: 2300,
+    France: 3000,
+    Russia: 4000,
+    amt: 2000,
+  },
+  {
+    name: 'Dec 20, 2021',
+    UK: 1890,
+    Malta: 4800,
+    Germany: 2700,
+    France: 3900,
+    Russia: 3500,
+    amt: 2181,
+  },
+  {
+    name: 'Dec 25, 2021',
+    UK: 2390,
+    Malta: 3800,
+    Germany: 1700,
+    France: 4500,
+    Russia: 2500,
+    amt: 2500,
+  },
+  {
+    name: 'Dec 30, 2021',
+    UK: 2490,
+    Malta: 4300,
+    Germany: 1300,
+    France: 4100,
+    Russia: 3600,
+    amt: 2100,
+  },
+];
 
 const rows = [
   createData('1', flagUk, 'United Kingdom', '2', '▲', '11', '▲'),
@@ -93,7 +172,59 @@ function AppRankings({ title }) {
     <div>
       <div className="app-page__rankings">
         <h3>Daily «{title}» TOP Rankings Charts by Country for «OS» on «PLATFORM» </h3>
-        <img src={img} alt="img" />
+        <div className="app-info__chart">
+          <h4>30 days Ranking history</h4>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart
+              width={500}
+              height={300}
+              data={data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}>
+              <Line
+                type="monotone"
+                dataKey="UK"
+                stroke={chartColorsRevenue[0]}
+                activeDot={{ r: 8 }}
+              />
+              <Line type="monotone" dataKey="Malta" stroke={chartColorsRevenue[1]} />
+              <Line type="monotone" dataKey="Germany" stroke={chartColorsRevenue[2]} />
+              <Line type="monotone" dataKey="France" stroke={chartColorsRevenue[3]} />
+              <Line type="monotone" dataKey="Russia" stroke={chartColorsRevenue[4]} />
+              <CartesianGrid stroke="#E0E0E0" strokeDasharray="0" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+            </LineChart>
+          </ResponsiveContainer>
+          <div className="app-info__chart--bottom">
+            <div className="app-info__chart--item">
+              <span style={{ background: `${chartColorsRevenue[0]}` }}></span>
+              <img src={flagUk} alt="flagUk" /> <p>UK</p>
+            </div>
+            <div className="app-info__chart--item">
+              <span style={{ background: `${chartColorsRevenue[1]}` }}></span>
+              <img src={flagMalta} alt="flagMalta" /> <p>Malta</p>
+            </div>
+            <div className="app-info__chart--item">
+              <span style={{ background: `${chartColorsRevenue[2]}` }}></span>
+              <img src={flagGermany} alt="flagGermany" /> <p>Germany</p>
+            </div>
+            <div className="app-info__chart--item">
+              <span style={{ background: `${chartColorsRevenue[3]}` }}></span>
+              <img src={flagFrance} alt="flagFrance" /> <p>France</p>
+            </div>
+            <div className="app-info__chart--item">
+              <span style={{ background: `${chartColorsRevenue[4]}` }}></span>
+              <img src={flagRussia} alt="flagRussia" /> <p>Russia</p>
+            </div>
+          </div>
+        </div>
+
         <TableContainer>
           <Table sx={{ minWidth: 300 }} aria-label="custom pagination table">
             <TableHead>
@@ -164,7 +295,9 @@ function AppRankings({ title }) {
           </Table>
         </TableContainer>
 
-        <Button className='app-page__rankings--btn' variant="outlined">See ranking details </Button>
+        <Button className="app-page__rankings--btn" variant="outlined">
+          See ranking details
+        </Button>
       </div>
     </div>
   );

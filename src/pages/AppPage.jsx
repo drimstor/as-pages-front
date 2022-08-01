@@ -36,12 +36,6 @@ function myFunction() {
     clearLiActive();
     ul[0].classList.add('--active');
   }
-
-  // else {
-  //   clearLiActive();
-  //   ul[1].classList.add('--active');
-  // }
-  console.log(scrolled);
 }
 
 function AppPage() {
@@ -130,19 +124,17 @@ function AppPage() {
                 <div className="app-page__nav--progress-container">
                   <div className="app-page__nav--progress-bar"></div>
                 </div>
-
-                <AnchorLink href="#app-info" offset=" 160 ">
+                <AnchorLink href="#app-info" offset=" 100 ">
                   <li className="--active">Metrics summary</li>
                 </AnchorLink>
                 <AnchorLink href="#app-reports" offset=" 0 ">
                   <li>Reports</li>
                 </AnchorLink>
-                
                 <AnchorLink href="#app-marketing" offset=" 110 ">
-                <li>About</li>
+                  <li>About</li>
                 </AnchorLink>
                 <AnchorLink href="#app-rankings" offset=" 0 ">
-                <li>Rankings</li>
+                  <li>Rankings</li>
                 </AnchorLink>
               </ul>
             </div>
