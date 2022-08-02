@@ -19,14 +19,16 @@ function AppInfo({ logo, flag, title, link, category, description }) {
   return (
     <div className="app-info">
       <div className="app-info__title">
-        <img src={logo} alt="app-logo" />
-        <div className="app-info__text">
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <div className="app-info__country">
-            <img src={flag} alt="country-flag" /> <a href={link}>{link}</a>
+        <div className="app-info__container">
+          <img src={logo} alt="app-logo" />
+          <div className="app-info__text">
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <div className="app-info__country">
+              <img src={flag} alt="country-flag" /> <a href={link}>{link}</a>
+            </div>
+            <p>{category}</p>
           </div>
-          <p>{category}</p>
         </div>
         <Button variant="contained">➕  Add to Collection</Button>
       </div>

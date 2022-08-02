@@ -1,8 +1,9 @@
 import React from 'react';
-import { AppInfo, AppMarketing, AppReports, AppRankings } from '../components';
+import { AppInfo, AppMarketing, AppReports, AppRankings, AppNotification } from '../components';
+import { ModalContext } from '../contexts';
 
-import { Breadcrumbs, Link, Typography, Divider } from '@mui/material';
-import { NavigateNext, AutoGraph } from '@mui/icons-material';
+import { Breadcrumbs, Link, Typography, Divider, IconButton } from '@mui/material';
+import { NavigateNext, AutoGraph, ArrowBackIos } from '@mui/icons-material';
 
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
@@ -19,6 +20,7 @@ function myFunction() {
   let scrolled = (winScroll / height) * 100;
   const heightBar = document.querySelector('.app-page__nav--progress-bar');
   heightBar.style.height = scrolled + '%';
+
   const ul = heightBar.closest('ul').querySelectorAll('li');
   function clearLiActive() {
     ul.forEach((element) => element.classList.remove('--active'));
@@ -53,34 +55,30 @@ function AppPage() {
       Zoom Cloud Meetings
     </Typography>,
   ];
+
+  const { matches769 } = React.useContext(ModalContext);
+
   return (
     <div className="app-page">
-      <div className="wrapper">
-        <div className="app-page__notification">
-          <h4>Zoom Cloud Meetings app Trends and Statistics 2022</h4>
-          <span>App’s Downloads, Revenue and Ratings by Сountry</span>
-          <p>
-            Zoom Cloud Meetings App displays growing trends in 2022 among Business apps for Android
-            on Google Play. Good dynamic of downloads shows that in 2022 Zoom Cloud Meetings App
-            reached 500M+ Installs. Zoom.us Company made revenue on Zoom Cloud Meetings App in
-            January of 500M+ USD. Today Zoom Cloud Meetings App is ranking with 4,4 stars (13,9K
-            votes) and has 15,7K reviews in total. Zoom Cloud Meetings App was updated on Mar 3,
-            2022 to the latest Ver 3.1. current Version now. Trending Zoom Cloud Meetings App in
-            Business Category was released 8 years ago on Mar 1, 2014.
-          </p>
-        </div>
-      </div>
+      {/* ---------------------------- */}
+      <AppNotification title={'ZOOM Cloud Meetings'} />
       {/* ---------------------------- */}
       <Divider />
       {/* ---------------------------- */}
       <div className="wrapper">
-        <Breadcrumbs separator={<NavigateNext fontSize="small" />} aria-label="breadcrumb">
-          {breadcrumbs}
-        </Breadcrumbs>
+        {matches769 ? (
+          <Breadcrumbs separator={<NavigateNext fontSize="small" />} aria-label="breadcrumb">
+            {breadcrumbs}
+          </Breadcrumbs>
+        ) : (
+          <div className="app-page__back">
+            <IconButton aria-label="back">
+              <ArrowBackIos />
+            </IconButton>
+          </div>
+        )}
         {/* ---------------------------- */}
         <span className="app-page__reward">TOP 5 Apps like «Zoom Cloud Meetings» app</span>
-        {/* ---------------------------- */}
-
         {/* ---------------------------- */}
         <div className="flex-wrapper">
           <div className="anchor" id="app-info"></div>

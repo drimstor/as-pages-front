@@ -1,7 +1,13 @@
 import React from 'react';
 
-import { FirstPage, LastPage, KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import arrow from '../assets/img/arrow-up.svg';
+import flagUk from '../assets/img/flag-uk.svg';
+import flagMalta from '../assets/img/flag-malta.svg';
+import flagGermany from '../assets/img/flag-germany.svg';
+import flagFrance from '../assets/img/flag-france.svg';
+import flagRussia from '../assets/img/flag-russia.svg';
 
+import { FirstPage, LastPage, KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import {
   TableHead,
@@ -17,15 +23,6 @@ import {
   Button,
 } from '@mui/material';
 
-import img from '../assets/google_ranking_chart.png';
-import arrow from '../assets/img/arrow-up.svg';
-
-import flagUk from '../assets/img/flag-uk.svg';
-import flagMalta from '../assets/img/flag-malta.svg';
-import flagGermany from '../assets/img/flag-germany.svg';
-import flagFrance from '../assets/img/flag-france.svg';
-import flagRussia from '../assets/img/flag-russia.svg';
-
 import {
   LineChart,
   Line,
@@ -37,7 +34,6 @@ import {
 } from 'recharts';
 
 const chartColorsRevenue = ['#2196F3', '#1FAA00', '#FFEA00', '#FF9800', '#D81B60'];
-
 const data = [
   {
     name: 'Dec 1, 2021',
@@ -174,23 +170,10 @@ function AppRankings({ title }) {
         <h3>Daily «{title}» TOP Rankings Charts by Country for «OS» on «PLATFORM» </h3>
         <div className="app-info__chart">
           <h4>30 days Ranking history</h4>
+          {/* ---------------------------- */}
           <ResponsiveContainer width="100%" height={300}>
-            <LineChart
-              width={500}
-              height={300}
-              data={data}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}>
-              <Line
-                type="monotone"
-                dataKey="UK"
-                stroke={chartColorsRevenue[0]}
-                activeDot={{ r: 8 }}
-              />
+            <LineChart data={data}>
+              <Line type="monotone" dataKey="UK" stroke={chartColorsRevenue[0]} />
               <Line type="monotone" dataKey="Malta" stroke={chartColorsRevenue[1]} />
               <Line type="monotone" dataKey="Germany" stroke={chartColorsRevenue[2]} />
               <Line type="monotone" dataKey="France" stroke={chartColorsRevenue[3]} />
@@ -201,6 +184,7 @@ function AppRankings({ title }) {
               <Tooltip />
             </LineChart>
           </ResponsiveContainer>
+          {/* ---------------------------- */}
           <div className="app-info__chart--bottom">
             <div className="app-info__chart--item">
               <span style={{ background: `${chartColorsRevenue[0]}` }}></span>
@@ -224,7 +208,7 @@ function AppRankings({ title }) {
             </div>
           </div>
         </div>
-
+        {/* ---------------------------- */}
         <TableContainer>
           <Table sx={{ minWidth: 300 }} aria-label="custom pagination table">
             <TableHead>
@@ -265,7 +249,6 @@ function AppRankings({ title }) {
                   </TableCell>
                 </TableRow>
               ))}
-
               {emptyRows > 0 && (
                 <TableRow style={{ height: 53 * emptyRows }}>
                   <TableCell colSpan={7} />
@@ -294,7 +277,7 @@ function AppRankings({ title }) {
             </TableFooter>
           </Table>
         </TableContainer>
-
+        {/* ---------------------------- */}
         <Button className="app-page__rankings--btn" variant="outlined">
           See ranking details
         </Button>

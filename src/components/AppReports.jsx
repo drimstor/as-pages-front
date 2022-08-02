@@ -13,7 +13,6 @@ import {
 } from 'recharts';
 
 const chartColorsRevenue = ['#2196F3', '#1FAA00'];
-
 const data = [
   {
     name: '12/19',
@@ -95,10 +94,15 @@ function AppReports({ title }) {
     <div className="app-info">
       <div className="app-info__stats">
         <h3>«{title}» Reports</h3>
-
+        {/* ---------------------------- */}
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+            <Tabs
+              value={value}
+              variant="scrollable"
+              // scrollButtons={false}
+              onChange={handleChange}
+              aria-label="basic tabs example">
               <Tab label="Revenue per month" {...a11yProps(0)} />
               <Tab label="revenue by country" {...a11yProps(1)} />
               <Tab label="daily installs" {...a11yProps(2)} />
@@ -116,21 +120,12 @@ function AppReports({ title }) {
                 <p>Monthly Downloads</p> <p>Monthly Revenue</p>
               </div>
               <ResponsiveContainer width="100%" height={300}>
-                <LineChart
-                  width={500}
-                  height={300}
-                  data={data}
-                  margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                  }}>
+                <LineChart data={data}>
                   <Line
                     type="monotone"
                     dataKey="Downloads"
                     stroke={chartColorsRevenue[0]}
-                    activeDot={{ r: 8 }}
+                    activeDot={{ r: 6 }}
                   />
                   <Line type="monotone" dataKey="Revenue" stroke={chartColorsRevenue[1]} />
                   <CartesianGrid stroke="#E0E0E0" strokeDasharray="0" />
@@ -139,6 +134,7 @@ function AppReports({ title }) {
                   <Tooltip />
                 </LineChart>
               </ResponsiveContainer>
+              {/* ---------------------------- */}
               <div className="app-info__chart--bottom">
                 <div className="app-info__chart--item">
                   <span style={{ background: `${chartColorsRevenue[0]}` }}></span> <p>Downloads</p>
@@ -161,22 +157,8 @@ function AppReports({ title }) {
                 <p>Monthly Downloads</p> <p>Monthly Revenue</p>
               </div>
               <ResponsiveContainer width="100%" height={300}>
-                <LineChart
-                  width={500}
-                  height={300}
-                  data={data}
-                  margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                  }}>
-                  <Line
-                    type="monotone"
-                    dataKey="Downloads"
-                    stroke={chartColorsRevenue[0]}
-                    activeDot={{ r: 8 }}
-                  />
+                <LineChart data={data}>
+                  <Line type="monotone" dataKey="Downloads" stroke={chartColorsRevenue[0]} />
                   <Line type="monotone" dataKey="Revenue" stroke={chartColorsRevenue[1]} />
                   <CartesianGrid stroke="#E0E0E0" strokeDasharray="0" />
                   <XAxis dataKey="name" />
@@ -184,6 +166,7 @@ function AppReports({ title }) {
                   <Tooltip />
                 </LineChart>
               </ResponsiveContainer>
+              {/* ---------------------------- */}
               <div className="app-info__chart--bottom">
                 <div className="app-info__chart--item">
                   <span style={{ background: `${chartColorsRevenue[0]}` }}></span> <p>Downloads</p>
@@ -206,22 +189,8 @@ function AppReports({ title }) {
                 <p>Monthly Downloads</p> <p>Monthly Revenue</p>
               </div>
               <ResponsiveContainer width="100%" height={300}>
-                <LineChart
-                  width={500}
-                  height={300}
-                  data={data}
-                  margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                  }}>
-                  <Line
-                    type="monotone"
-                    dataKey="Downloads"
-                    stroke={chartColorsRevenue[0]}
-                    activeDot={{ r: 8 }}
-                  />
+                <LineChart data={data}>
+                  <Line type="monotone" dataKey="Downloads" stroke={chartColorsRevenue[0]} />
                   <Line type="monotone" dataKey="Revenue" stroke={chartColorsRevenue[1]} />
                   <CartesianGrid stroke="#E0E0E0" strokeDasharray="0" />
                   <XAxis dataKey="name" />
@@ -229,6 +198,7 @@ function AppReports({ title }) {
                   <Tooltip />
                 </LineChart>
               </ResponsiveContainer>
+              {/* ---------------------------- */}
               <div className="app-info__chart--bottom">
                 <div className="app-info__chart--item">
                   <span style={{ background: `${chartColorsRevenue[0]}` }}></span> <p>Downloads</p>

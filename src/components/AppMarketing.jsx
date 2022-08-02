@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 
 import slide from '../assets/slide1.png';
 
-function AppMarketing( { title } ) {
+function AppMarketing({ title }) {
   return (
     <div className="app-page__marketing">
       <h3>Best «{title}» Images and Marketing Description.</h3>
@@ -45,9 +45,8 @@ function AppMarketing( { title } ) {
 
       <div className="app-page__paragraphs">
         <p>
-          App displays growing trends in 2022 among Business apps for Android on
-          Google Play. Good dynamic of downloads shows that in 2022 Zoom Cloud Meetings App reached
-          500M+ Installs.
+          App displays growing trends in 2022 among Business apps for Android on Google Play. Good
+          dynamic of downloads shows that in 2022 Zoom Cloud Meetings App reached 500M+ Installs.
         </p>
         <p>Zoom.us Company made revenue on Zoom Cloud Meetings App in January of 500M+ USD.</p>
         <p style={{ color: 'transparent' }}>
