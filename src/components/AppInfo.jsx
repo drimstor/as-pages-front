@@ -30,7 +30,7 @@ function AppInfo({ logo, flag, title, link, category, description }) {
             <p>{category}</p>
           </div>
         </div>
-        <Button variant="contained">➕  Add to Collection</Button>
+        <Button variant="contained">+ Add to Collection</Button>
       </div>
       <div className="app-info__metrics">
         <h3>«{title}» Metrics and Intelligence Data, Today</h3>

@@ -4,6 +4,7 @@ function AppNotification({ title }) {
   const notification = React.useRef(null);
   function hideNotification() {
     notification.current.style.marginTop = `-${notification.current.clientHeight - 65}px`;
+    notification.current.style.opacity = '0';
   }
   return (
     <div className="wrapper">
