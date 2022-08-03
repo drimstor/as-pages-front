@@ -1,4 +1,5 @@
 import React from 'react';
+import { ModalContext } from '../contexts';
 
 import { Table, TableBody, TableCell, TableContainer, TableRow, Button } from '@mui/material';
 
@@ -16,6 +17,7 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 function AppInfo({ logo, flag, title, link, category, description }) {
+  const { matches376 } = React.useContext(ModalContext);
   return (
     <div className="app-info">
       <div className="app-info__title">
@@ -24,12 +26,24 @@ function AppInfo({ logo, flag, title, link, category, description }) {
           <div className="app-info__text">
             <h2>{title}</h2>
             <p>{description}</p>
+            {matches376 && (
+              <>
+                <div className="app-info__country">
+                  <img src={flag} alt="country-flag" /> <a href={link}>{link}</a>
+                </div>
+                <p>{category}</p>
+              </>
+            )}
+          </div>
+        </div>
+        {!matches376 && (
+          <div className="app-info__mobile-wrap">
             <div className="app-info__country">
               <img src={flag} alt="country-flag" /> <a href={link}>{link}</a>
             </div>
             <p>{category}</p>
           </div>
-        </div>
+        )}
         <Button variant="contained">+ Add to Collection</Button>
       </div>
       <div className="app-info__metrics">

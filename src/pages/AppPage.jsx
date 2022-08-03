@@ -10,37 +10,9 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import logo from '../assets/img/app-logo.svg';
 import flag from '../assets/img/flag-uk.svg';
 
-// Прогресс бар
-window.onscroll = function () {
-  myFunction();
-};
-function myFunction() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  const heightBar = document.querySelector('.app-page__nav--progress-bar');
-  heightBar.style.height = scrolled + '%';
-
-  const ul = heightBar.closest('ul').querySelectorAll('li');
-  function clearLiActive() {
-    ul.forEach((element) => element.classList.remove('--active'));
-  }
-  if (scrolled > 25 && scrolled < 50) {
-    clearLiActive();
-    ul[1].classList.add('--active');
-  } else if (scrolled > 50 && scrolled < 75) {
-    clearLiActive();
-    ul[2].classList.add('--active');
-  } else if (scrolled > 75 && scrolled < 101) {
-    clearLiActive();
-    ul[3].classList.add('--active');
-  } else {
-    clearLiActive();
-    ul[0].classList.add('--active');
-  }
-}
-
 function AppPage() {
+  const { matches769, matches1025 } = React.useContext(ModalContext);
+
   const breadcrumbs = [
     <Link underline="hover" key="1" color="inherit">
       Home
@@ -56,7 +28,25 @@ function AppPage() {
     </Typography>,
   ];
 
-  const { matches769 } = React.useContext(ModalContext);
+  // Прогресс бар
+  matches1025 &&
+    document.addEventListener('scroll', function () {
+      // Заполнение полоски
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      const heightBar = document.querySelector('.app-page__nav--progress-bar');
+      heightBar.style.height = scrolled + '%';
+      // Подстветка слов
+      const ul = heightBar.closest('ul').querySelectorAll('li');
+      const oneItem = 100 / ul.length;
+      for (let i = 0; i < ul.length; i++) {
+        if (scrolled > oneItem * i && scrolled < oneItem * (i + 1)) {
+          ul.forEach((element) => element.classList.remove('--active'));
+          ul[i].classList.add('--active');
+        }
+      }
+    });
 
   return (
     <div className="app-page">

@@ -2,8 +2,7 @@
   background: #d1d1d11e;
   position: relative;
   &__back {
-    margin: 10px;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 15px;
     @include size(50px, 50px);
     background: $blue;
@@ -40,9 +39,10 @@
       @extend %MiniText;
       margin: 10px 0;
       display: inline-block;
+      width: 115px;
     }
     li.--active {
-      color: $main;
+      color: black;
       font-weight: 500;
     }
     ul {
@@ -103,7 +103,7 @@
           padding-right: 0;
           margin-left: -25px;
           position: relative;
-          right: -35px;;
+          right: -35px;
         }
         tr td.MuiTableCell-root:nth-child(7) {
           padding-left: 0;
@@ -116,6 +116,10 @@
         th.MuiTableCell-root:nth-child(5),
         tr td.MuiTableCell-root:nth-child(5) {
           padding-left: 0;
+        }
+        th.MuiTableCell-root:nth-child(3),
+        tr td.MuiTableCell-root:nth-child(3) {
+          padding-right: 0;
         }
         tr td.MuiTableCell-root:nth-child(5) {
           &::before {
@@ -242,6 +246,8 @@
     padding: 90px 0 20px;
     a {
       display: none;
+      font-weight: 400;
+      font-size: 13px;
     }
     h4 {
       @include text(1rem, 1.1875rem);
@@ -320,6 +326,17 @@
   }
   .app-info {
     position: relative;
+
+    &__mobile-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 2px;
+      margin-bottom: -27px;
+      p {
+        font-size: 14px;
+      }
+    }
     &__stats {
       margin-top: 100px;
       .MuiBox-root {
@@ -355,8 +372,10 @@
       &--bottom {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 30px;
-        padding-left: 90px;
+        flex-wrap: wrap;
+        padding-left: 35px;
         margin-top: 10px;
       }
       &--item {
@@ -533,14 +552,6 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .app-page .app-info__chart--bottom {
-    display: grid;
-    grid-template-columns: 129px 129px;
-    padding-left: 0px;
-    width: 250px;
-    margin: 0 auto;
-    margin-top: 15px;
-  }
   .app-page__marketing p {
     width: 100%;
   }
@@ -588,13 +599,12 @@
       padding-top: 4px;
       background: $disabled;
       border-radius: 25px;
-      opacity: 0.7;
+      opacity: 0.6;
       margin-bottom: 20px;
     }
   }
   .app-page__reward {
     margin-left: -10px;
-    // display: none;
     font-size: 13px;
     &::after {
       font-size: 11px;
@@ -620,7 +630,7 @@
 
 @media screen and (max-width: 376px) {
   .app-page {
-    .app-info__title .app-info__container{
+    .app-info__title .app-info__container {
       align-items: center;
       gap: 20px;
       > img {
@@ -628,7 +638,10 @@
       }
     }
   }
-  .app-page .app-info__chart{
+  .app-page .app-info__chart {
     padding-right: 20px;
+  }
+  .app-page .app-info__chart--bottom {
+    padding-left: 10px;
   }
 }

@@ -40,6 +40,7 @@ const ModalContextProvider = ({ children }) => {
   const matches1025 = useMediaQuery('(min-width:1025px)');
   const matches769 = useMediaQuery('(min-width:769px)');
   const matches426 = useMediaQuery('(min-width:426px)');
+  const matches376 = useMediaQuery('(min-width:376px)');
 
   // Тема от Maerial UI
   const theme = createTheme({
@@ -63,6 +64,7 @@ const ModalContextProvider = ({ children }) => {
 
   // Значения для провайдера
   const modalContextValues = {
+    matches376,
     matches426,
     matches769,
     matches1025,

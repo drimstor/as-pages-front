@@ -100,7 +100,6 @@ function AppReports({ title }) {
             <Tabs
               value={value}
               variant="scrollable"
-              // scrollButtons={false}
               onChange={handleChange}
               aria-label="basic tabs example">
               <Tab label="Revenue per month" {...a11yProps(0)} />
